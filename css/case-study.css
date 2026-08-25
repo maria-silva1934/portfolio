@@ -858,3 +858,49 @@ margin: 0 0 3rem 0;}
     width: 100%;
     height: auto;
 }
+/* =========================================================
+   ART & VISUAL WORK — Gallery
+   ========================================================= */
+
+.art-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.art-piece {
+    margin: 0;
+    overflow: hidden;
+    background: var(--surface, #f5f3ef);
+}
+
+.art-piece img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.35s ease;
+}
+
+.art-piece:hover img {
+    transform: scale(1.025);
+}
+
+
+/* Larger visual rhythm for selected works */
+
+.art-piece:nth-child(5n + 1) {
+    grid-column: span 1;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .art-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+}
