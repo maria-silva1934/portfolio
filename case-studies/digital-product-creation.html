@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Product Creation — Maria Silva</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/case-study.css">
+
+    <style>
+        .product-showcase {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .product-piece {
+            margin: 0;
+            overflow: hidden;
+            background: var(--surface, #f5f3ef);
+        }
+
+        .product-piece img {
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: transform 0.35s ease;
+        }
+
+        .product-piece:hover img {
+            transform: scale(1.02);
+        }
+
+        .product-piece figcaption {
+            padding: 0.9rem 1rem;
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        .workflow {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .workflow-item {
+            padding: 1.5rem;
+            border: 1px solid currentColor;
+            border-radius: 2px;
+        }
+
+        .workflow-number {
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            opacity: 0.55;
+            margin-bottom: 0.8rem;
+        }
+
+        .workflow-title {
+            margin: 0 0 0.6rem;
+            font-size: 1.15rem;
+        }
+
+        .workflow-text {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            opacity: 0.75;
+        }
+
+        .tools-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+            margin-top: 1.5rem;
+        }
+
+        .tool-item {
+            padding: 0.55rem 0.9rem;
+            border: 1px solid currentColor;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 700px) {
+            .product-showcase,
+            .workflow {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<main id="main">
+
+    <section class="case-body" aria-label="Digital Product Creation case study">
+
+        <div class="container case-body-inner">
+
+            <!-- Hero -->
+            <section class="case-hero" aria-label="Digital Product Creation introduction">
+
+                <div class="case-hero-inner">
+
+                    <a class="case-back-link" href="../index.html">
+                        ← Back to Projects
+                    </a>
+
+                    <p class="case-category">
+                        Creative / Digital Products
+                    </p>
+
+                    <h1 class="case-title">
+                        Digital Product Creation
+                    </h1>
+
+                    <p class="case-type">
+                        Clipart Bundles &amp; Digital Assets
+                    </p>
+
+                    <p class="case-intro">
+                        A selection of digital products created and prepared
+                        as downloadable creative assets, combining visual
+                        design, asset organization and product presentation.
+                    </p>
+
+                    <p class="case-intro">
+                        The work covers the process from individual assets
+                        through to curated bundles prepared for digital
+                        marketplaces.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Woodland & Nature -->
+            <section class="case-section">
+
+                <p class="case-section-label">
+                    Featured Product 01
+                </p>
+
+                <h2 class="case-section-title">
+                    Woodland &amp; Nature Clipart Bundle
+                </h2>
+
+                <p class="case-intro">
+                    A nature-inspired clipart collection organized as a
+                    cohesive digital bundle, with individual assets curated
+                    into a consistent visual product.
+                </p>
+
+                <div class="product-showcase">
+
+                    <figure class="product-piece">
+                        <img
+                            src="../assets/digital-products/Woodland_Nature_004.png"
+                            alt="Woodland and nature clipart bundle"
+                            loading="lazy">
+
+                        <figcaption>
+                            Woodland &amp; Nature — selected digital asset.
+                        </figcaption>
+                    </figure>
+
+                    <figure class="product-piece">
+                        <img
+                            src="../assets/digital-products/Woodland_Nature_081.png"
+                            alt="Woodland and nature digital asset"
+                            loading="lazy">
+
+                        <figcaption>
+                            Woodland &amp; Nature — selected digital asset.
+                        </figcaption>
+                    </figure>
+
+                </div>
+
+            </section>
+
+
+            <!-- Botanical Foliage -->
+            <section class="case-section">
+
+                <p class="case-section-label">
+                    Featured Product 02
+                </p>
+
+                <h2 class="case-section-title">
+                    Botanical Foliage Pack
+                </h2>
+
+                <p class="case-intro">
+                    A botanical asset collection focused on foliage and
+                    watercolor elements, designed as a versatile digital
+                    pack for creative projects and decorative applications.
+                </p>
+
+                <div class="product-showcase">
+
+                    <figure class="product-piece">
+                        <img
+                            src="../assets/digital-products/watercolor-wildflower-007.png"
+                            alt="Botanical watercolor digital asset"
+                            loading="lazy">
+
+                        <figcaption>
+                            Botanical Foliage — selected digital asset.
+                        </figcaption>
+                    </figure>
+
+                    <figure class="product-piece">
+                        <img
+                            src="../assets/digital-products/watercolor-wildflower-008.png"
+                            alt="Botanical watercolor foliage asset"
+                            loading="lazy">
+
+                        <figcaption>
+                            Botanical Foliage — selected digital asset.
+                        </figcaption>
+                    </figure>
+
+                </div>
+
+            </section>
+
+
+            <!-- Workflow -->
+            <section class="case-section">
+
+                <p class="case-section-label">
+                    Workflow
+                </p>
+
+                <h2 class="case-section-title">
+                    From Assets to Product
+                </h2>
+
+                <div class="workflow">
+
+                    <article class="workflow-item">
+                        <p class="workflow-number">01</p>
+
+                        <h3 class="workflow-title">
+                            Asset Creation
+                        </h3>
+
+                        <p class="workflow-text">
+                            Creating and selecting individual visual assets
+                            with attention to consistency, style and usability.
+                        </p>
+                    </article>
+
+                    <article class="workflow-item">
+                        <p class="workflow-number">02</p>
+
+                        <h3 class="workflow-title">
+                            Curation
+                        </h3>
+
+                        <p class="workflow-text">
+                            Grouping related assets into themed collections
+                            that work as complete digital products.
+                        </p>
+                    </article>
+
+                    <article class="workflow-item">
+                        <p class="workflow-number">03</p>
+
+                        <h3 class="workflow-title">
+                            File Organization
+                        </h3>
+
+                        <p class="workflow-text">
+                            Structuring digital files and preparing the final
+                            bundle for a clear and practical customer experience.
+                        </p>
+                    </article>
+
+                    <article class="workflow-item">
+                        <p class="workflow-number">04</p>
+
+                        <h3 class="workflow-title">
+                            Product Presentation
+                        </h3>
+
+                        <p class="workflow-text">
+                            Preparing product visuals, titles and descriptions
+                            to communicate the value and contents of each pack.
+                        </p>
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- Marketplace -->
+            <section class="case-section">
+
+                <p class="case-section-label">
+                    Product Preparation
+                </p>
+
+                <h2 class="case-section-title">
+                    Marketplace-Ready Assets
+                </h2>
+
+                <p class="case-intro">
+                    Each collection is prepared with attention to product
+                    naming, descriptions, tags, file structure and visual
+                    presentation, creating a complete digital product rather
+                    than a simple collection of individual files.
+                </p>
+
+            </section>
+
+
+            <!-- Skills -->
+            <section class="case-section">
+
+                <p class="case-section-label">
+                    Skills
+                </p>
+
+                <h2 class="case-section-title">
+                    What This Project Demonstrates
+                </h2>
+
+                <div class="tools-list">
+
+                    <span class="tool-item">
+                        Digital Product Creation
+                    </span>
+
+                    <span class="tool-item">
+                        Asset Design
+                    </span>
+
+                    <span class="tool-item">
+                        Creative Direction
+                    </span>
+
+                    <span class="tool-item">
+                        Product Curation
+                    </span>
+
+                    <span class="tool-item">
+                        File Organization
+                    </span>
+
+                    <span class="tool-item">
+                        Product Presentation
+                    </span>
+
+                    <span class="tool-item">
+                        E-commerce
+                    </span>
+
+                    <span class="tool-item">
+                        Marketplace Optimization
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- Outcome -->
+            <section class="case-section">
+
+                <p class="case-section-label">
+                    Project Outcome
+                </p>
+
+                <h2 class="case-section-title">
+                    Creative Assets Turned Into Products
+                </h2>
+
+                <p class="case-intro">
+                    These projects demonstrate the ability to take creative
+                    assets through curation, organization and presentation,
+                    transforming them into structured digital products ready
+                    for distribution.
+                </p>
+
+                <p class="case-author">
+                    Digital product creation by Maria Silva · © 2026
+                </p>
+
+            </section>
+
+        </div>
+
+    </section>
+
+</main>
+
+</body>
+</html>
