@@ -5,625 +5,1976 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Primary SEO -->
-  <title>Maria Silva — AI Evaluation · Content Operations · E-commerce · Digital Support</title>
-  <meta name="description" content="Portfolio of Maria Silva, a Portugal-based professional combining customer-facing experience with digital tools, e-commerce and AI-assisted workflows. Available for international remote work.">
+  <title>Maria Silva — Creative Technologist · Digital Creator · Visual Artist</title>
+
+  <meta
+    name="description"
+    content="Portfolio of Maria Silva — Creative Technologist, Digital Creator and Visual Artist working across AI, visual content, video, digital products and e-commerce."
+  >
+
   <meta name="author" content="Maria Silva">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Maria Silva — AI Evaluation · Content Operations · E-commerce · Digital Support">
-  <meta property="og:description" content="Portugal-based professional combining customer-facing experience with digital tools, e-commerce and AI-assisted workflows.">
-  <meta property="og:url" content="https://vintagebymaria.github.io/">
+  <meta
+    property="og:title"
+    content="Maria Silva — Creative Technologist · Digital Creator · Visual Artist"
+  >
+  <meta
+    property="og:description"
+    content="AI, visual content, video, digital products, e-commerce and independent creative projects."
+  >
+  <meta
+    property="og:url"
+    content="https://maria-silva1934.github.io/portfolio/"
+  >
   <meta property="og:site_name" content="Maria Silva Portfolio">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Maria Silva — AI Evaluation · Content Operations · E-commerce · Digital Support">
-  <meta name="twitter:description" content="Portugal-based professional combining customer-facing experience with digital tools, e-commerce and AI-assisted workflows.">
+  <meta
+    name="twitter:title"
+    content="Maria Silva — Creative Technologist · Digital Creator · Visual Artist"
+  >
+  <meta
+    name="twitter:description"
+    content="AI, visual content, video, digital products, e-commerce and independent creative projects."
+  >
 
-  <!-- Favicon (inline SVG, no external file needed) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a1a1a'/><text x='50' y='68' font-size='52' font-family='Georgia, serif' fill='%23faf9f7' text-anchor='middle'>M</text></svg>">
+  <!-- Favicon -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a1a1a'/><text x='50' y='68' font-size='52' font-family='Georgia, serif' fill='%23faf9f7' text-anchor='middle'>M</text></svg>"
+  >
 
-  <!-- Styles -->
+  <!-- Main stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Small homepage-specific additions -->
+  <style>
+
+    /* ================================
+       HOMEPAGE STRATEGIC LAYOUT
+       ================================ */
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-inner {
+      max-width: 980px;
+    }
+
+    .hero-eyebrow {
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+
+    .hero-title {
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      max-width: 850px;
+      line-height: 1.35;
+    }
+
+    .hero-intro {
+      max-width: 720px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .hero-pathways {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+      max-width: 900px;
+    }
+
+    .hero-pathway {
+      display: block;
+      padding: 1.35rem;
+      border: 1px solid rgba(0,0,0,0.12);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .hero-pathway:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0,0,0,0.35);
+    }
+
+    .pathway-label {
+      display: block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.5rem;
+      opacity: 0.65;
+    }
+
+    .pathway-title {
+      display: block;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .pathway-description {
+      display: block;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      opacity: 0.72;
+    }
+
+    /* ================================
+       SERVICES
+       ================================ */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    .service-card {
+      padding: 1.6rem;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .service-number {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      opacity: 0.55;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-title {
+      margin-bottom: 0.75rem;
+    }
+
+    .service-description {
+      line-height: 1.65;
+      font-size: 0.92rem;
+    }
+
+    .service-list {
+      margin-top: 1rem;
+      padding-left: 1rem;
+    }
+
+    .service-list li {
+      margin-bottom: 0.35rem;
+      font-size: 0.85rem;
+    }
+
+    /* ================================
+       WORK / PROJECT CATEGORIES
+       ================================ */
+
+    .work-intro {
+      max-width: 760px;
+    }
+
+    .project-category {
+      margin-top: 3.5rem;
+    }
+
+    .project-category:first-child {
+      margin-top: 2rem;
+    }
+
+    .project-category-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .project-category-heading h3 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    .project-category-heading span {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.55;
+    }
+
+    /* ================================
+       VENTURES
+       ================================ */
+
+    .ventures-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .venture-card {
+      padding: 1.75rem;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .venture-status {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.55;
+    }
+
+    .venture-title {
+      margin-bottom: 0.75rem;
+    }
+
+    .venture-description {
+      line-height: 1.7;
+      font-size: 0.92rem;
+    }
+
+    /* ================================
+       THAILAND SECTION
+       ================================ */
+
+    .international-box {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: start;
+      padding: 2rem;
+      border: 1px solid rgba(0,0,0,0.12);
+    }
+
+    .international-text p {
+      line-height: 1.75;
+    }
+
+    .international-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .international-list li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .international-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* ================================
+       CTA
+       ================================ */
+
+    .final-cta {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .final-cta .section-intro {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .final-cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    /* ================================
+       RESPONSIVE
+       ================================ */
+
+    @media (max-width: 900px) {
+
+      .hero-pathways,
+      .services-grid,
+      .ventures-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .international-box {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      .hero {
+        min-height: auto;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+
+      .hero-pathways,
+      .services-grid,
+      .ventures-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .btn {
+        text-align: center;
+      }
+
+      .project-category-heading {
+        display: block;
+      }
+
+      .project-category-heading span {
+        display: block;
+        margin-top: 0.35rem;
+      }
+
+    }
+
+  </style>
 </head>
+
 <body>
 
-  <!-- ============ SKIP LINK ============ -->
+  <!-- ================================
+       SKIP LINK
+       ================================ -->
+
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- ============ HEADER / NAV ============ -->
+
+  <!-- ================================
+       HEADER / NAVIGATION
+       ================================ -->
+
   <header class="site-header" id="top">
+
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Maria Silva — back to top">
+
+      <a
+        class="brand"
+        href="#top"
+        aria-label="Maria Silva — back to top"
+      >
         <span class="brand-mark" aria-hidden="true">M</span>
         <span class="brand-name">Maria Silva</span>
       </a>
 
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Toggle navigation menu">
+
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        aria-expanded="false"
+        aria-controls="primaryNav"
+        aria-label="Toggle navigation menu"
+      >
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
         <span class="nav-toggle-bar"></span>
       </button>
 
-      <nav class="primary-nav" id="primaryNav" aria-label="Primary navigation">
+
+      <nav
+        class="primary-nav"
+        id="primaryNav"
+        aria-label="Primary navigation"
+      >
+
         <ul class="nav-list">
-          <li><a href="#about">About</a></li>
-          <li><a href="#focus">Focus</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact" class="nav-cta">Contact</a></li>
+
+          <li>
+            <a href="#about">About</a>
+          </li>
+
+          <li>
+            <a href="#services">Services</a>
+          </li>
+
+          <li>
+            <a href="#work">Work</a>
+          </li>
+
+          <li>
+            <a href="#ventures">Projects</a>
+          </li>
+
+          <li>
+            <a href="#experience">Experience</a>
+          </li>
+
+          <li>
+            <a href="#contact" class="nav-cta">Contact</a>
+          </li>
+
         </ul>
+
       </nav>
+
     </div>
+
   </header>
+
 
   <main id="main">
 
-    <!-- ============ HERO ============ -->
-    <section class="hero" aria-labelledby="hero-title">
+
+    <!-- ================================
+         HERO
+         ================================ -->
+
+    <section
+      class="hero"
+      aria-labelledby="hero-title"
+    >
+
       <div class="container hero-inner">
-        <p class="hero-eyebrow reveal">Porto, Portugal · Available for remote work</p>
-        <h1 class="hero-title reveal" id="hero-title">Maria Silva</h1>
-        <p class="hero-subtitle reveal">AI Evaluation · Content Operations · E-commerce · Digital Support</p>
+
+        <p class="hero-eyebrow reveal">
+          Porto, Portugal · International · Available for opportunities
+        </p>
+
+
+        <h1
+          class="hero-title reveal"
+          id="hero-title"
+        >
+          Maria Silva
+        </h1>
+
+
+        <p class="hero-subtitle reveal">
+          Creative Technologist · Digital Creator · Visual Artist
+        </p>
+
+
         <p class="hero-intro reveal">
-    I combine customer-facing experience with AI-assisted research, content operations,
-    e-commerce workflows and digital support.
-</p>
+          I create digital products, visual content and creative projects
+          using design, AI and modern digital tools — combining practical
+          experience with independent project development.
+        </p>
+
+
         <div class="hero-actions reveal">
-          <a class="btn btn-primary" href="#projects">View Projects</a>
-          <a class="btn btn-secondary" href="#contact">Contact Me</a>
+
+          <a
+            class="btn btn-primary"
+            href="#work"
+          >
+            View My Work
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="#contact"
+          >
+            Work With Me
+          </a>
+
         </div>
+
+
+        <!-- THREE MAIN PATHWAYS -->
+
+        <div class="hero-pathways reveal">
+
+
+          <a
+            class="hero-pathway"
+            href="#services"
+          >
+
+            <span class="pathway-label">
+              01 · Clients
+            </span>
+
+            <span class="pathway-title">
+              Work With Me
+            </span>
+
+            <span class="pathway-description">
+              Freelance creative, digital and e-commerce services.
+            </span>
+
+          </a>
+
+
+          <a
+            class="hero-pathway"
+            href="#international"
+          >
+
+            <span class="pathway-label">
+              02 · International
+            </span>
+
+            <span class="pathway-title">
+              Work in Thailand
+            </span>
+
+            <span class="pathway-description">
+              Open to international opportunities and relocation pathways.
+            </span>
+
+          </a>
+
+
+          <a
+            class="hero-pathway"
+            href="#ventures"
+          >
+
+            <span class="pathway-label">
+              03 · Ventures
+            </span>
+
+            <span class="pathway-title">
+              Projects & Ventures
+            </span>
+
+            <span class="pathway-description">
+              Independent projects, digital products and future business ideas.
+            </span>
+
+          </a>
+
+
+        </div>
+
       </div>
+
     </section>
 
-    <!-- ============ ABOUT ============ -->
-    <section class="section about" id="about" aria-labelledby="about-title">
+
+    <!-- ================================
+         ABOUT
+         ================================ -->
+
+    <section
+      class="section about"
+      id="about"
+      aria-labelledby="about-title"
+    >
+
       <div class="container">
-        <p class="section-label reveal">About</p>
-        <h2 class="section-title reveal" id="about-title">A practical, detail-oriented professional</h2>
+
+        <p class="section-label reveal">
+          About
+        </p>
+
+
+        <h2
+          class="section-title reveal"
+          id="about-title"
+        >
+          A creative and practical approach to digital work
+        </h2>
+
 
         <div class="about-grid">
+
+
           <div class="about-text reveal">
+
             <p>
-              I'm based in <strong>Porto, Portugal</strong>. My professional background includes
-              customer support, gas emergency response, international airport passenger assistance
-              and production operations.
+              I'm based in <strong>Porto, Portugal</strong>, with a
+              professional background spanning customer-facing work,
+              operations, emergency response and international airport
+              passenger assistance.
             </p>
+
             <p>
-              I also have hands-on experience with online selling, e-commerce marketplaces,
-              product listings, customer communication, digital content and AI-assisted workflows.
+              Alongside my professional experience, I've developed
+              hands-on projects in <strong>AI, visual creation, video,
+              e-commerce, digital products and automation</strong>.
             </p>
+
             <p>
-              I'm interested in applying these transferable skills to
-              <strong>international remote work</strong>.
+              I enjoy turning ideas into practical digital projects —
+              from concept and research through creation, organization,
+              presentation and publication.
             </p>
+
+            <p>
+              My goal is to work internationally, collaborate with
+              businesses and clients, and develop independent projects
+              with long-term potential.
+            </p>
+
           </div>
 
-          <aside class="about-facts reveal" aria-label="Quick facts">
+
+          <aside
+            class="about-facts reveal"
+            aria-label="Quick facts"
+          >
+
             <ul class="facts-list">
+
               <li>
-                <span class="fact-label">Based in</span>
-                <span class="fact-value">Porto, Portugal</span>
+                <span class="fact-label">
+                  Based in
+                </span>
+
+                <span class="fact-value">
+                  Porto, Portugal
+                </span>
               </li>
+
+
               <li>
-                <span class="fact-label">Focus</span>
-                <span class="fact-value">Remote · International</span>
+                <span class="fact-label">
+                  Direction
+                </span>
+
+                <span class="fact-value">
+                  International
+                </span>
               </li>
+
+
               <li>
-                <span class="fact-label">Languages</span>
-                <span class="fact-value">PT · ES · EN · TH</span>
+                <span class="fact-label">
+                  Work
+                </span>
+
+                <span class="fact-value">
+                  Freelance · Employment
+                </span>
               </li>
+
+
+              <li>
+                <span class="fact-label">
+                  Projects
+                </span>
+
+                <span class="fact-value">
+                  Independent · Digital
+                </span>
+              </li>
+
+
+              <li>
+                <span class="fact-label">
+                  Languages
+                </span>
+
+                <span class="fact-value">
+                  PT · ES · EN · TH
+                </span>
+              </li>
+
             </ul>
+
           </aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ AREAS OF FOCUS ============ -->
-    <section class="section focus" id="focus" aria-labelledby="focus-title">
-      <div class="container">
-        <p class="section-label reveal">Areas of Focus</p>
-        <h2 class="section-title reveal" id="focus-title">Where I can contribute</h2>
-
-        <div class="focus-grid">
-
-          <article class="focus-card reveal">
-            <div class="focus-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2a7 7 0 0 1 7 7c0 2.4-1.2 4.5-3 5.7V17a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2v-2.3C6.2 13.5 5 11.4 5 9a7 7 0 0 1 7-7z"/>
-                <path d="M9 21h6"/>
-                <path d="M10 18h4"/>
-              </svg>
-            </div>
-            <h3 class="focus-title">AI & Evaluation</h3>
-            <ul class="focus-list">
-              <li>AI response evaluation</li>
-              <li>Content evaluation</li>
-              <li>Online research</li>
-              <li>Prompt-based workflows</li>
-            </ul>
-          </article>
-
-          <article class="focus-card reveal">
-            <div class="focus-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-                <path d="M3.3 7 12 12l8.7-5"/>
-                <path d="M12 22V12"/>
-              </svg>
-            </div>
-            <h3 class="focus-title">Content & E-commerce</h3>
-            <ul class="focus-list">
-              <li>Product listings</li>
-              <li>Product research</li>
-              <li>Marketplace operations</li>
-              <li>Digital content</li>
-              <li>Online customer communication</li>
-            </ul>
-          </article>
-
-          <article class="focus-card reveal">
-            <div class="focus-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-              </svg>
-            </div>
-            <h3 class="focus-title">Customer & Operations</h3>
-            <ul class="focus-list">
-              <li>Customer support</li>
-              <li>Information accuracy</li>
-              <li>Incident handling</li>
-              <li>Escalation</li>
-              <li>Cross-cultural communication</li>
-            </ul>
-          </article>
 
         </div>
+
       </div>
+
     </section>
 
-    <!-- ============ SELECTED PROJECTS ============ -->
-    <section class="section projects" id="projects" aria-labelledby="projects-title">
+
+    <!-- ================================
+         SERVICES
+         ================================ -->
+
+    <section
+      class="section"
+      id="services"
+      aria-labelledby="services-title"
+    >
+
       <div class="container">
-        <p class="section-label reveal">Selected Projects</p>
-        <h2 class="section-title reveal" id="projects-title">Sample work & case studies</h2>
+
+        <p class="section-label reveal">
+          Services
+        </p>
+
+
+        <h2
+          class="section-title reveal"
+          id="services-title"
+        >
+          What I can create or support
+        </h2>
+
+
         <p class="section-intro reveal">
-          Practical portfolio exercises demonstrating my approach to AI evaluation, research,
-          e-commerce content and customer operations.
+          Flexible digital services for businesses, creators and
+          independent projects.
         </p>
 
-        <div class="projects-grid">
 
-          <a class="project-card-link reveal" href="case-studies/ai-response-evaluation.html" aria-label="View case study: AI Response Evaluation">
-            <article class="project-card">
-              <div class="project-number" aria-hidden="true">01</div>
-              <h3 class="project-title">AI Response Evaluation</h3>
-              <p class="project-desc">
-                Comparative evaluation of AI-generated responses based on accuracy, relevance,
-                clarity and instruction following.
-              </p>
-              <p class="project-status status-completed">
-                <span class="status-dot" aria-hidden="true"></span>
-                Completed Case Study
-              </p>
-              <span class="project-cta">View Case Study <span aria-hidden="true">→</span></span>
-            </article>
-          </a>
+        <div class="services-grid">
 
-          <a class="project-card-link reveal" href="case-studies/ai-research-fact-checking.html" aria-label="View case study: AI Research & Fact-Checking">
-            <article class="project-card">
-              <div class="project-number" aria-hidden="true">02</div>
-              <h3 class="project-title">AI Research & Fact-Checking</h3>
-              <p class="project-desc">
-                Research and verification exercise focused on identifying inaccuracies in
-                AI-generated information and improving the final response.
-              </p>
-              <p class="project-status status-completed">
-                <span class="status-dot" aria-hidden="true"></span>
-                Completed Case Study
-              </p>
-              <span class="project-cta">View Case Study <span aria-hidden="true">→</span></span>
-            </article>
-          </a>
 
-          <a class="project-card-link reveal" href="case-studies/ecommerce-product-optimization.html" aria-label="View case study: E-commerce Product Optimization">
-            <article class="project-card">
-              <div class="project-number" aria-hidden="true">03</div>
-              <h3 class="project-title">E-commerce Product Optimization</h3>
-              <p class="project-desc">
-                Product research and listing optimization exercise covering titles, descriptions,
-                customer-focused information and marketplace presentation.
-              </p>
-              <p class="project-status status-completed">
-                <span class="status-dot" aria-hidden="true"></span>
-                Completed Case Study
-              </p>
-              <span class="project-cta">View Case Study <span aria-hidden="true">→</span></span>
-            </article>
-          </a>
+          <!-- SERVICE 01 -->
 
-          <a class="project-card-link reveal" href="case-studies/customer-support-escalation.html" aria-label="View case study: Customer Support & Escalation">
-            <article class="project-card">
-              <div class="project-number" aria-hidden="true">04</div>
-              <h3 class="project-title">Customer Support & Escalation</h3>
-              <p class="project-desc">
-                Practical customer communication scenarios demonstrating problem resolution,
-                clear communication and appropriate escalation.
-              </p>
-              <p class="project-status status-completed">
-                <span class="status-dot" aria-hidden="true"></span>
-                Completed Case Study
-              </p>
-              <span class="project-cta">View Case Study <span aria-hidden="true">→</span></span>
-            </article>
-          </a>
+          <article class="service-card reveal">
 
-        <a class="project-card-link reveal"
-   href="case-studies/flux-comfyui-image-generation.html"
-   aria-label="View case study: FLUX.1-dev — ComfyUI Image Generation Workflow">
+            <div class="service-number">
+              01
+            </div>
 
-    <article class="project-card">
-        <div class="project-number" aria-hidden="true">05</div>
+            <h3 class="service-title">
+              AI & Visual Content
+            </h3>
 
-        <h3 class="project-title">
-            FLUX.1-dev — ComfyUI Image Generation
-        </h3>
+            <p class="service-description">
+              AI-assisted visual creation and digital content workflows
+              for creative projects, products and online communication.
+            </p>
 
-        <p class="project-desc">
-            Local generative AI workflow built from scratch in ComfyUI,
-            including FLUX.1-dev, quantization, CUDA troubleshooting and
-            hardware-constrained optimization.
-        </p>
+            <ul class="service-list">
 
-        <p class="project-status status-completed">
-            <span class="status-dot" aria-hidden="true"></span>
-            Completed Case Study
-        </p>
+              <li>AI image generation</li>
+              <li>Visual content</li>
+              <li>Creative concepts</li>
+              <li>AI-assisted workflows</li>
 
-        <span class="project-cta">
-            View Case Study
-            <span aria-hidden="true">→</span>
-        </span>
-    </article> 
-      </a>
-      
-<a class="project-card-link reveal"
-   href="case-studies/vinted-workflow-automation.html"
-   aria-label="View case study: Vinted Workflow Automation">
+            </ul>
 
-    <article class="project-card">
+          </article>
 
-        <div class="project-number" aria-hidden="true">06</div>
 
-        <h3 class="project-title">
-            Vinted Workflow Automation
-        </h3>
+          <!-- SERVICE 02 -->
 
-        <p class="project-desc">
-            Personal automation tool designed to streamline repetitive Vinted workflows,
-            reduce manual tasks and improve efficiency in digital operations.
-        </p>
+          <article class="service-card reveal">
 
-        <p class="project-status status-completed">
-            <span class="status-dot" aria-hidden="true"></span>
-            Completed Case Study
-        </p>
+            <div class="service-number">
+              02
+            </div>
 
-        <span class="project-cta">
-            View Case Study
-            <span aria-hidden="true">→</span>
-        </span>
+            <h3 class="service-title">
+              Video Editing
+            </h3>
 
-    </article>
+            <p class="service-description">
+              Short-form and atmospheric video projects combining
+              visual storytelling, pacing, sound and presentation.
+            </p>
 
-</a> 
+            <ul class="service-list">
 
-<a class="project-card-link reveal"
-  href="case-studies/creative-writing-storytelling.html"
-  aria-label="View case study: Creative Writing & Storytelling">
+              <li>Video editing</li>
+              <li>Color grading</li>
+              <li>Sound design</li>
+              <li>Content presentation</li>
 
-  <article class="project-card">
+            </ul>
 
-    <div class="project-number" aria-hidden="true">06</div>
+          </article>
 
-    <h3 class="project-title">
-      Creative Writing &amp; Storytelling
-    </h3>
 
-    <p class="project-desc">
-      A selection of original poetry, emotional writing and narrative
-      storytelling, presented in Portuguese with English literary adaptations.
-    </p>
+          <!-- SERVICE 03 -->
 
-    <p class="project-status status-completed">
-      <span class="status-dot" aria-hidden="true"></span>
-      Completed Case Study
-    </p>
+          <article class="service-card reveal">
 
-    <span class="project-cta">
-      View Case Study
-      <span aria-hidden="true">→</span>
-    </span>
+            <div class="service-number">
+              03
+            </div>
 
-  </article>
+            <h3 class="service-title">
+              Digital Products
+            </h3>
 
-</a>
-<a class="project-card-link reveal"
-    href="case-studies/art-visual-work.html"
-    aria-label="View case study: Art & Visual Work">
+            <p class="service-description">
+              Creation and preparation of digital products designed
+              for online marketplaces and independent businesses.
+            </p>
 
-    <article class="project-card">
+            <ul class="service-list">
 
-        <div class="project-number" aria-hidden="true">07</div>
+              <li>Digital asset packs</li>
+              <li>Product organization</li>
+              <li>Marketplace presentation</li>
+              <li>Product research</li>
 
-        <h3 class="project-title">
-            Art &amp; Visual Work
-        </h3>
+            </ul>
 
-        <p class="project-desc">
-            A selection of original artwork exploring drawing,
-            painting, illustration, mixed media and painted surfaces
-            across different materials and formats.
-        </p>
+          </article>
 
-        <p class="project-status status-completed">
-            <span class="status-dot" aria-hidden="true"></span>
-            Completed Case Study
-        </p>
 
-        <span class="project-cta">
-            View Case Study
-            <span aria-hidden="true">→</span>
-        </span>
+          <!-- SERVICE 04 -->
 
-    </article>
+          <article class="service-card reveal">
 
-</a>
+            <div class="service-number">
+              04
+            </div>
 
-<a class="project-card-link reveal"
-   href="case-studies/video-editing-davinci.html"
-   aria-label="View case study: Video Editing — DaVinci Resolve">
+            <h3 class="service-title">
+              E-commerce & Digital Operations
+            </h3>
 
-    <article class="project-card">
+            <p class="service-description">
+              Practical support for online selling, product listings,
+              research, marketplaces and repetitive digital workflows.
+            </p>
 
-        <div class="project-number" aria-hidden="true">08</div>
+            <ul class="service-list">
 
-        <h3 class="project-title">
-            Video Editing — DaVinci Resolve
-        </h3>
+              <li>Product listings</li>
+              <li>Marketplace management</li>
+              <li>Product research</li>
+              <li>Workflow automation</li>
 
-        <p class="project-desc">
-            A short atmospheric video edit combining visual storytelling,
-            pacing, sound design, transitions and color grading.
-        </p>
+            </ul>
 
-        <p class="project-status status-completed">
-            <span class="status-dot" aria-hidden="true"></span>
-            Completed Case Study
-        </p>
+          </article>
 
-        <span class="project-cta">
-            View Case Study
-            <span aria-hidden="true">×</span>
-        </span>
 
-    </article>
+        </div>
 
-</a>
-
-<a class="project-card-link reveal"
-   href="case-studies/digital-product-creation.html"
-   aria-label="View case study: Digital Product Creation">
-
-    <article class="project-card">
-
-        <div class="project-number" aria-hidden="true">09</div>
-
-        <h3 class="project-title">
-            Digital Product Creation
-        </h3>
-
-        <p class="project-desc">
-            Creation and preparation of digital asset bundles, combining
-            visual design, curation, organization and product presentation.
-        </p>
-
-        <p class="project-status status-completed">
-            <span class="status-dot" aria-hidden="true"></span>
-            Completed Case Study
-        </p>
-
-        <span class="project-cta">
-            View Case Study
-            <span aria-hidden="true">→</span>
-        </span>
-
-    </article>
-
-</a>
-
-</div>
       </div>
+
     </section>
 
-    <!-- ============ SKILLS & TOOLS ============ -->
-    <section class="section skills" id="skills" aria-labelledby="skills-title">
+
+    <!-- ================================
+         INTERNATIONAL / THAILAND
+         ================================ -->
+
+    <section
+      class="section"
+      id="international"
+      aria-labelledby="international-title"
+    >
+
       <div class="container">
-        <p class="section-label reveal">Skills & Tools</p>
-        <h2 class="section-title reveal" id="skills-title">Tools I work with</h2>
+
+        <p class="section-label reveal">
+          International Direction
+        </p>
+
+
+        <h2
+          class="section-title reveal"
+          id="international-title"
+        >
+          Open to international opportunities
+        </h2>
+
+
+        <div class="international-box reveal">
+
+
+          <div class="international-text">
+
+            <p>
+              I'm building my career with an international focus,
+              particularly toward <strong>Thailand</strong>.
+            </p>
+
+            <p>
+              I'm interested in opportunities where creativity,
+              digital tools, AI, content, e-commerce or operations
+              intersect with an international working environment.
+            </p>
+
+            <p>
+              I'm open to employment, freelance collaborations and
+              projects that can develop into longer-term professional
+              relationships.
+            </p>
+
+          </div>
+
+
+          <ul class="international-list">
+
+            <li>
+              International / Thailand opportunities
+            </li>
+
+            <li>
+              Creative & digital roles
+            </li>
+
+            <li>
+              AI & content-related work
+            </li>
+
+            <li>
+              E-commerce & digital operations
+            </li>
+
+            <li>
+              Freelance collaborations
+            </li>
+
+          </ul>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================
+         SELECTED WORK
+         ================================ -->
+
+    <section
+      class="section projects"
+      id="work"
+      aria-labelledby="work-title"
+    >
+
+      <div class="container">
+
+        <p class="section-label reveal">
+          Selected Work
+        </p>
+
+
+        <h2
+          class="section-title reveal"
+          id="work-title"
+        >
+          Projects that show how I work
+        </h2>
+
+
+        <p class="section-intro work-intro reveal">
+          A selection of practical case studies and creative work
+          demonstrating AI workflows, digital operations, visual
+          creation, video, art and digital product development.
+        </p>
+
+
+        <!-- AI & DIGITAL -->
+
+        <div class="project-category">
+
+          <div class="project-category-heading">
+
+            <h3>
+              AI & Digital
+            </h3>
+
+            <span>
+              Research · Automation · E-commerce
+            </span>
+
+          </div>
+
+
+          <div class="projects-grid">
+
+
+            <a
+              class="project-card-link reveal"
+              href="case-studies/ai-response-evaluation.html"
+              aria-label="View case study: AI Response Evaluation"
+            >
+
+              <article class="project-card">
+
+                <div class="project-number">
+                  01
+                </div>
+
+                <h3 class="project-title">
+                  AI Response Evaluation
+                </h3>
+
+                <p class="project-desc">
+                  Comparative evaluation of AI-generated responses
+                  based on accuracy, relevance, clarity and
+                  instruction following.
+                </p>
+
+                <p class="project-status status-completed">
+                  <span class="status-dot"></span>
+                  Completed Case Study
+                </p>
+
+                <span class="project-cta">
+                  View Case Study →
+                </span>
+
+              </article>
+
+            </a>
+
+
+            <a
+              class="project-card-link reveal"
+              href="case-studies/ai-research-fact-checking.html"
+              aria-label="View case study: AI Research & Fact-Checking"
+            >
+
+              <article class="project-card">
+
+                <div class="project-number">
+                  02
+                </div>
+
+                <h3 class="project-title">
+                  AI Research & Fact-Checking
+                </h3>
+
+                <p class="project-desc">
+                  Research and verification exercise focused on
+                  identifying inaccuracies in AI-generated information
+                  and improving the final response.
+                </p>
+
+                <p class="project-status status-completed">
+                  <span class="status-dot"></span>
+                  Completed Case Study
+                </p>
+
+                <span class="project-cta">
+                  View Case Study →
+                </span>
+
+              </article>
+
+            </a>
+
+
+            <a
+              class="project-card-link reveal"
+              href="case-studies/ecommerce-product-optimization.html"
+              aria-label="View case study: E-commerce Product Optimization"
+            >
+
+              <article class="project-card">
+
+                <div class="project-number">
+                  03
+                </div>
+
+                <h3 class="project-title">
+                  E-commerce Product Optimization
+                </h3>
+
+                <p class="project-desc">
+                  Product research and listing optimization covering
+                  titles, descriptions, customer-focused information
+                  and marketplace presentation.
+                </p>
+
+                <p class="project-status status-completed">
+                  <span class="status-dot"></span>
+                  Completed Case Study
+                </p>
+
+                <span class="project-cta">
+                  View Case Study →
+                </span>
+
+              </article>
+
+            </a>
+
+
+            <a
+              class="project-card-link reveal"
+              href="case-studies/vinted-workflow-automation.html"
+              aria-label="View case study: Vinted Workflow Automation"
+            >
+
+              <article class="project-card">
+
+                <div class="project-number">
+                  06
+                </div>
+
+                <h3 class="project-title">
+                  Vinted Workflow Automation
+                </h3>
+
+                <p class="project-desc">
+                  Personal automation tool designed to streamline
+                  repetitive Vinted workflows, reduce manual tasks
+                  and improve digital operations.
+                </p>
+
+                <p class="project-status status-completed">
+                  <span class="status-dot"></span>
+                  Completed Case Study
+                </p>
+
+                <span class="project-cta">
+                  View Case Study →
+                </span>
+
+              </article>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+        <!-- CREATIVE TECHNOLOGY -->
+
+        <div class="project-category">
+
+          <div class="project-category-heading">
+
+            <h3>
+              Creative Technology
+            </h3>
+
+            <span>
+              AI · ComfyUI · Visual Generation
+            </span>
+
+          </div>
+
+
+          <div class="projects-grid">
+
+
+            <a
+              class="project-card-link reveal"
+              href="case-studies/flux-comfyui-image-generation.html"
+              aria-label="View case study: FLUX.1-dev — ComfyUI Image Generation"
+            >
+
+              <article class="project-card">
+
+                <div class="project-number">
+                  05
+                </div>
+
+                <h3 class="project-title">
+                  FLUX.1-dev — ComfyUI Image Generation
+                </h3>
+
+                <p class="project-desc">
+                  Local generative AI workflow built from scratch in
+                  ComfyUI, including model setup, quantization,
+                  troubleshooting and hardware-aware optimization.
+                </p>
+
+                <p class="project-status status-completed">
+                  <span class="status-dot"></span>
+                  Completed Case Study
+                </p>
+
+                <span class="project-cta">
+                  View Case Study →
+                </span>
+
+              </article>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+        <!-- VISUAL & VIDEO -->
+
+        <div class="project-category">
+
+          <div class="project-category-heading">
+
+            <h3>
+              Visual & Video
+            </h3>
+
+            <span>
+              Art · Video · Storytelling
+            </span>
+
+          </div>
+
+
+          <div class="projects-grid">
+
+
+            <a
+              class="project-card-link reveal"
+              href="case-studies/art-visual-work.html"
+              aria-label="View case study: Art & Visual Work"
+            >
+
+              <article class="project-card">
+
+                <div class="project-number">
+                  07
+                </div>
+
+                <h3 class="project-title">
+                  Art &amp; Visual Work
+                </h3>
+
+                <p class="project-desc">
+                  Original artwork exploring drawing, painting,
+                  illustration, mixed media and painted surfaces
+                  across different materials and formats.
+                </p>
+
+                <p class="project-status status-completed">
+                  <span class="status-dot"></span>
+                  Completed Case Study
+                </p>
+
+                <span class="project-cta">
+                  View Case Study →
+                </span>
+
+              </article>
+
+            </a>
+
+
+            <a
+              class="project-card-link reveal"
+              href="case-studies/video-editing-davinci.html"
+              aria-label="View case study: Video Editing — DaVinci Resolve"
+            >
+
+              <article class="project-card">
+
+                <div class="project-number">
+                  08
+                </div>
+
+                <h3 class="project-title">
+                  Video Editing — DaVinci Resolve
+                </h3>
+
+                <p class="project-desc">
+                  A short atmospheric video edit combining visual
+                  storytelling, pacing, sound design, transitions
+                  and color grading.
+                </p>
+
+                <p class="project-status status-completed">
+                  <span class="status-dot"></span>
+                  Completed Case Study
+                </p>
+
+                <span class="project-cta">
+                  View Case Study →
+                </span>
+
+              </article>
+
+            </a>
+
+
+            <a
+              class="project-card-link reveal"
+              href="case-studies/creative-writing-storytelling.html"
+              aria-label="View case study: Creative Writing & Storytelling"
+            >
+
+              <article class="project-card">
+
+                <div class="project-number">
+                  10
+                </div>
+
+                <h3 class="project-title">
+                  Creative Writing &amp; Storytelling
+                </h3>
+
+                <p class="project-desc">
+                  Original poetry, emotional writing and narrative
+                  storytelling presented in Portuguese with English
+                  literary adaptations.
+                </p>
+
+                <p class="project-status status-completed">
+                  <span class="status-dot"></span>
+                  Completed Case Study
+                </p>
+
+                <span class="project-cta">
+                  View Case Study →
+                </span>
+
+              </article>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+        <!-- DIGITAL PRODUCTS -->
+
+        <div class="project-category">
+
+          <div class="project-category-heading">
+
+            <h3>
+              Digital Products
+            </h3>
+
+            <span>
+              Design · Curation · Marketplace
+            </span>
+
+          </div>
+
+
+          <div class="projects-grid">
+
+
+            <a
+              class="project-card-link reveal"
+              href="case-studies/digital-product-creation.html"
+              aria-label="View case study: Digital Product Creation"
+            >
+
+              <article class="project-card">
+
+                <div class="project-number">
+                  09
+                </div>
+
+                <h3 class="project-title">
+                  Digital Product Creation
+                </h3>
+
+                <p class="project-desc">
+                  Creation and preparation of digital asset bundles,
+                  combining visual design, curation, organization
+                  and product presentation.
+                </p>
+
+                <p class="project-status status-completed">
+                  <span class="status-dot"></span>
+                  Completed Case Study
+                </p>
+
+                <span class="project-cta">
+                  View Case Study →
+                </span>
+
+              </article>
+
+            </a>
+
+
+            <a
+              class="project-card-link reveal"
+              href="case-studies/customer-support-escalation.html"
+              aria-label="View case study: Customer Support & Escalation"
+            >
+
+              <article class="project-card">
+
+                <div class="project-number">
+                  04
+                </div>
+
+                <h3 class="project-title">
+                  Customer Support &amp; Escalation
+                </h3>
+
+                <p class="project-desc">
+                  Practical customer communication scenarios
+                  demonstrating problem resolution, clear communication
+                  and appropriate escalation.
+                </p>
+
+                <p class="project-status status-completed">
+                  <span class="status-dot"></span>
+                  Completed Case Study
+                </p>
+
+                <span class="project-cta">
+                  View Case Study →
+                </span>
+
+              </article>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================
+         PROJECTS & VENTURES
+         ================================ -->
+
+    <section
+      class="section"
+      id="ventures"
+      aria-labelledby="ventures-title"
+    >
+
+      <div class="container">
+
+        <p class="section-label reveal">
+          Projects & Ventures
+        </p>
+
+
+        <h2
+          class="section-title reveal"
+          id="ventures-title"
+        >
+          Building ideas beyond client work
+        </h2>
+
+
+        <p class="section-intro reveal">
+          Independent projects allow me to explore business ideas,
+          digital products and creative concepts from the ground up.
+        </p>
+
+
+        <div class="ventures-grid">
+
+
+          <article class="venture-card reveal">
+
+            <span class="venture-status">
+              Independent Project
+            </span>
+
+            <h3 class="venture-title">
+              Digital Product Projects
+            </h3>
+
+            <p class="venture-description">
+              Development of downloadable creative products,
+              including illustration, nature and botanical asset
+              collections prepared for digital marketplaces.
+            </p>
+
+          </article>
+
+
+          <article class="venture-card reveal">
+
+            <span class="venture-status">
+              Content Project
+            </span>
+
+            <h3 class="venture-title">
+              Creative Video Projects
+            </h3>
+
+            <p class="venture-description">
+              Development of atmospheric and documentary-style
+              visual content combining editing, storytelling,
+              sound and visual composition.
+            </p>
+
+          </article>
+
+
+          <article class="venture-card reveal">
+
+            <span class="venture-status">
+              Future Venture
+            </span>
+
+            <h3 class="venture-title">
+              Digital & Creative Ventures
+            </h3>
+
+            <p class="venture-description">
+              Exploring scalable ideas that combine AI, digital
+              products, content, e-commerce and creative production
+              into independent businesses.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================================
+         SKILLS
+         ================================ -->
+
+    <section
+      class="section skills"
+      id="skills"
+      aria-labelledby="skills-title"
+    >
+
+      <div class="container">
+
+        <p class="section-label reveal">
+          Skills & Tools
+        </p>
+
+
+        <h2
+          class="section-title reveal"
+          id="skills-title"
+        >
+          Tools I work with
+        </h2>
+
 
         <div class="skills-grid">
 
+
           <div class="skill-group reveal">
-            <h3 class="skill-group-title">AI & Digital</h3>
+
+            <h3 class="skill-group-title">
+              AI & Creative Technology
+            </h3>
+
             <ul class="skill-list">
+
               <li>Generative AI tools</li>
               <li>AI-assisted research</li>
               <li>Prompt-based workflows</li>
-              <li>Online research</li>
-              <li>Content evaluation</li>
+              <li>ComfyUI</li>
+              <li>FLUX workflows</li>
+              <li>AI image generation</li>
+
             </ul>
+
           </div>
 
+
           <div class="skill-group reveal">
-            <h3 class="skill-group-title">E-commerce</h3>
+
+            <h3 class="skill-group-title">
+              Visual & Video
+            </h3>
+
             <ul class="skill-list">
+
+              <li>Canva</li>
+              <li>CapCut</li>
+              <li>DaVinci Resolve</li>
+              <li>Visual composition</li>
+              <li>Video editing</li>
+              <li>Digital storytelling</li>
+
+            </ul>
+
+          </div>
+
+
+          <div class="skill-group reveal">
+
+            <h3 class="skill-group-title">
+              E-commerce
+            </h3>
+
+            <ul class="skill-list">
+
               <li>Shopify</li>
               <li>Vinted</li>
               <li>Online marketplaces</li>
               <li>Product listings</li>
               <li>Product research</li>
+              <li>Digital products</li>
+
+            </ul>
+
+          </div>
+
+
+          <div class="skill-group reveal">
+
+            <h3 class="skill-group-title">
+              Digital Operations
+            </h3>
+
+            <ul class="skill-list">
+
+              <li>Workflow organization</li>
+              <li>Automation concepts</li>
+              <li>Online research</li>
+              <li>Content evaluation</li>
               <li>Customer communication</li>
+              <li>Information accuracy</li>
+
             </ul>
+
           </div>
 
-          <div class="skill-group reveal">
-            <h3 class="skill-group-title">Content</h3>
-            <ul class="skill-list">
-              <li>Canva</li>
-              <li>CapCut</li>
-              <li>DaVinci Resolve</li>
-            </ul>
-          </div>
 
           <div class="skill-group reveal">
-            <h3 class="skill-group-title">Technical</h3>
+
+            <h3 class="skill-group-title">
+              Technical
+            </h3>
+
             <ul class="skill-list">
+
               <li>Visual Studio Code</li>
               <li>Pinokio</li>
-              <li>Basic coding / technical workflows</li>
+              <li>HTML / CSS</li>
+              <li>Basic coding workflows</li>
+              <li>GitHub</li>
+              <li>AI-assisted development</li>
+
             </ul>
+
           </div>
 
-          <div class="skill-group reveal">
-            <h3 class="skill-group-title">Productivity</h3>
-            <ul class="skill-list">
-              <li>Microsoft Word</li>
-              <li>Microsoft Excel</li>
-              <li>Google Docs</li>
-            </ul>
-          </div>
 
         </div>
+
       </div>
+
     </section>
 
-    <!-- ============ EXPERIENCE ============ -->
-    <section class="section experience" id="experience" aria-labelledby="experience-title">
+
+    <!-- ================================
+         EXPERIENCE
+         ================================ -->
+
+    <section
+      class="section experience"
+      id="experience"
+      aria-labelledby="experience-title"
+    >
+
       <div class="container">
-        <p class="section-label reveal">Experience</p>
-        <h2 class="section-title reveal" id="experience-title">Professional background</h2>
+
+        <p class="section-label reveal">
+          Experience
+        </p>
+
+
+        <h2
+          class="section-title reveal"
+          id="experience-title"
+        >
+          Professional background
+        </h2>
+
 
         <div class="experience-list">
 
-          <article class="experience-item reveal">
-            <div class="experience-meta">
-              <h3 class="experience-role">Airport Passenger Assistance</h3>
-              <p class="experience-period">2023–2026</p>
-            </div>
-            <p class="experience-desc">
-              International passenger mobility and accessibility assistance in a fast-paced
-              airport environment.
-            </p>
-          </article>
 
           <article class="experience-item reveal">
+
             <div class="experience-meta">
-              <h3 class="experience-role">Emergency Response Support — Portgás</h3>
-              <p class="experience-period">2022–2024</p>
+
+              <h3 class="experience-role">
+                Airport Passenger Assistance
+              </h3>
+
+              <p class="experience-period">
+                2023–2026
+              </p>
+
             </div>
+
             <p class="experience-desc">
-              Gas emergency call handling, accurate information collection, computer-based
-              incident registration and escalation support.
+              International passenger mobility and accessibility
+              assistance in a fast-paced airport environment,
+              requiring communication, responsibility and
+              attention to individual needs.
             </p>
+
           </article>
 
+
           <article class="experience-item reveal">
+
             <div class="experience-meta">
-              <h3 class="experience-role">Production — Cerealis / Milaneza</h3>
-              <p class="experience-period">2019–2022</p>
+
+              <h3 class="experience-role">
+                Emergency Response Support — Portgás
+              </h3>
+
+              <p class="experience-period">
+                2022–2024
+              </p>
+
             </div>
+
             <p class="experience-desc">
-              Food production environment requiring consistency, attention to detail,
-              hygiene and safety procedures.
+              Gas emergency call handling, accurate information
+              collection, computer-based incident registration
+              and escalation support.
             </p>
+
           </article>
+
+
+          <article class="experience-item reveal">
+
+            <div class="experience-meta">
+
+              <h3 class="experience-role">
+                Production — Cerealis / Milaneza
+              </h3>
+
+              <p class="experience-period">
+                2019–2022
+              </p>
+
+            </div>
+
+            <p class="experience-desc">
+              Food production environment requiring consistency,
+              attention to detail, hygiene, safety procedures
+              and reliable operational work.
+            </p>
+
+          </article>
+
 
         </div>
+
       </div>
+
     </section>
 
-    <!-- ============ LANGUAGES ============ -->
-    <section class="section languages" id="languages" aria-labelledby="languages-title">
-      <div class="container">
-        <p class="section-label reveal">Languages</p>
-        <h2 class="section-title reveal" id="languages-title">Languages I speak</h2>
 
-        <ul class="languages-list">
-          <li class="language-item reveal">
-            <span class="language-name">Portuguese</span>
-            <span class="language-level">Native</span>
-          </li>
-          <li class="language-item reveal">
-            <span class="language-name">Spanish</span>
-            <span class="language-level">C2</span>
-          </li>
-          <li class="language-item reveal">
-            <span class="language-name">English</span>
-            <span class="language-level">C1</span>
-          </li>
-          <li class="language-item reveal">
-            <span class="language-name">Thai</span>
-            <span class="language-level">A1</span>
-          </li>
-        </ul>
-      </div>
-    </section>
+    <!-- ================================
+         LANGUAGES
+         ================================ -->
 
-    <!-- ============ CONTACT ============ -->
-    <section class="section contact" id="contact" aria-labelledby="contact-title">
+    <section
+      class="section languages"
+      id="languages"
+      aria-labelledby="languages-title"
+    >
+
       <div class="container">
-        <p class="section-label reveal">Contact</p>
-        <h2 class="section-title reveal" id="contact-title">Let's work together</h2>
-        <p class="section-intro reveal">
-          I'm open to international remote opportunities in AI evaluation, content operations,
-          e-commerce, customer support and related roles.
+
+        <p class="section-label reveal">
+          Languages
         </p>
 
-        <div class="contact-card reveal">
-          <p class="contact-name">Maria Silva</p>
-          <p class="contact-location">Porto, Portugal</p>
-          <p class="contact-email">
-            <a href="mailto:vintagebymaria@gmail.com">vintagebymaria@gmail.com</a>
-          </p>
-          <a class="btn btn-primary btn-email" href="mailto:vintagebymaria@gmail.com">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="4" width="20" height="16" rx="2"/>
-              <path d="m22 7-10 6L2 7"/>
-            </svg>
-            Send an email
-          </a>
-        </div>
+
+        <h2
+          class="section-title reveal"
+          id="languages-title"
+        >
+          Languages I speak
+        </h2>
+
+
+        <ul class="languages-list">
+
+
+          <li class="language-item reveal">
+
+            <span class="language-name">
+              Portuguese
+            </span>
+
+            <span class="language-level">
+              Native
+            </span>
+
+          </li>
+
+
+          <li class="language-item reveal">
+
+            <span class="language-name">
+              Spanish
+            </span>
+
+            <span class="language-level">
+              C2
+            </span>
+
+          </li>
+
+
+          <li class="language-item reveal">
+
+            <span class="language-name">
+              English
+            </span>
+
+            <span class="language-level">
+              C1
+            </span>
+
+          </li>
+
+
+          <li class="language-item reveal">
+
+            <span class="language-name">
+              Thai
+            </span>
+
+            <span class="language-level">
+              A1
+            </span>
+
+          </li>
+
+
+        </ul>
+
       </div>
+
     </section>
+
+
+    <!-- ================================
+         FINAL CTA / CONTACT
+         ================================ -->
+
+    <section
+      class="section contact"
+      id="contact"
+      aria-labelledby="contact-title"
+    >
+
+      <div class="container">
+
+
+        <div class="final-cta">
+
+
+          <p class="section-label reveal">
+            Contact
+          </p>
+
+
+          <h2
+            class="section-title reveal"
+            id="contact-title"
+          >
+            Let's build something together
+          </h2>
+
+
+          <p class="section-intro reveal">
+
+            I'm open to freelance projects, international
+            opportunities, creative collaborations and conversations
+            around digital products or independent ventures.
+
+          </p>
+
+
+          <div class="final-cta-actions reveal">
+
+            <a
+              class="btn btn-primary"
+              href="mailto:vintagebymaria@gmail.com"
+            >
+              Contact Me
+            </a>
+
+
+            <a
+              class="btn btn-secondary"
+              href="#work"
+            >
+              Explore My Work
+            </a>
+
+          </div>
+
+
+          <div class="contact-card reveal">
+
+            <p class="contact-name">
+              Maria Silva
+            </p>
+
+            <p class="contact-location">
+              Porto, Portugal · International
+            </p>
+
+            <p class="contact-email">
+
+              <a
+                href="mailto:vintagebymaria@gmail.com"
+              >
+                vintagebymaria@gmail.com
+              </a>
+
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
 
   </main>
 
-  <!-- ============ FOOTER ============ -->
+
+  <!-- ================================
+       FOOTER
+       ================================ -->
+
   <footer class="site-footer">
+
     <div class="container footer-inner">
-      <p class="footer-note">Built using AI-assisted development workflows.</p>
-      <p class="footer-copy">© <span id="year">2026</span> Maria Silva</p>
+
+      <p class="footer-note">
+        Built using AI-assisted development workflows.
+      </p>
+
+      <p class="footer-copy">
+        © <span id="year">2026</span> Maria Silva
+      </p>
+
     </div>
+
   </footer>
 
-  <!-- Scripts -->
+
+  <!-- ================================
+       SCRIPTS
+       ================================ -->
+
   <script src="js/main.js"></script>
+
 </body>
 </html>
