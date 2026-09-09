@@ -134,6 +134,68 @@
       opacity: 0.72;
     }
 
+/* ================================
+   WHAT I BRING
+   ================================ */
+
+.bring-list {
+  max-width: 900px;
+  margin: 2rem auto 0;
+}
+
+.bring-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bring-list li {
+  position: relative;
+  padding: 0 0 1.15rem 1.5rem;
+  margin-bottom: 1.15rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.bring-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.55;
+}
+
+/* ================================
+   PROJECTS & VENTURES
+   ================================ */
+
+.venture-focus {
+  margin-top: 1.25rem;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  opacity: 0.72;
+}
+
+.venture-focus strong {
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.ventures-cta {
+  max-width: 760px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.ventures-cta p {
+  margin: 0 0 1.25rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
     /* ================================
        SERVICES
        ================================ */
@@ -1018,599 +1080,612 @@
     </section>
 
 
+<!-- ================================
+     SELECTED WORK
+     ================================ -->
+
+<section
+  class="section projects"
+  id="work"
+  aria-labelledby="work-title"
+>
+
+  <div class="container">
+
+    <p class="section-label reveal">
+      Selected Work
+    </p>
+
+    <h2
+      class="section-title reveal"
+      id="work-title"
+    >
+      Projects that show how I work
+    </h2>
+
+    <p class="section-intro work-intro reveal">
+      A selection of practical case studies and creative work
+      demonstrating research, AI workflows, visual creation,
+      video, digital products, e-commerce and automation.
+    </p>
+
+
     <!-- ================================
-         SELECTED WORK
+         01 · AI & RESEARCH
          ================================ -->
 
-    <section
-      class="section projects"
-      id="work"
-      aria-labelledby="work-title"
-    >
+    <div class="project-category">
 
-      <div class="container">
+      <div class="project-category-heading">
 
-        <p class="section-label reveal">
-          Selected Work
-        </p>
+        <h3>
+          AI &amp; Research
+        </h3>
+
+        <span>
+          Research · Evaluation · Fact-Checking
+        </span>
+
+      </div>
 
 
-        <h2
-          class="section-title reveal"
-          id="work-title"
+      <div class="projects-grid">
+
+
+        <a
+          class="project-card-link reveal"
+          href="case-studies/ai-response-evaluation.html"
+          aria-label="View case study: AI Response Evaluation"
         >
-          Projects that show how I work
-        </h2>
 
+          <article class="project-card">
 
-        <p class="section-intro work-intro reveal">
-          A selection of practical case studies and creative work
-          demonstrating AI workflows, digital operations, visual
-          creation, video, art and digital product development.
-        </p>
+            <div class="project-number">
+              01
+            </div>
 
-
-        <!-- AI & DIGITAL -->
-
-        <div class="project-category">
-
-          <div class="project-category-heading">
-
-            <h3>
-              AI & Digital
+            <h3 class="project-title">
+              AI Response Evaluation
             </h3>
 
-            <span>
-              Research · Automation · E-commerce
+            <p class="project-desc">
+              Comparative evaluation of AI-generated responses
+              based on accuracy, relevance, clarity and
+              instruction following.
+            </p>
+
+            <p class="project-status status-completed">
+              <span class="status-dot"></span>
+              Research · Evaluation
+            </p>
+
+            <span class="project-cta">
+              View Case Study →
             </span>
 
-          </div>
+          </article>
+
+        </a>
 
 
-          <div class="projects-grid">
+        <a
+          class="project-card-link reveal"
+          href="case-studies/ai-research-fact-checking.html"
+          aria-label="View case study: AI Research & Fact-Checking"
+        >
 
+          <article class="project-card">
 
-            <a
-              class="project-card-link reveal"
-              href="case-studies/ai-response-evaluation.html"
-              aria-label="View case study: AI Response Evaluation"
-            >
+            <div class="project-number">
+              02
+            </div>
 
-              <article class="project-card">
-
-                <div class="project-number">
-                  01
-                </div>
-
-                <h3 class="project-title">
-                  AI Response Evaluation
-                </h3>
-
-                <p class="project-desc">
-                  Comparative evaluation of AI-generated responses
-                  based on accuracy, relevance, clarity and
-                  instruction following.
-                </p>
-
-                <p class="project-status status-completed">
-                  <span class="status-dot"></span>
-                  Completed Case Study
-                </p>
-
-                <span class="project-cta">
-                  View Case Study →
-                </span>
-
-              </article>
-
-            </a>
-
-
-            <a
-              class="project-card-link reveal"
-              href="case-studies/ai-research-fact-checking.html"
-              aria-label="View case study: AI Research & Fact-Checking"
-            >
-
-              <article class="project-card">
-
-                <div class="project-number">
-                  02
-                </div>
-
-                <h3 class="project-title">
-                  AI Research & Fact-Checking
-                </h3>
-
-                <p class="project-desc">
-                  Research and verification exercise focused on
-                  identifying inaccuracies in AI-generated information
-                  and improving the final response.
-                </p>
-
-                <p class="project-status status-completed">
-                  <span class="status-dot"></span>
-                  Completed Case Study
-                </p>
-
-                <span class="project-cta">
-                  View Case Study →
-                </span>
-
-              </article>
-
-            </a>
-
-
-            <a
-              class="project-card-link reveal"
-              href="case-studies/ecommerce-product-optimization.html"
-              aria-label="View case study: E-commerce Product Optimization"
-            >
-
-              <article class="project-card">
-
-                <div class="project-number">
-                  03
-                </div>
-
-                <h3 class="project-title">
-                  E-commerce Product Optimization
-                </h3>
-
-                <p class="project-desc">
-                  Product research and listing optimization covering
-                  titles, descriptions, customer-focused information
-                  and marketplace presentation.
-                </p>
-
-                <p class="project-status status-completed">
-                  <span class="status-dot"></span>
-                  Completed Case Study
-                </p>
-
-                <span class="project-cta">
-                  View Case Study →
-                </span>
-
-              </article>
-
-            </a>
-
-
-            <a
-              class="project-card-link reveal"
-              href="case-studies/vinted-workflow-automation.html"
-              aria-label="View case study: Vinted Workflow Automation"
-            >
-
-              <article class="project-card">
-
-                <div class="project-number">
-                  06
-                </div>
-
-                <h3 class="project-title">
-                  Vinted Workflow Automation
-                </h3>
-
-                <p class="project-desc">
-                  Personal automation tool designed to streamline
-                  repetitive Vinted workflows, reduce manual tasks
-                  and improve digital operations.
-                </p>
-
-                <p class="project-status status-completed">
-                  <span class="status-dot"></span>
-                  Completed Case Study
-                </p>
-
-                <span class="project-cta">
-                  View Case Study →
-                </span>
-
-              </article>
-
-            </a>
-
-
-          </div>
-
-        </div>
-
-
-        <!-- CREATIVE TECHNOLOGY -->
-
-        <div class="project-category">
-
-          <div class="project-category-heading">
-
-            <h3>
-              Creative Technology
+            <h3 class="project-title">
+              AI Research &amp; Fact-Checking
             </h3>
 
-            <span>
-              AI · ComfyUI · Visual Generation
+            <p class="project-desc">
+              Research and verification exercise focused on
+              identifying inaccuracies in AI-generated information
+              and improving the final response.
+            </p>
+
+            <p class="project-status status-completed">
+              <span class="status-dot"></span>
+              Research · Verification
+            </p>
+
+            <span class="project-cta">
+              View Case Study →
             </span>
 
-          </div>
+          </article>
 
-
-          <div class="projects-grid">
-
-
-            <a
-              class="project-card-link reveal"
-              href="case-studies/flux-comfyui-image-generation.html"
-              aria-label="View case study: FLUX.1-dev — ComfyUI Image Generation"
-            >
-
-              <article class="project-card">
-
-                <div class="project-number">
-                  05
-                </div>
-
-                <h3 class="project-title">
-                  FLUX.1-dev — ComfyUI Image Generation
-                </h3>
-
-                <p class="project-desc">
-                  Local generative AI workflow built from scratch in
-                  ComfyUI, including model setup, quantization,
-                  troubleshooting and hardware-aware optimization.
-                </p>
-
-                <p class="project-status status-completed">
-                  <span class="status-dot"></span>
-                  Completed Case Study
-                </p>
-
-                <span class="project-cta">
-                  View Case Study →
-                </span>
-
-              </article>
-
-            </a>
-
-
-          </div>
-
-        </div>
-
-
-        <!-- VISUAL & VIDEO -->
-
-        <div class="project-category">
-
-          <div class="project-category-heading">
-
-            <h3>
-              Visual & Video
-            </h3>
-
-            <span>
-              Art · Video · Storytelling
-            </span>
-
-          </div>
-
-
-          <div class="projects-grid">
-
-
-            <a
-              class="project-card-link reveal"
-              href="case-studies/art-visual-work.html"
-              aria-label="View case study: Art & Visual Work"
-            >
-
-              <article class="project-card">
-
-                <div class="project-number">
-                  07
-                </div>
-
-                <h3 class="project-title">
-                  Art &amp; Visual Work
-                </h3>
-
-                <p class="project-desc">
-                  Original artwork exploring drawing, painting,
-                  illustration, mixed media and painted surfaces
-                  across different materials and formats.
-                </p>
-
-                <p class="project-status status-completed">
-                  <span class="status-dot"></span>
-                  Completed Case Study
-                </p>
-
-                <span class="project-cta">
-                  View Case Study →
-                </span>
-
-              </article>
-
-            </a>
-
-
-            <a
-              class="project-card-link reveal"
-              href="case-studies/video-editing-davinci.html"
-              aria-label="View case study: Video Editing — DaVinci Resolve"
-            >
-
-              <article class="project-card">
-
-                <div class="project-number">
-                  08
-                </div>
-
-                <h3 class="project-title">
-                  Video Editing — DaVinci Resolve
-                </h3>
-
-                <p class="project-desc">
-                  A short atmospheric video edit combining visual
-                  storytelling, pacing, sound design, transitions
-                  and color grading.
-                </p>
-
-                <p class="project-status status-completed">
-                  <span class="status-dot"></span>
-                  Completed Case Study
-                </p>
-
-                <span class="project-cta">
-                  View Case Study →
-                </span>
-
-              </article>
-
-            </a>
-
-
-            <a
-              class="project-card-link reveal"
-              href="case-studies/creative-writing-storytelling.html"
-              aria-label="View case study: Creative Writing & Storytelling"
-            >
-
-              <article class="project-card">
-
-                <div class="project-number">
-                  10
-                </div>
-
-                <h3 class="project-title">
-                  Creative Writing &amp; Storytelling
-                </h3>
-
-                <p class="project-desc">
-                  Original poetry, emotional writing and narrative
-                  storytelling presented in Portuguese with English
-                  literary adaptations.
-                </p>
-
-                <p class="project-status status-completed">
-                  <span class="status-dot"></span>
-                  Completed Case Study
-                </p>
-
-                <span class="project-cta">
-                  View Case Study →
-                </span>
-
-              </article>
-
-            </a>
-
-
-          </div>
-
-        </div>
-
-
-        <!-- DIGITAL PRODUCTS -->
-
-        <div class="project-category">
-
-          <div class="project-category-heading">
-
-            <h3>
-              Digital Products
-            </h3>
-
-            <span>
-              Design · Curation · Marketplace
-            </span>
-
-          </div>
-
-
-          <div class="projects-grid">
-
-
-            <a
-              class="project-card-link reveal"
-              href="case-studies/digital-product-creation.html"
-              aria-label="View case study: Digital Product Creation"
-            >
-
-              <article class="project-card">
-
-                <div class="project-number">
-                  09
-                </div>
-
-                <h3 class="project-title">
-                  Digital Product Creation
-                </h3>
-
-                <p class="project-desc">
-                  Creation and preparation of digital asset bundles,
-                  combining visual design, curation, organization
-                  and product presentation.
-                </p>
-
-                <p class="project-status status-completed">
-                  <span class="status-dot"></span>
-                  Completed Case Study
-                </p>
-
-                <span class="project-cta">
-                  View Case Study →
-                </span>
-
-              </article>
-
-            </a>
-
-
-            <a
-              class="project-card-link reveal"
-              href="case-studies/customer-support-escalation.html"
-              aria-label="View case study: Customer Support & Escalation"
-            >
-
-              <article class="project-card">
-
-                <div class="project-number">
-                  04
-                </div>
-
-                <h3 class="project-title">
-                  Customer Support &amp; Escalation
-                </h3>
-
-                <p class="project-desc">
-                  Practical customer communication scenarios
-                  demonstrating problem resolution, clear communication
-                  and appropriate escalation.
-                </p>
-
-                <p class="project-status status-completed">
-                  <span class="status-dot"></span>
-                  Completed Case Study
-                </p>
-
-                <span class="project-cta">
-                  View Case Study →
-                </span>
-
-              </article>
-
-            </a>
-
-
-          </div>
-
-        </div>
+        </a>
 
 
       </div>
 
-    </section>
+    </div>
 
 
     <!-- ================================
-         PROJECTS & VENTURES
+         02 · CREATIVE TECHNOLOGY
          ================================ -->
 
-    <section
-      class="section"
-      id="ventures"
-      aria-labelledby="ventures-title"
-    >
+    <div class="project-category">
 
-      <div class="container">
+      <div class="project-category-heading">
 
-        <p class="section-label reveal">
-          Projects & Ventures
-        </p>
+        <h3>
+          Creative Technology
+        </h3>
 
-
-        <h2
-          class="section-title reveal"
-          id="ventures-title"
-        >
-          Building ideas beyond client work
-        </h2>
-
-
-        <p class="section-intro reveal">
-          Independent projects allow me to explore business ideas,
-          digital products and creative concepts from the ground up.
-        </p>
-
-
-        <div class="ventures-grid">
-
-
-          <article class="venture-card reveal">
-
-            <span class="venture-status">
-              Independent Project
-            </span>
-
-            <h3 class="venture-title">
-              Digital Product Projects
-            </h3>
-
-            <p class="venture-description">
-              Development of downloadable creative products,
-              including illustration, nature and botanical asset
-              collections prepared for digital marketplaces.
-            </p>
-
-          </article>
-
-
-          <article class="venture-card reveal">
-
-            <span class="venture-status">
-              Content Project
-            </span>
-
-            <h3 class="venture-title">
-              Creative Video Projects
-            </h3>
-
-            <p class="venture-description">
-              Development of atmospheric and documentary-style
-              visual content combining editing, storytelling,
-              sound and visual composition.
-            </p>
-
-          </article>
-
-
-          <article class="venture-card reveal">
-
-            <span class="venture-status">
-              Future Venture
-            </span>
-
-            <h3 class="venture-title">
-              Digital & Creative Ventures
-            </h3>
-
-            <p class="venture-description">
-              Exploring scalable ideas that combine AI, digital
-              products, content, e-commerce and creative production
-              into independent businesses.
-            </p>
-
-          </article>
-
-
-        </div>
+        <span>
+          Generative AI · ComfyUI · Workflow Development
+        </span>
 
       </div>
 
-    </section>
+
+      <div class="projects-grid">
+
+
+        <a
+          class="project-card-link reveal"
+          href="case-studies/flux-comfyui-image-generation.html"
+          aria-label="View case study: FLUX.1-dev — ComfyUI Image Generation"
+        >
+
+          <article class="project-card">
+
+            <div class="project-number">
+              03
+            </div>
+
+            <h3 class="project-title">
+              FLUX.1-dev — ComfyUI Image Generation
+            </h3>
+
+            <p class="project-desc">
+              Local generative AI workflow built from scratch in
+              ComfyUI, including model setup, quantization,
+              CUDA troubleshooting and hardware-constrained
+              optimization.
+            </p>
+
+            <p class="project-status status-completed">
+              <span class="status-dot"></span>
+              Generative AI · Workflow Development
+            </p>
+
+            <span class="project-cta">
+              View Case Study →
+            </span>
+
+          </article>
+
+        </a>
+
+
+      </div>
+
+    </div>
+
+
+    <!-- ================================
+         03 · VISUAL & VIDEO
+         ================================ -->
+
+    <div class="project-category">
+
+      <div class="project-category-heading">
+
+        <h3>
+          Visual &amp; Video
+        </h3>
+
+        <span>
+          Art · Editing · Storytelling
+        </span>
+
+      </div>
+
+
+      <div class="projects-grid">
+
+
+        <a
+          class="project-card-link reveal"
+          href="case-studies/art-visual-work.html"
+          aria-label="View case study: Art & Visual Work"
+        >
+
+          <article class="project-card">
+
+            <div class="project-number">
+              04
+            </div>
+
+            <h3 class="project-title">
+              Art &amp; Visual Work
+            </h3>
+
+            <p class="project-desc">
+              Original artwork exploring drawing, painting,
+              illustration, mixed media and painted surfaces
+              across different materials and formats.
+            </p>
+
+            <p class="project-status status-completed">
+              <span class="status-dot"></span>
+              Visual Art · Illustration
+            </p>
+
+            <span class="project-cta">
+              View Case Study →
+            </span>
+
+          </article>
+
+        </a>
+
+
+        <a
+          class="project-card-link reveal"
+          href="case-studies/video-editing-davinci.html"
+          aria-label="View case study: Video Editing — DaVinci Resolve"
+        >
+
+          <article class="project-card">
+
+            <div class="project-number">
+              05
+            </div>
+
+            <h3 class="project-title">
+              Video Editing — DaVinci Resolve
+            </h3>
+
+            <p class="project-desc">
+              Atmospheric video editing combining visual
+              storytelling, pacing, sound design, transitions
+              and color grading.
+            </p>
+
+            <p class="project-status status-completed">
+              <span class="status-dot"></span>
+              Video · Editing · Storytelling
+            </p>
+
+            <span class="project-cta">
+              View Case Study →
+            </span>
+
+          </article>
+
+        </a>
+
+
+        <a
+          class="project-card-link reveal"
+          href="case-studies/creative-writing-storytelling.html"
+          aria-label="View case study: Creative Writing & Storytelling"
+        >
+
+          <article class="project-card">
+
+            <div class="project-number">
+              06
+            </div>
+
+            <h3 class="project-title">
+              Creative Writing &amp; Storytelling
+            </h3>
+
+            <p class="project-desc">
+              Original poetry, emotional writing and narrative
+              storytelling presented in Portuguese with English
+              literary adaptations.
+            </p>
+
+            <p class="project-status status-completed">
+              <span class="status-dot"></span>
+              Writing · Narrative · Creative Direction
+            </p>
+
+            <span class="project-cta">
+              View Case Study →
+            </span>
+
+          </article>
+
+        </a>
+
+
+      </div>
+
+    </div>
+
+
+    <!-- ================================
+         04 · DIGITAL PRODUCTS & E-COMMERCE
+         ================================ -->
+
+    <div class="project-category">
+
+      <div class="project-category-heading">
+
+        <h3>
+          Digital Products &amp; E-commerce
+        </h3>
+
+        <span>
+          Product Creation · Marketplace · Automation
+        </span>
+
+      </div>
+
+
+      <div class="projects-grid">
+
+
+        <a
+          class="project-card-link reveal"
+          href="case-studies/digital-product-creation.html"
+          aria-label="View case study: Digital Product Creation"
+        >
+
+          <article class="project-card">
+
+            <div class="project-number">
+              07
+            </div>
+
+            <h3 class="project-title">
+              Digital Product Creation
+            </h3>
+
+            <p class="project-desc">
+              Creation and preparation of digital asset bundles,
+              combining visual design, curation, organization
+              and product presentation.
+            </p>
+
+            <p class="project-status status-completed">
+              <span class="status-dot"></span>
+              Digital Products · Visual Design
+            </p>
+
+            <span class="project-cta">
+              View Case Study →
+            </span>
+
+          </article>
+
+        </a>
+
+
+        <a
+          class="project-card-link reveal"
+          href="case-studies/ecommerce-product-optimization.html"
+          aria-label="View case study: E-commerce Product Optimization"
+        >
+
+          <article class="project-card">
+
+            <div class="project-number">
+              08
+            </div>
+
+            <h3 class="project-title">
+              E-commerce Product Optimization
+            </h3>
+
+            <p class="project-desc">
+              Product research and listing optimization covering
+              titles, descriptions, customer-focused information
+              and marketplace presentation.
+            </p>
+
+            <p class="project-status status-completed">
+              <span class="status-dot"></span>
+              E-commerce · Product Content
+            </p>
+
+            <span class="project-cta">
+              View Case Study →
+            </span>
+
+          </article>
+
+        </a>
+
+
+        <a
+          class="project-card-link reveal"
+          href="case-studies/vinted-workflow-automation.html"
+          aria-label="View case study: Vinted Workflow Automation"
+        >
+
+          <article class="project-card">
+
+            <div class="project-number">
+              09
+            </div>
+
+            <h3 class="project-title">
+              Vinted Workflow Automation
+            </h3>
+
+            <p class="project-desc">
+              Personal automation workflow designed to streamline
+              repetitive marketplace tasks, reduce manual work
+              and improve digital operations.
+            </p>
+
+            <p class="project-status status-completed">
+              <span class="status-dot"></span>
+              Automation · Digital Operations
+            </p>
+
+            <span class="project-cta">
+              View Case Study →
+            </span>
+
+          </article>
+
+        </a>
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ================================
+     PROJECTS & VENTURES
+     ================================ -->
+
+<section
+  class="section"
+  id="ventures"
+  aria-labelledby="ventures-title"
+>
+
+  <div class="container">
+
+    <p class="section-label reveal">
+      Projects & Ventures
+    </p>
+
+
+    <h2
+      class="section-title reveal"
+      id="ventures-title"
+    >
+      Building ideas beyond client work
+    </h2>
+
+
+    <p class="section-intro reveal">
+      Independent projects exploring digital products, creative
+      content and ideas with potential to grow beyond individual
+      client engagements.
+    </p>
+
+
+    <div class="ventures-grid">
+
+
+      <!-- DIGITAL PRODUCTS -->
+
+      <article class="venture-card reveal">
+
+        <span class="venture-status">
+          Independent Project
+        </span>
+
+        <h3 class="venture-title">
+          Digital Products
+        </h3>
+
+        <p class="venture-description">
+          Development of downloadable creative products, including
+          illustration, nature and botanical asset collections
+          prepared for digital marketplaces.
+        </p>
+
+        <p class="venture-focus">
+          <strong>Focus:</strong>
+          Product Development · Visual Design · Digital Commerce
+        </p>
+
+      </article>
+
+
+      <!-- CREATIVE CONTENT -->
+
+      <article class="venture-card reveal">
+
+        <span class="venture-status">
+          Content Project
+        </span>
+
+        <h3 class="venture-title">
+          Creative Content
+        </h3>
+
+        <p class="venture-description">
+          Development of atmospheric and documentary-style visual
+          content combining video editing, storytelling, sound,
+          visual composition and AI-assisted creative production.
+        </p>
+
+        <p class="venture-focus">
+          <strong>Focus:</strong>
+          Content · Video · Storytelling · AI
+        </p>
+
+      </article>
+
+
+      <!-- FUTURE VENTURES -->
+
+      <article class="venture-card reveal">
+
+        <span class="venture-status">
+          Future Venture
+        </span>
+
+        <h3 class="venture-title">
+          Digital &amp; Creative Ventures
+        </h3>
+
+        <p class="venture-description">
+          Exploring scalable ideas that combine AI, digital
+          products, content, e-commerce and creative production
+          into independent digital businesses.
+        </p>
+
+        <p class="venture-focus">
+          <strong>Focus:</strong>
+          Innovation · Digital Business · AI · Entrepreneurship
+        </p>
+
+      </article>
+
+
+    </div>
+
+
+    <!-- VENTURES CTA -->
+
+    <div class="ventures-cta reveal">
+
+      <p>
+        Interested in collaborating, investing or exploring
+        a project together?
+      </p>
+
+      <a
+        class="btn btn-secondary"
+        href="#contact"
+      >
+        Discuss a Project →
+      </a>
+
+    </div>
+
+
+  </div>
+
+</section>
 
 
     <!-- ================================
