@@ -396,6 +396,52 @@
   text-underline-offset: 4px;
 }
 
+/* ================================
+   EXPERIENCE GROUPS / CERTIFICATIONS
+   ================================ */
+
+.experience-group {
+  margin-top: 3rem;
+}
+
+.experience-group-label {
+  margin-bottom: 1.25rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.55;
+}
+
+.certifications {
+  padding-top: 0.5rem;
+}
+
+.certifications-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.certification-item {
+  padding: 0.65rem 0.9rem;
+  border: 1px solid rgba(0,0,0,0.1);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.experience-summary {
+  max-width: 760px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.experience-summary p {
+  margin: 0;
+  line-height: 1.75;
+  font-size: 0.95rem;
+  opacity: 0.78;
+}
 
 /* ================================
    SERVICE FIT / CUSTOM CTA
@@ -1856,109 +1902,270 @@
     </section>
 
 
-    <!-- ================================
-         EXPERIENCE
-         ================================ -->
+<!-- ================================
+     EXPERIENCE
+     ================================ -->
 
-    <section
-      class="section experience"
-      id="experience"
-      aria-labelledby="experience-title"
+<section
+  class="section experience"
+  id="experience"
+  aria-labelledby="experience-title"
+>
+
+  <div class="container">
+
+    <p class="section-label reveal">
+      Experience
+    </p>
+
+
+    <h2
+      class="section-title reveal"
+      id="experience-title"
     >
-
-      <div class="container">
-
-        <p class="section-label reveal">
-          Experience
-        </p>
+      Professional background
+    </h2>
 
 
-        <h2
-          class="section-title reveal"
-          id="experience-title"
-        >
-          Professional background
-        </h2>
+    <p class="section-intro reveal">
+      A varied professional background combining customer-facing work,
+      operations, administration and international service environments.
+    </p>
 
 
-        <div class="experience-list">
+    <!-- PROFESSIONAL EXPERIENCE -->
+
+    <div class="experience-group reveal">
+
+      <p class="experience-group-label">
+        Professional Experience
+      </p>
 
 
-          <article class="experience-item reveal">
+      <div class="experience-list">
 
-            <div class="experience-meta">
 
-              <h3 class="experience-role">
-                Airport Passenger Assistance
-              </h3>
+        <article class="experience-item">
 
-              <p class="experience-period">
-                2023–2026
-              </p>
+          <div class="experience-meta">
 
-            </div>
+            <h3 class="experience-role">
+              Airport Passenger Assistance
+            </h3>
 
-            <p class="experience-desc">
-              International passenger mobility and accessibility
-              assistance in a fast-paced airport environment,
-              requiring communication, responsibility and
-              attention to individual needs.
+            <p class="experience-period">
+              2023–2026
             </p>
 
-          </article>
+          </div>
+
+          <p class="experience-desc">
+            International passenger mobility and accessibility assistance
+            in a fast-paced airport environment, requiring communication,
+            responsibility and attention to individual needs.
+          </p>
+
+        </article>
 
 
-          <article class="experience-item reveal">
+        <article class="experience-item">
 
-            <div class="experience-meta">
+          <div class="experience-meta">
 
-              <h3 class="experience-role">
-                Emergency Response Support — Portgás
-              </h3>
+            <h3 class="experience-role">
+              Emergency Response Support — Portgás
+            </h3>
 
-              <p class="experience-period">
-                2022–2024
-              </p>
-
-            </div>
-
-            <p class="experience-desc">
-              Gas emergency call handling, accurate information
-              collection, computer-based incident registration
-              and escalation support.
+            <p class="experience-period">
+              2022–2024
             </p>
 
-          </article>
+          </div>
+
+          <p class="experience-desc">
+            Gas emergency call handling, accurate information collection,
+            computer-based incident registration and escalation support.
+          </p>
+
+        </article>
 
 
-          <article class="experience-item reveal">
+        <article class="experience-item">
 
-            <div class="experience-meta">
+          <div class="experience-meta">
 
-              <h3 class="experience-role">
-                Production — Cerealis / Milaneza
-              </h3>
+            <h3 class="experience-role">
+              Production — Cerealis / Milaneza
+            </h3>
 
-              <p class="experience-period">
-                2019–2022
-              </p>
-
-            </div>
-
-            <p class="experience-desc">
-              Food production environment requiring consistency,
-              attention to detail, hygiene, safety procedures
-              and reliable operational work.
+            <p class="experience-period">
+              2019–2022
             </p>
 
-          </article>
+          </div>
 
+          <p class="experience-desc">
+            Food production environment requiring consistency, attention
+            to detail, hygiene, safety procedures and reliable
+            operational work.
+          </p>
 
-        </div>
+        </article>
+
 
       </div>
 
-    </section>
+    </div>
+
+
+    <!-- ADDITIONAL EXPERIENCE -->
+
+    <div class="experience-group reveal">
+
+      <p class="experience-group-label">
+        Additional Experience
+      </p>
+
+
+      <div class="experience-list">
+
+
+        <article class="experience-item">
+
+          <div class="experience-meta">
+
+            <h3 class="experience-role">
+              Administration — OBLER
+            </h3>
+
+          </div>
+
+          <p class="experience-desc">
+            Administrative support involving budget preparation,
+            Excel-based work, organization of information and
+            general administrative processes.
+          </p>
+
+        </article>
+
+
+        <article class="experience-item">
+
+          <div class="experience-meta">
+
+            <h3 class="experience-role">
+              McDonald's
+            </h3>
+
+          </div>
+
+          <p class="experience-desc">
+            Customer service and operational experience in a
+            fast-paced environment, developing reliability,
+            teamwork and communication skills.
+          </p>
+
+        </article>
+
+
+        <article class="experience-item">
+
+          <div class="experience-meta">
+
+            <h3 class="experience-role">
+              Burger King
+            </h3>
+
+          </div>
+
+          <p class="experience-desc">
+            Operational and customer-facing experience, including
+            working efficiently within a structured team environment.
+          </p>
+
+        </article>
+
+
+        <article class="experience-item">
+
+          <div class="experience-meta">
+
+            <h3 class="experience-role">
+              El Corte Inglés
+            </h3>
+
+          </div>
+
+          <p class="experience-desc">
+            Customer-facing retail experience with emphasis on
+            service, communication and day-to-day operational support.
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+
+    <!-- TRAINING & CERTIFICATIONS -->
+
+    <div class="experience-group certifications reveal">
+
+      <p class="experience-group-label">
+        Training &amp; Certifications
+      </p>
+
+
+      <div class="certifications-list">
+
+        <span class="certification-item">
+          Private Security Guard Training
+        </span>
+
+        <span class="certification-item">
+          First Aid
+        </span>
+
+        <span class="certification-item">
+          Fire Prevention &amp; Firefighting
+        </span>
+
+        <span class="certification-item">
+          Passenger Assistance — PRM
+        </span>
+
+        <span class="certification-item">
+          Prevention &amp; Combat of Workplace Harassment
+        </span>
+
+        <span class="certification-item">
+          Personal Protective Equipment (PPE) Training
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <!-- PROFESSIONAL BACKGROUND -->
+
+    <div class="experience-summary reveal">
+
+      <p>
+        Across different professional environments, I developed
+        adaptability, reliability, problem-solving skills and the
+        ability to work under pressure — strengths I now bring into
+        creative and digital projects.
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
 
 
     <!-- ================================
