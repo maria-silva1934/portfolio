@@ -301,6 +301,49 @@
       margin-top: 2rem;
     }
 
+
+/* ================================
+   SERVICE FIT / CUSTOM CTA
+   ================================ */
+
+.service-fit {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  opacity: 0.72;
+}
+
+.service-fit strong {
+  opacity: 1;
+}
+
+.service-note {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.service-note p {
+  margin: 0;
+  max-width: 680px;
+  line-height: 1.65;
+}
+
+@media (max-width: 600px) {
+
+  .service-note {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
     /* ================================
        RESPONSIVE
        ================================ */
@@ -697,161 +740,200 @@
     </section>
 
 
-    <!-- ================================
-         SERVICES
-         ================================ -->
+<!-- ================================
+     SERVICES
+     ================================ -->
 
-    <section
-      class="section"
-      id="services"
-      aria-labelledby="services-title"
+<section
+  class="section"
+  id="services"
+  aria-labelledby="services-title"
+>
+
+  <div class="container">
+
+    <p class="section-label reveal">
+      Services
+    </p>
+
+    <h2
+      class="section-title reveal"
+      id="services-title"
     >
+      Creative and digital support for real projects
+    </h2>
 
-      <div class="container">
-
-        <p class="section-label reveal">
-          Services
-        </p>
-
-
-        <h2
-          class="section-title reveal"
-          id="services-title"
-        >
-          What I can create or support
-        </h2>
+    <p class="section-intro reveal">
+      I help businesses, creators and independent projects turn ideas
+      into polished digital content, products and practical workflows.
+    </p>
 
 
-        <p class="section-intro reveal">
-          Flexible digital services for businesses, creators and
-          independent projects.
-        </p>
+    <div class="services-grid">
 
 
-        <div class="services-grid">
+      <!-- SERVICE 01 -->
 
+      <article class="service-card reveal">
 
-          <!-- SERVICE 01 -->
-
-          <article class="service-card reveal">
-
-            <div class="service-number">
-              01
-            </div>
-
-            <h3 class="service-title">
-              AI & Visual Content
-            </h3>
-
-            <p class="service-description">
-              AI-assisted visual creation and digital content workflows
-              for creative projects, products and online communication.
-            </p>
-
-            <ul class="service-list">
-
-              <li>AI image generation</li>
-              <li>Visual content</li>
-              <li>Creative concepts</li>
-              <li>AI-assisted workflows</li>
-
-            </ul>
-
-          </article>
-
-
-          <!-- SERVICE 02 -->
-
-          <article class="service-card reveal">
-
-            <div class="service-number">
-              02
-            </div>
-
-            <h3 class="service-title">
-              Video Editing
-            </h3>
-
-            <p class="service-description">
-              Short-form and atmospheric video projects combining
-              visual storytelling, pacing, sound and presentation.
-            </p>
-
-            <ul class="service-list">
-
-              <li>Video editing</li>
-              <li>Color grading</li>
-              <li>Sound design</li>
-              <li>Content presentation</li>
-
-            </ul>
-
-          </article>
-
-
-          <!-- SERVICE 03 -->
-
-          <article class="service-card reveal">
-
-            <div class="service-number">
-              03
-            </div>
-
-            <h3 class="service-title">
-              Digital Products
-            </h3>
-
-            <p class="service-description">
-              Creation and preparation of digital products designed
-              for online marketplaces and independent businesses.
-            </p>
-
-            <ul class="service-list">
-
-              <li>Digital asset packs</li>
-              <li>Product organization</li>
-              <li>Marketplace presentation</li>
-              <li>Product research</li>
-
-            </ul>
-
-          </article>
-
-
-          <!-- SERVICE 04 -->
-
-          <article class="service-card reveal">
-
-            <div class="service-number">
-              04
-            </div>
-
-            <h3 class="service-title">
-              E-commerce & Digital Operations
-            </h3>
-
-            <p class="service-description">
-              Practical support for online selling, product listings,
-              research, marketplaces and repetitive digital workflows.
-            </p>
-
-            <ul class="service-list">
-
-              <li>Product listings</li>
-              <li>Marketplace management</li>
-              <li>Product research</li>
-              <li>Workflow automation</li>
-
-            </ul>
-
-          </article>
-
-
+        <div class="service-number">
+          01
         </div>
 
-      </div>
+        <h3 class="service-title">
+          AI &amp; Visual Content
+        </h3>
 
-    </section>
+        <p class="service-description">
+          AI-assisted visual creation for brands, products, social
+          content and creative projects.
+        </p>
+
+        <ul class="service-list">
+
+          <li>AI-generated imagery</li>
+          <li>Creative visual concepts</li>
+          <li>Product visuals</li>
+          <li>AI-assisted content workflows</li>
+
+        </ul>
+
+        <p class="service-fit">
+          <strong>Ideal for:</strong>
+          small businesses, creators, online shops and creative projects.
+        </p>
+
+      </article>
+
+
+      <!-- SERVICE 02 -->
+
+      <article class="service-card reveal">
+
+        <div class="service-number">
+          02
+        </div>
+
+        <h3 class="service-title">
+          Video Editing
+        </h3>
+
+        <p class="service-description">
+          Short-form and atmospheric video editing focused on
+          storytelling, rhythm, sound and visual presentation.
+        </p>
+
+        <ul class="service-list">
+
+          <li>Video editing</li>
+          <li>Transitions &amp; pacing</li>
+          <li>Color grading</li>
+          <li>Sound design</li>
+
+        </ul>
+
+        <p class="service-fit">
+          <strong>Ideal for:</strong>
+          social media, promotional content, YouTube and creative projects.
+        </p>
+
+      </article>
+
+
+      <!-- SERVICE 03 -->
+
+      <article class="service-card reveal">
+
+        <div class="service-number">
+          03
+        </div>
+
+        <h3 class="service-title">
+          Digital Products
+        </h3>
+
+        <p class="service-description">
+          Creation and preparation of digital products from concept
+          and visual assets to organized, marketplace-ready collections.
+        </p>
+
+        <ul class="service-list">
+
+          <li>Digital asset packs</li>
+          <li>Product curation</li>
+          <li>File organization</li>
+          <li>Marketplace presentation</li>
+
+        </ul>
+
+        <p class="service-fit">
+          <strong>Ideal for:</strong>
+          Etsy sellers, creators and businesses building digital products.
+        </p>
+
+      </article>
+
+
+      <!-- SERVICE 04 -->
+
+      <article class="service-card reveal">
+
+        <div class="service-number">
+          04
+        </div>
+
+        <h3 class="service-title">
+          E-commerce &amp; Digital Operations
+        </h3>
+
+        <p class="service-description">
+          Practical support for online shops and marketplaces, with
+          a focus on organization, product information and efficient workflows.
+        </p>
+
+        <ul class="service-list">
+
+          <li>Product listings</li>
+          <li>Product research</li>
+          <li>Marketplace organization</li>
+          <li>Workflow improvement &amp; automation</li>
+
+        </ul>
+
+        <p class="service-fit">
+          <strong>Ideal for:</strong>
+          small online businesses, marketplace sellers and growing shops.
+        </p>
+
+      </article>
+
+
+    </div>
+
+
+    <!-- SERVICE POSITIONING -->
+
+    <div class="service-note reveal">
+
+      <p>
+        <strong>Need something more specific?</strong>
+        I can also combine these skills into a custom workflow
+        depending on the project, business or content requirements.
+      </p>
+
+      <a
+        class="btn btn-secondary"
+        href="#contact"
+      >
+        Discuss a Project
+      </a>
+
+    </div>
+
+
+  </div>
+
+</section>
 
 
     <!-- ================================
