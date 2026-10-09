@@ -1,13 +1,13 @@
 
 /* ============================================================
    MARIA SILVA — PORTFOLIO
-   Navigation, scroll effects, footer year and image lightbox
+   Navigation, scroll effects and image lightbox
    ============================================================ */
 
 (function () {
   "use strict";
 
-  /* ---------- Mobile navigation toggle ---------- */
+  /* ---------- Mobile navigation ---------- */
   const navToggle = document.getElementById("navToggle");
   const primaryNav = document.getElementById("primaryNav");
 
@@ -92,7 +92,7 @@
   }
 
   /* ---------- Image lightbox ---------- */
-  const images = Array.from(
+  const galleryImages = Array.from(
     document.querySelectorAll(
       "main .case-figure img, main .case-image img, main .art-piece img"
     )
@@ -100,35 +100,47 @@
     return img.getAttribute("src") || img.currentSrc;
   });
 
-  if (!images.length) {
-    return;
-  }
+  if (!galleryImages.length) return;
 
-  let currentIndex = 0;
-  let previousFocus = null;
+  galleryImages.forEach(function (img, index) {
+    img.classList.add("lightbox-trigger");
+    img.setAttribute("tabindex", "0");
+    img.setAttribute("role", "button");
+    img.setAttribute(
+      "aria-label",
+      "Open image " + (index + 1) + " of " + galleryImages.length
+    );
+
+    img.addEventListener("click", function () {
+      openLightbox(index);
+    });
+
+    img.addEventListener("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openLightbox(index);
+      }
+    });
+  });
 
   const lightbox = document.createElement("div");
   lightbox.className = "image-lightbox";
+  lightbox.hidden = true;
   lightbox.setAttribute("role", "dialog");
   lightbox.setAttribute("aria-modal", "true");
   lightbox.setAttribute("aria-label", "Image gallery");
-  lightbox.hidden = true;
 
   lightbox.innerHTML = `
     <button class="lightbox-close" type="button"
-      aria-label="Close image gallery">&times;</button>
-
+      aria-label="Close image viewer">&times;</button>
     <button class="lightbox-arrow lightbox-prev" type="button"
       aria-label="Previous image">&#10094;</button>
-
     <figure class="lightbox-figure">
       <img class="lightbox-image" alt="">
-      <figcaption class="lightbox-caption" hidden></figcaption>
+      <figcaption class="lightbox-caption"></figcaption>
     </figure>
-
     <button class="lightbox-arrow lightbox-next" type="button"
       aria-label="Next image">&#10095;</button>
-
     <p class="lightbox-counter" aria-live="polite"></p>
   `;
 
@@ -136,47 +148,44 @@
 
   const lightboxImage = lightbox.querySelector(".lightbox-image");
   const lightboxCaption = lightbox.querySelector(".lightbox-caption");
+  const lightboxCounter = lightbox.querySelector(".lightbox-counter");
   const closeButton = lightbox.querySelector(".lightbox-close");
-  const previousButton = lightbox.querySelector(".lightbox-prev");
+  const prevButton = lightbox.querySelector(".lightbox-prev");
   const nextButton = lightbox.querySelector(".lightbox-next");
-  const counter = lightbox.querySelector(".lightbox-counter");
 
-  function getCaption(img) {
-    const figure = img.closest("figure");
-    const figcaption = figure
+  let currentIndex = 0;
+  let previousFocus = null;
+
+  function showImage(index) {
+    currentIndex =
+      (index + galleryImages.length) % galleryImages.length;
+
+    const sourceImage = galleryImages[currentIndex];
+    const source = sourceImage.currentSrc || sourceImage.src;
+    const figure = sourceImage.closest("figure");
+    const captionElement = figure
       ? figure.querySelector("figcaption")
       : null;
 
-    return (
-      (figcaption && figcaption.textContent.trim()) ||
-      img.getAttribute("alt") ||
-      ""
-    );
-  }
+    lightboxImage.src = source;
+    lightboxImage.alt = sourceImage.alt || "Portfolio image";
 
-  function showImage(index) {
-    currentIndex = (index + images.length) % images.length;
+    const caption = captionElement
+      ? captionElement.textContent.trim()
+      : sourceImage.alt || "";
 
-    const img = images[currentIndex];
-
-    lightboxImage.src = img.currentSrc || img.src;
-    lightboxImage.alt = img.alt || "";
-
-    const caption = getCaption(img);
     lightboxCaption.textContent = caption;
     lightboxCaption.hidden = !caption;
+    lightboxCounter.textContent =
+      (currentIndex + 1) + " / " + galleryImages.length;
 
-    counter.textContent =
-      (currentIndex + 1) + " / " + images.length;
-
-    const multipleImages = images.length > 1;
-    previousButton.hidden = !multipleImages;
-    nextButton.hidden = !multipleImages;
+    const hasMultipleImages = galleryImages.length > 1;
+    prevButton.hidden = !hasMultipleImages;
+    nextButton.hidden = !hasMultipleImages;
   }
 
   function openLightbox(index) {
     previousFocus = document.activeElement;
-
     showImage(index);
     lightbox.hidden = false;
     document.body.classList.add("lightbox-open");
@@ -195,36 +204,17 @@
     }
   }
 
-  images.forEach(function (img, index) {
-    img.classList.add("lightbox-trigger");
-    img.setAttribute("tabindex", "0");
-    img.setAttribute("role", "button");
-    img.setAttribute(
-      "aria-label",
-      "Enlarge image" + (img.alt ? ": " + img.alt : "")
-    );
+  function showPrevious() {
+    showImage(currentIndex - 1);
+  }
 
-    img.addEventListener("click", function () {
-      openLightbox(index);
-    });
-
-    img.addEventListener("keydown", function (event) {
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        openLightbox(index);
-      }
-    });
-  });
+  function showNext() {
+    showImage(currentIndex + 1);
+  }
 
   closeButton.addEventListener("click", closeLightbox);
-
-  previousButton.addEventListener("click", function () {
-    showImage(currentIndex - 1);
-  });
-
-  nextButton.addEventListener("click", function () {
-    showImage(currentIndex + 1);
-  });
+  prevButton.addEventListener("click", showPrevious);
+  nextButton.addEventListener("click", showNext);
 
   lightbox.addEventListener("click", function (event) {
     if (event.target === lightbox) {
@@ -240,29 +230,24 @@
       closeLightbox();
     } else if (event.key === "ArrowLeft") {
       event.preventDefault();
-      showImage(currentIndex - 1);
+      showPrevious();
     } else if (event.key === "ArrowRight") {
       event.preventDefault();
-      showImage(currentIndex + 1);
+      showNext();
     } else if (event.key === "Tab") {
-      const controls = [
-        closeButton,
-        previousButton,
-        nextButton
-      ].filter(function (button) {
-        return !button.hidden;
-      });
+      const focusable = Array.from(
+        lightbox.querySelectorAll("button:not([hidden])")
+      );
 
-      const first = controls[0];
-      const last = controls[controls.length - 1];
+      if (!focusable.length) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
 
       if (event.shiftKey && document.activeElement === first) {
         event.preventDefault();
         last.focus();
-      } else if (
-        !event.shiftKey &&
-        document.activeElement === last
-      ) {
+      } else if (!event.shiftKey && document.activeElement === last) {
         event.preventDefault();
         first.focus();
       }
