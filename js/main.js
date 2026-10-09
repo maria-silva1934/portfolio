@@ -1,7 +1,7 @@
 
 /* ============================================================
    MARIA SILVA — PORTFOLIO
-   Navigation, reveal animations, footer year and image lightbox
+   Navigation, scroll effects, footer year and image lightbox
    ============================================================ */
 
 (function () {
@@ -96,33 +96,34 @@
     document.querySelectorAll(
       "main .case-figure img, main .case-image img, main .art-piece img"
     )
-  ).filter(function (image) {
-    return image.getAttribute("src") || image.currentSrc;
+  ).filter(function (img) {
+    return img.getAttribute("src") || img.currentSrc;
   });
 
-  if (!images.length) return;
+  if (!images.length) {
+    return;
+  }
 
-  let activeIndex = 0;
+  let currentIndex = 0;
   let previousFocus = null;
 
   const lightbox = document.createElement("div");
   lightbox.className = "image-lightbox";
   lightbox.setAttribute("role", "dialog");
   lightbox.setAttribute("aria-modal", "true");
-  lightbox.setAttribute("aria-label", "Expanded image viewer");
-  lightbox.setAttribute("aria-hidden", "true");
+  lightbox.setAttribute("aria-label", "Image gallery");
   lightbox.hidden = true;
 
   lightbox.innerHTML = `
     <button class="lightbox-close" type="button"
-      aria-label="Close image viewer">&times;</button>
+      aria-label="Close image gallery">&times;</button>
 
     <button class="lightbox-arrow lightbox-prev" type="button"
       aria-label="Previous image">&#10094;</button>
 
     <figure class="lightbox-figure">
       <img class="lightbox-image" alt="">
-      <figcaption class="lightbox-caption"></figcaption>
+      <figcaption class="lightbox-caption" hidden></figcaption>
     </figure>
 
     <button class="lightbox-arrow lightbox-next" type="button"
@@ -135,48 +136,49 @@
 
   const lightboxImage = lightbox.querySelector(".lightbox-image");
   const lightboxCaption = lightbox.querySelector(".lightbox-caption");
-  const lightboxCounter = lightbox.querySelector(".lightbox-counter");
   const closeButton = lightbox.querySelector(".lightbox-close");
   const previousButton = lightbox.querySelector(".lightbox-prev");
   const nextButton = lightbox.querySelector(".lightbox-next");
+  const counter = lightbox.querySelector(".lightbox-counter");
 
-  function getCaption(image) {
-    const figure = image.closest("figure");
-    const caption = figure && figure.querySelector("figcaption");
+  function getCaption(img) {
+    const figure = img.closest("figure");
+    const figcaption = figure
+      ? figure.querySelector("figcaption")
+      : null;
 
-    if (caption) return caption.textContent.trim();
-
-    return image.getAttribute("alt") || "";
+    return (
+      (figcaption && figcaption.textContent.trim()) ||
+      img.getAttribute("alt") ||
+      ""
+    );
   }
 
   function showImage(index) {
-    activeIndex = (index + images.length) % images.length;
+    currentIndex = (index + images.length) % images.length;
 
-    const image = images[activeIndex];
+    const img = images[currentIndex];
 
-    lightboxImage.src = image.currentSrc || image.src;
-    lightboxImage.alt = image.alt || "Portfolio project image";
-    lightboxCaption.textContent = getCaption(image);
-    lightboxCaption.hidden = !lightboxCaption.textContent;
+    lightboxImage.src = img.currentSrc || img.src;
+    lightboxImage.alt = img.alt || "";
 
-    lightboxCounter.textContent =
-      images.length > 1
-        ? (activeIndex + 1) + " / " + images.length
-        : "";
+    const caption = getCaption(img);
+    lightboxCaption.textContent = caption;
+    lightboxCaption.hidden = !caption;
+
+    counter.textContent =
+      (currentIndex + 1) + " / " + images.length;
 
     const multipleImages = images.length > 1;
     previousButton.hidden = !multipleImages;
     nextButton.hidden = !multipleImages;
-    lightboxCounter.hidden = !multipleImages;
   }
 
   function openLightbox(index) {
     previousFocus = document.activeElement;
 
     showImage(index);
-
     lightbox.hidden = false;
-    lightbox.setAttribute("aria-hidden", "false");
     document.body.classList.add("lightbox-open");
     closeButton.focus();
   }
@@ -185,7 +187,6 @@
     if (lightbox.hidden) return;
 
     lightbox.hidden = true;
-    lightbox.setAttribute("aria-hidden", "true");
     document.body.classList.remove("lightbox-open");
     lightboxImage.removeAttribute("src");
 
@@ -194,21 +195,20 @@
     }
   }
 
-  images.forEach(function (image, index) {
-    image.classList.add("lightbox-trigger");
-    image.setAttribute("tabindex", "0");
-    image.setAttribute("role", "button");
-    image.setAttribute(
+  images.forEach(function (img, index) {
+    img.classList.add("lightbox-trigger");
+    img.setAttribute("tabindex", "0");
+    img.setAttribute("role", "button");
+    img.setAttribute(
       "aria-label",
-      "Enlarge image: " + (image.alt || "Portfolio image")
+      "Enlarge image" + (img.alt ? ": " + img.alt : "")
     );
 
-    image.addEventListener("click", function (event) {
-      event.preventDefault();
+    img.addEventListener("click", function () {
       openLightbox(index);
     });
 
-    image.addEventListener("keydown", function (event) {
+    img.addEventListener("keydown", function (event) {
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
         openLightbox(index);
@@ -219,11 +219,11 @@
   closeButton.addEventListener("click", closeLightbox);
 
   previousButton.addEventListener("click", function () {
-    showImage(activeIndex - 1);
+    showImage(currentIndex - 1);
   });
 
   nextButton.addEventListener("click", function () {
-    showImage(activeIndex + 1);
+    showImage(currentIndex + 1);
   });
 
   lightbox.addEventListener("click", function (event) {
@@ -236,29 +236,36 @@
     if (lightbox.hidden) return;
 
     if (event.key === "Escape") {
+      event.preventDefault();
       closeLightbox();
-    } else if (event.key === "ArrowLeft" && images.length > 1) {
-      showImage(activeIndex - 1);
-    } else if (event.key === "ArrowRight" && images.length > 1) {
-      showImage(activeIndex + 1);
+    } else if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      showImage(currentIndex - 1);
+    } else if (event.key === "ArrowRight") {
+      event.preventDefault();
+      showImage(currentIndex + 1);
     } else if (event.key === "Tab") {
-      const focusable = [closeButton];
+      const controls = [
+        closeButton,
+        previousButton,
+        nextButton
+      ].filter(function (button) {
+        return !button.hidden;
+      });
 
-      if (images.length > 1) {
-        focusable.push(previousButton, nextButton);
-      }
-
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
+      const first = controls[0];
+      const last = controls[controls.length - 1];
 
       if (event.shiftKey && document.activeElement === first) {
         event.preventDefault();
         last.focus();
-      } else if (!event.shiftKey && document.activeElement === last) {
+      } else if (
+        !event.shiftKey &&
+        document.activeElement === last
+      ) {
         event.preventDefault();
         first.focus();
       }
     }
   });
-
 })();
