@@ -1,256 +1,752 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Services | Maria Silva</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Creative and digital services by Maria Silva. Websites, AI content, digital design and e-commerce support for small businesses.">
+  <title>Services | Maria Silva — Creative Technologist & Digital Creator</title>
 
-    <link rel="stylesheet" href="css/styles.css">
+  <meta
+    name="description"
+    content="Creative and digital services by Maria Silva, including website design, AI-assisted visual content, graphic design, video editing and e-commerce support."
+  >
 
-    <script src="js/main.js" defer></script>
+  <meta name="author" content="Maria Silva">
+  <meta name="robots" content="index, follow">
 
-    <style>
-        .services-page {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 80px 24px;
-        }
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Services | Maria Silva">
+  <meta
+    property="og:description"
+    content="Creative, visual and digital services for businesses and independent projects."
+  >
+  <meta
+    property="og:url"
+    content="https://maria-silva1934.github.io/portfolio/services.html"
+  >
+  <meta property="og:site_name" content="Maria Silva Portfolio">
 
-        .services-intro {
-            max-width: 750px;
-            margin-bottom: 60px;
-        }
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Services | Maria Silva">
+  <meta
+    name="twitter:description"
+    content="Creative, visual and digital services for businesses and independent projects."
+  >
 
-        .services-intro h1 {
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            margin-bottom: 24px;
-        }
+  <!-- SAME FAVICON AS HOME -->
 
-        .services-intro p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            opacity: 0.8;
-        }
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a1a1a'/><text x='50' y='68' font-size='52' font-family='Georgia, serif' fill='%23faf9f7' text-anchor='middle'>M</text></svg>"
+  >
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 24px;
-        }
+  <!-- ORIGINAL CSS -->
 
-        .service-card {
-            padding: 32px;
-            border: 1px solid rgba(128, 128, 128, 0.25);
-            border-radius: 16px;
-            transition: transform 0.25s ease,
-                        border-color 0.25s ease;
-        }
+  <link rel="stylesheet" href="css/styles.css">
 
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(128, 128, 128, 0.6);
-        }
+  <!-- SERVICES PAGE CSS -->
 
-        .service-number {
-            font-size: 0.85rem;
-            opacity: 0.6;
-            margin-bottom: 24px;
-        }
+  <style>
 
-        .service-card h2 {
-            font-size: 1.6rem;
-            margin-bottom: 16px;
-        }
+    .services-hero {
+      min-height: 65vh;
+      display: flex;
+      align-items: center;
+    }
 
-        .service-card p {
-            line-height: 1.7;
-            opacity: 0.8;
-        }
+    .services-hero-inner {
+      max-width: 980px;
+    }
 
-        .service-card ul {
-            padding-left: 20px;
-            margin-top: 20px;
-            line-height: 2;
-        }
+    .services-eyebrow {
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
 
-        .services-cta {
-            margin-top: 80px;
-            padding: 40px;
-            border: 1px solid rgba(128, 128, 128, 0.25);
-            border-radius: 16px;
-        }
+    .services-title {
+      margin-bottom: 0.5rem;
+    }
 
-        .services-cta h2 {
-            font-size: 2rem;
-            margin-bottom: 16px;
-        }
+    .services-intro {
+      max-width: 760px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
 
-        .services-cta p {
-            line-height: 1.7;
-            margin-bottom: 24px;
-        }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
 
-        .services-cta a {
-            display: inline-block;
-            text-decoration: none;
-        }
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      text-decoration: none;
+      color: inherit;
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+    }
 
-        @media (max-width: 700px) {
-            .services-page {
-                padding: 50px 20px;
-            }
+    .service-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0, 0, 0, 0.35);
+    }
 
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
+    .service-number {
+      display: block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 1.5rem;
+      opacity: 0.65;
+    }
 
-            .service-card {
-                padding: 24px;
-            }
+    .service-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
 
-            .services-cta {
-                padding: 28px;
-                margin-top: 50px;
-            }
-        }
-    </style>
+    .service-card p {
+      line-height: 1.75;
+      opacity: 0.8;
+    }
+
+    .service-card ul {
+      padding-left: 1.2rem;
+      margin-top: 1.25rem;
+      line-height: 2;
+    }
+
+    .service-link {
+      display: inline-block;
+      margin-top: auto;
+      padding-top: 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .service-link:hover {
+      opacity: 0.65;
+    }
+
+    .services-process {
+      max-width: 850px;
+    }
+
+    .services-process-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+
+    .process-item {
+      padding: 1.5rem;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .process-item span {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      opacity: 0.65;
+      margin-bottom: 1rem;
+    }
+
+    .process-item h3 {
+      margin-bottom: 0.75rem;
+    }
+
+    .process-item p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    .services-cta {
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .services-cta .section-intro {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .services-cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 900px) {
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .services-process-list {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      .services-hero {
+        min-height: auto;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        padding: 1.5rem;
+      }
+
+      .services-cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .services-cta-actions .btn {
+        text-align: center;
+      }
+
+    }
+
+  </style>
+
+  <!-- ORIGINAL JAVASCRIPT -->
+
+  <script src="js/main.js" defer></script>
+
 </head>
 
 <body>
 
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="services.html" aria-current="page">Services</a>
-            <a href="projects.html">Projects</a>
-            <a href="thumbnail.html">Thumbnails</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+  <!-- ACCESSIBILITY -->
 
-    <main class="services-page">
+  <a class="skip-link" href="#main">
+    Skip to main content
+  </a>
 
-        <section class="services-intro">
-            <p>WHAT I DO</p>
+  <!-- HEADER: SAME STRUCTURE AS HOME -->
 
-            <h1>Creative solutions for digital businesses.</h1>
+  <header class="site-header" id="top">
+
+    <div class="container header-inner">
+
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="Maria Silva — homepage"
+      >
+
+        <span class="brand-mark" aria-hidden="true">
+          M
+        </span>
+
+        <span class="brand-name">
+          Maria Silva
+        </span>
+
+      </a>
+
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        aria-expanded="false"
+        aria-controls="primaryNav"
+        aria-label="Toggle navigation menu"
+      >
+
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+
+      </button>
+
+      <nav
+        class="primary-nav"
+        id="primaryNav"
+        aria-label="Primary navigation"
+      >
+
+        <ul class="nav-list">
+
+          <li>
+            <a href="about.html">
+              About
+            </a>
+          </li>
+
+          <li>
+            <a href="services.html" aria-current="page">
+              Services
+            </a>
+          </li>
+
+          <li>
+            <a href="projects.html">
+              Projects
+            </a>
+          </li>
+
+          <li>
+            <a href="writing.html">
+              Writing
+            </a>
+          </li>
+
+          <li>
+            <a href="contact.html" class="nav-cta">
+              Contact
+            </a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+  <!-- MAIN -->
+
+  <main id="main">
+
+    <!-- HERO -->
+
+    <section
+      class="services-hero"
+      aria-labelledby="services-title"
+    >
+
+      <div class="container services-hero-inner">
+
+        <p class="services-eyebrow reveal">
+          Creative · Digital · Independent
+        </p>
+
+        <h1 class="services-title reveal" id="services-title">
+          Creative solutions for digital businesses.
+        </h1>
+
+        <p class="services-intro reveal">
+
+          I help small businesses and independent creators
+          build a stronger digital presence through websites,
+          visual content, AI-assisted creativity and
+          practical digital solutions.
+
+        </p>
+
+        <div class="hero-actions reveal">
+
+          <a class="btn btn-primary" href="#services">
+            Explore Services
+          </a>
+
+          <a class="btn btn-secondary" href="contact.html">
+            Get in Touch
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SERVICES -->
+
+    <section
+      class="section"
+      id="services"
+      aria-labelledby="services-heading"
+    >
+
+      <div class="container">
+
+        <p class="section-label reveal">
+          What I Do
+        </p>
+
+        <h2 class="section-title reveal" id="services-heading">
+          Creative, visual and digital services
+        </h2>
+
+        <p class="section-intro reveal">
+
+          From building an online presence
+          to developing visual content,
+          I help turn ideas into practical
+          digital solutions.
+
+        </p>
+
+        <div class="services-grid">
+
+          <!-- 01 -->
+
+          <article class="service-card reveal">
+
+            <span class="service-number">
+              01 · WEB DESIGN
+            </span>
+
+            <h2>Website Design</h2>
 
             <p>
-                I help small businesses and independent creators
-                build a stronger digital presence through websites,
-                visual content, AI-assisted creativity and
-                practical digital solutions.
-            </p>
-        </section>
 
-        <section class="services-grid">
+              Modern, responsive websites designed
+              to present businesses, services
+              and projects professionally.
 
-            <article class="service-card">
-                <p class="service-number">01 / WEB</p>
-
-                <h2>Website Design</h2>
-
-                <p>
-                    Modern, responsive websites designed to
-                    present your business professionally
-                    and help customers find what they need.
-                </p>
-
-                <ul>
-                    <li>Business websites</li>
-                    <li>Landing pages</li>
-                    <li>Website redesign</li>
-                    <li>Portfolio websites</li>
-                </ul>
-            </article>
-
-            <article class="service-card">
-                <p class="service-number">02 / AI & CREATIVE</p>
-
-                <h2>AI & Visual Content</h2>
-
-                <p>
-                    Creative visual content combining
-                    AI tools and digital design
-                    to bring ideas and brands to life.
-                </p>
-
-                <ul>
-                    <li>AI-generated images</li>
-                    <li>Product visuals</li>
-                    <li>Creative concepts</li>
-                    <li>AI-assisted video content</li>
-                </ul>
-            </article>
-
-            <article class="service-card">
-                <p class="service-number">03 / DESIGN</p>
-
-                <h2>Graphic Design</h2>
-
-                <p>
-                    Visual materials that help businesses
-                    communicate clearly and maintain
-                    a consistent identity.
-                </p>
-
-                <ul>
-                    <li>Social media graphics</li>
-                    <li>Thumbnails</li>
-                    <li>Promotional materials</li>
-                    <li>Digital artwork</li>
-                </ul>
-            </article>
-
-            <article class="service-card">
-                <p class="service-number">04 / DIGITAL</p>
-
-                <h2>E-commerce & Digital Support</h2>
-
-                <p>
-                    Practical assistance with online stores,
-                    product presentation and digital
-                    business operations.
-                </p>
-
-                <ul>
-                    <li>Product listings</li>
-                    <li>Digital product presentation</li>
-                    <li>Store organization</li>
-                    <li>Content management</li>
-                </ul>
-            </article>
-
-        </section>
-
-        <section class="services-cta">
-
-            <p>LET'S WORK TOGETHER</p>
-
-            <h2>Have a project in mind?</h2>
-
-            <p>
-                Whether you need a website, visual content
-                or help with your digital business,
-                let's discuss what you have in mind.
             </p>
 
-            <a href="contact.html">
-                Get in touch →
+            <ul>
+              <li>Business websites</li>
+              <li>Landing pages</li>
+              <li>Website redesign</li>
+              <li>Portfolio websites</li>
+            </ul>
+
+            <a class="service-link" href="contact.html">
+              Discuss a Website Project →
             </a>
 
-        </section>
+          </article>
 
-    </main>
+          <!-- 02 -->
 
-    <footer>
-        <p>© Maria Silva</p>
-    </footer>
+          <article class="service-card reveal">
+
+            <span class="service-number">
+              02 · AI & CREATIVE
+            </span>
+
+            <h2>AI & Visual Content</h2>
+
+            <p>
+
+              Creative visual content combining
+              AI tools and digital design
+              to bring ideas and brands to life.
+
+            </p>
+
+            <ul>
+              <li>AI-generated images</li>
+              <li>Product visuals</li>
+              <li>Creative concepts</li>
+              <li>AI-assisted video content</li>
+            </ul>
+
+            <a class="service-link" href="contact.html">
+              Discuss a Creative Project →
+            </a>
+
+          </article>
+
+          <!-- 03 -->
+
+          <article class="service-card reveal">
+
+            <span class="service-number">
+              03 · DESIGN
+            </span>
+
+            <h2>Graphic Design</h2>
+
+            <p>
+
+              Visual materials that help businesses
+              communicate clearly and maintain
+              a consistent identity.
+
+            </p>
+
+            <ul>
+              <li>Social media graphics</li>
+              <li>Thumbnails</li>
+              <li>Promotional materials</li>
+              <li>Digital artwork</li>
+            </ul>
+
+            <a class="service-link" href="contact.html">
+              Discuss a Design Project →
+            </a>
+
+          </article>
+
+          <!-- 04 -->
+
+          <article class="service-card reveal">
+
+            <span class="service-number">
+              04 · VIDEO
+            </span>
+
+            <h2>Video Editing</h2>
+
+            <p>
+
+              Digital video content combining
+              editing, visual storytelling
+              and creative tools.
+
+            </p>
+
+            <ul>
+              <li>Short-form video</li>
+              <li>Social media content</li>
+              <li>AI-assisted video</li>
+              <li>Creative video projects</li>
+            </ul>
+
+            <a class="service-link" href="contact.html">
+              Discuss a Video Project →
+            </a>
+
+          </article>
+
+          <!-- 05 -->
+
+          <article class="service-card reveal">
+
+            <span class="service-number">
+              05 · E-COMMERCE
+            </span>
+
+            <h2>E-commerce & Digital Products</h2>
+
+            <p>
+
+              Practical assistance with online stores,
+              product presentation and digital
+              business operations.
+
+            </p>
+
+            <ul>
+              <li>Product listings</li>
+              <li>Digital product presentation</li>
+              <li>Store organization</li>
+              <li>Content management</li>
+            </ul>
+
+            <a class="service-link" href="contact.html">
+              Discuss an E-commerce Project →
+            </a>
+
+          </article>
+
+          <!-- 06 -->
+
+          <article class="service-card reveal">
+
+            <span class="service-number">
+              06 · DIGITAL SUPPORT
+            </span>
+
+            <h2>Digital Business Support</h2>
+
+            <p>
+
+              Practical assistance with digital
+              content, online organization
+              and everyday business tasks.
+
+            </p>
+
+            <ul>
+              <li>Content organization</li>
+              <li>Digital asset management</li>
+              <li>Online business support</li>
+              <li>Creative project assistance</li>
+            </ul>
+
+            <a class="service-link" href="contact.html">
+              Discuss Your Requirements →
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PROCESS -->
+
+    <section
+      class="section"
+      aria-labelledby="process-title"
+    >
+
+      <div class="container">
+
+        <div class="services-process">
+
+          <p class="section-label reveal">
+            How I Work
+          </p>
+
+          <h2 class="section-title reveal" id="process-title">
+            From idea to finished project
+          </h2>
+
+          <p class="section-intro reveal">
+
+            Every project starts with understanding
+            what you need and finding a practical
+            way to bring your idea to life.
+
+          </p>
+
+        </div>
+
+        <div class="services-process-list">
+
+          <article class="process-item reveal">
+
+            <span>STEP 01</span>
+
+            <h3>Understand</h3>
+
+            <p>
+
+              We discuss your project,
+              objectives and requirements.
+
+            </p>
+
+          </article>
+
+          <article class="process-item reveal">
+
+            <span>STEP 02</span>
+
+            <h3>Create</h3>
+
+            <p>
+
+              I develop the project
+              using the appropriate
+              creative and digital tools.
+
+            </p>
+
+          </article>
+
+          <article class="process-item reveal">
+
+            <span>STEP 03</span>
+
+            <h3>Deliver</h3>
+
+            <p>
+
+              The finished work is
+              prepared according
+              to the agreed requirements.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT -->
+
+    <section
+      class="section"
+      id="contact"
+      aria-labelledby="contact-title"
+    >
+
+      <div class="container">
+
+        <div class="services-cta reveal">
+
+          <p class="section-label">
+            Let's Work Together
+          </p>
+
+          <h2 class="section-title" id="contact-title">
+            Have a project in mind?
+          </h2>
+
+          <p class="section-intro">
+
+            Whether you need a website,
+            visual content or help
+            with your digital business,
+            let's discuss what you have in mind.
+
+          </p>
+
+          <div class="services-cta-actions">
+
+            <a class="btn btn-primary" href="contact.html">
+              Get in Touch
+            </a>
+
+            <a class="btn btn-secondary" href="projects.html">
+              Explore My Work
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-inner">
+
+      <p>
+        © 2026 Maria Silva. All rights reserved.
+      </p>
+
+      <a href="#top">
+        Back to top ↑
+      </a>
+
+    </div>
+
+  </footer>
 
 </body>
+
 </html>
