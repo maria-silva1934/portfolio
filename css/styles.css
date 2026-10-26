@@ -1011,3 +1011,10 @@ ul {
     padding: var(--space-md);
   }
 }
+
+/* Contact page: center the heading and intro with the CTA content */
+.contact .final-cta { text-align: center; }
+.contact .final-cta .section-title,
+.contact .final-cta .section-intro { margin-left: auto; margin-right: auto; }
+.contact .final-cta .section-title { text-align: center; }
+.contact .final-cta .final-cta-actions { justify-content: center; }
