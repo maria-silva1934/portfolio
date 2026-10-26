@@ -237,93 +237,53 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 42px;
-      height: 42px;
-      border: 1px solid #ddd;
+      width: 40px;
+      height: 40px;
+      border: 1px solid #dedbd5;
       border-radius: 50%;
       background: #faf9f7;
       color: #1a1a1a;
-      font-size: 1.5rem;
       cursor: pointer;
       z-index: 2;
     }
 
-    .writing-modal h2 {
+    .writing-modal-content h2 {
       font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2rem, 5vw, 3.5rem);
       font-weight: 400;
-      letter-spacing: -0.05em;
-      line-height: 1.1;
-      margin: 20px 0 10px;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      letter-spacing: -0.04em;
+      line-height: 1.15;
+      margin: 15px 0 12px;
     }
 
-    .writing-modal .modal-language {
+    .writing-modal-content .writing-subtitle {
       color: #777;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+      font-style: italic;
       margin-bottom: 35px;
     }
 
-    .writing-modal .modal-text {
+    .writing-modal-content .writing-text {
       font-family: Georgia, "Times New Roman", serif;
       font-size: 1.05rem;
-      line-height: 1.95;
+      line-height: 2;
       white-space: pre-line;
     }
 
-    .writing-modal .modal-text p {
-      margin: 0 0 24px;
+    .writing-modal-content .writing-translation {
+      border-top: 1px solid #dedbd5;
+      margin-top: 45px;
+      padding-top: 35px;
     }
 
-    .writing-modal .modal-divider {
-      border: 0;
-      border-top: 1px solid #ddd;
-      margin: 45px 0;
-    }
-
-    body.modal-open {
-      overflow: hidden;
-    }
-
-    /* CONTACT CTA */
-
-    .projects-cta {
-      padding: 90px 0;
-      border-top: 1px solid var(--border, #e8e6e2);
-      text-align: center;
-    }
-
-    .projects-cta h2 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      letter-spacing: -0.05em;
-      margin: 0 0 20px;
-    }
-
-    .projects-cta p {
-      max-width: 540px;
-      margin: 0 auto 25px;
-      color: var(--muted, #777);
-      line-height: 1.8;
-    }
-
-    .projects-cta a {
-      display: inline-block;
-      text-decoration: none;
-      color: #faf9f7;
-      background: #1a1a1a;
-      padding: 13px 23px;
-      border-radius: 50px;
-      transition: opacity 0.2s ease;
-    }
-
-    .projects-cta a:hover {
-      opacity: 0.75;
-    }
+    /* RESPONSIVE */
 
     @media (max-width: 700px) {
       .projects-intro {
-        padding-top: 70px;
+        padding: 75px 0 40px;
+      }
+
+      .project-section {
+        padding: 40px 0;
       }
 
       .project-grid {
@@ -331,8 +291,10 @@
         gap: 35px;
       }
 
-      .project-section {
-        padding: 40px 0;
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
       }
 
       .writing-card {
@@ -345,119 +307,115 @@
 
       .writing-modal-content {
         max-height: 95vh;
-        padding: 22px;
-      }
-
-      .writing-modal .modal-text {
-        font-size: 1rem;
+        border-radius: 8px;
       }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      .project-image img {
-        transition: none;
-      }
+    /* PROJECT IMAGE PRESENTATION */
+
+    .project-image {
+      position: relative;
+      background: #f4f1ec;
+    }
+
+    .project-image img {
+      object-position: center;
+    }
+
+    .project-image-placeholder {
+      height: auto;
+      min-height: 0;
+      padding: 22px;
+      background: transparent;
+      border: 1px dashed #d7d2ca;
+      border-radius: 12px;
+      color: #777;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .project-card .project-image-placeholder {
+      aspect-ratio: 16 / 10;
+    }
+
+    .project-card .project-image-placeholder span {
+      max-width: 300px;
     }
   </style>
 </head>
 
 <body>
 
-  <a class="skip-link" href="#main">Skip to main content</a>
+  <!-- NAVIGATION -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Maria Silva<span>.</span></a>
 
-  <!-- HEADER -->
-
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-
-      <a class="brand" href="index.html" aria-label="Maria Silva — homepage">
-        <span class="brand-mark" aria-hidden="true">M</span>
-        <span class="brand-name">Maria Silva</span>
-      </a>
-
-      <button
-        class="nav-toggle"
-        id="navToggle"
-        aria-expanded="false"
-        aria-controls="primaryNav"
-        aria-label="Toggle navigation menu"
-      >
-        <span class="nav-toggle-bar"></span>
-        <span class="nav-toggle-bar"></span>
-      </button>
-
-      <nav class="primary-nav" id="primaryNav" aria-label="Primary navigation">
-        <ul class="nav-list">
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html" aria-current="page">Projects</a></li>
-          <li><a href="writing.html">Writing</a></li>
-          <li><a href="contact.html" class="nav-cta">Contact</a></li>
-        </ul>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html" aria-current="page">Projects</a>
+        <a href="contact.html">Contact</a>
       </nav>
 
+      <button class="menu-toggle" aria-label="Open menu">
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
 
-    <!-- MAIN -->
-
-  <main id="main">
-
-    <!-- INTRO -->
-
+  <!-- INTRO -->
+  <main>
     <section class="projects-intro">
       <div class="container">
+        <span class="eyebrow">Selected work</span>
 
-        <span class="project-category">Portfolio</span>
-
-        <h1>Selected Projects</h1>
+        <h1>Projects<span>.</span></h1>
 
         <p>
-          A collection of work across web design, AI, digital creativity,
-          e-commerce and writing. Each project reflects a different way
-          of exploring ideas, solving problems and creating something meaningful.
+          A collection of projects exploring digital experiences,
+          artificial intelligence, visual creativity, e-commerce
+          and writing.
         </p>
-
       </div>
     </section>
 
-    <!-- WEBSITES -->
-
+        <!-- WEBSITES -->
     <section class="project-section" id="websites">
       <div class="container">
 
         <div class="section-heading">
           <h2>Websites</h2>
-          <span>01 / Web</span>
+          <span>01 project</span>
         </div>
 
         <div class="project-grid">
 
           <article class="project-card">
-
             <a
-              class="project-image"
               href="https://lemon-tree-hostel-khaosan.netlify.app"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit Lemon Tree Hostel website"
-              style="display:block;"
             >
-              <img
-                src="images/lemon-tree-hostel.png"
-                alt="Lemon Tree Hostel website project"
-                loading="lazy"
-              >
+              <div class="project-image">
+                <img
+                  src="images/lemon-tree-hostel.png"
+                  alt="Lemon Tree Hostel website design"
+                  loading="lazy"
+                >
+              </div>
             </a>
 
-            <span class="project-category">Website Design & Development</span>
+            <span class="project-category">Website Design</span>
 
             <h3>Lemon Tree Hostel</h3>
 
             <p>
-              A hospitality website designed to present the hostel,
-              its atmosphere, accommodation and essential information
-              through a clear and welcoming digital experience.
+              A website concept for a hostel in Bangkok, combining
+              accommodation information, visual identity and a
+              straightforward browsing experience.
             </p>
 
             <a
@@ -468,31 +426,29 @@
             >
               Visit website ↗
             </a>
-
           </article>
 
         </div>
-
       </div>
     </section>
 
-    <!-- AI & CREATIVE -->
 
+    <!-- AI & CREATIVE -->
     <section class="project-section" id="ai-creative">
       <div class="container">
 
         <div class="section-heading">
           <h2>AI & Creative</h2>
-          <span>02 / Creative</span>
+          <span>Creative technology</span>
         </div>
 
         <div class="project-grid">
 
+          <!-- AI RESPONSE EVALUATION -->
           <article class="project-card">
-
             <div class="project-image">
               <div class="project-image-placeholder">
-                AI Response Evaluation
+                <span>AI Response Evaluation</span>
               </div>
             </div>
 
@@ -501,38 +457,38 @@
             <h3>AI Response Evaluation</h3>
 
             <p>
-              Evaluating AI-generated responses for relevance,
-              clarity, accuracy and instruction-following,
-              with attention to quality and useful feedback.
+              An exploration of evaluating AI-generated responses,
+              focusing on accuracy, relevance, clarity and
+              instruction-following.
             </p>
-
           </article>
 
-          <article class="project-card">
 
+          <!-- AI RESEARCH -->
+          <article class="project-card">
             <div class="project-image">
               <div class="project-image-placeholder">
-                AI Research
+                <span>AI Research & Fact-Checking</span>
               </div>
             </div>
 
-            <span class="project-category">Research & Fact-Checking</span>
+            <span class="project-category">Research</span>
 
             <h3>AI Research & Fact-Checking</h3>
 
             <p>
-              Research-oriented work focused on checking information,
-              reviewing sources and identifying inconsistencies
-              in AI-generated content.
+              Research-oriented work focused on verifying
+              information, identifying inaccuracies and assessing
+              the reliability of AI-generated content.
             </p>
-
           </article>
 
-          <article class="project-card">
 
+          <!-- FLUX -->
+          <article class="project-card">
             <div class="project-image">
               <div class="project-image-placeholder">
-                ComfyUI
+                <span>FLUX.1-dev</span>
               </div>
             </div>
 
@@ -541,37 +497,18 @@
             <h3>FLUX.1-dev — ComfyUI</h3>
 
             <p>
-              Exploring AI image generation through ComfyUI,
-              prompt development and visual experimentation
-              with generative workflows.
+              Generative image experimentation using FLUX.1-dev
+              and ComfyUI, exploring image generation workflows
+              and creative control.
             </p>
-
           </article>
 
-          <article class="project-card">
 
+          <!-- DAVINCI -->
+          <article class="project-card">
             <div class="project-image">
               <div class="project-image-placeholder">
-                Art & Visual Work
-              </div>
-            </div>
-
-            <span class="project-category">Digital Art</span>
-
-            <h3>Art & Visual Work</h3>
-
-            <p>
-              Personal visual explorations combining composition,
-              atmosphere, colour and digital creativity.
-            </p>
-
-          </article>
-
-          <article class="project-card">
-
-            <div class="project-image">
-              <div class="project-image-placeholder">
-                Video Editing
+                <span>DaVinci Resolve</span>
               </div>
             </div>
 
@@ -580,94 +517,125 @@
             <h3>DaVinci Resolve</h3>
 
             <p>
-              Video editing and visual storytelling,
-              exploring rhythm, atmosphere, transitions
-              and the relationship between image and sound.
+              Video editing and visual storytelling experiments
+              exploring pacing, composition and the presentation
+              of creative content.
             </p>
-
           </article>
 
-          <article class="project-card">
 
+          <!-- AFTER THE RAIN -->
+          <article class="project-card">
             <div class="project-image">
               <div class="project-image-placeholder">
-                After the Rain
+                <span>After the Rain</span>
               </div>
             </div>
 
-            <span class="project-category">Creative Video</span>
+            <span class="project-category">Creative Project</span>
 
             <h3>After the Rain</h3>
 
             <p>
-              A creative video project focused on atmosphere,
-              visual narrative and emotional storytelling.
+              A creative visual project exploring atmosphere,
+              emotion and storytelling through imagery.
             </p>
-
           </article>
 
-          <article class="project-card">
 
+          <!-- ETSY -->
+          <article class="project-card">
             <div class="project-image">
               <div class="project-image-placeholder">
-                Etsy Shop Presentation
+                <span>Etsy Shop Presentation</span>
               </div>
             </div>
 
-            <span class="project-category">Video & E-commerce</span>
+            <span class="project-category">Digital Products</span>
 
             <h3>Etsy Shop Presentation</h3>
 
             <p>
-              A visual presentation developed to communicate
-              a digital shop and its products through
-              creative video content.
+              A presentation of digital products and creative
+              assets developed for an online marketplace.
             </p>
-
           </article>
 
-          <article class="project-card">
+        </div>
+      </div>
+    </section>
 
+        <!-- ART -->
+    <section class="project-section" id="art">
+      <div class="container">
+
+        <div class="section-heading">
+          <h2>Art & Writing</h2>
+          <span>Visual art and written work</span>
+        </div>
+
+        <div class="project-grid">
+
+          <!-- ART & VISUAL WORK -->
+          <article class="project-card">
             <div class="project-image">
               <div class="project-image-placeholder">
-                Creative Writing
+                <span>Art & Visual Work</span>
               </div>
             </div>
 
-            <span class="project-category">Storytelling</span>
+            <span class="project-category">Visual Art</span>
+
+            <h3>Art & Visual Work</h3>
+
+            <p>
+              A collection of drawings, illustrations and
+              visual experiments exploring personal expression,
+              composition and different artistic approaches.
+            </p>
+          </article>
+
+
+          <!-- CREATIVE WRITING -->
+          <article class="project-card">
+            <div class="project-image">
+              <div class="project-image-placeholder">
+                <span>Creative Writing & Storytelling</span>
+              </div>
+            </div>
+
+            <span class="project-category">Creative Writing</span>
 
             <h3>Creative Writing & Storytelling</h3>
 
             <p>
-              Personal writing exploring emotion,
-              memory, distance and the ways stories
-              can communicate experiences.
+              Personal writing, poetry, stories and narrative
+              experiments exploring emotions, experiences
+              and human relationships.
             </p>
-
           </article>
 
         </div>
-
       </div>
     </section>
 
-    <!-- E-COMMERCE -->
 
+    <!-- E-COMMERCE & DIGITAL -->
     <section class="project-section" id="ecommerce">
       <div class="container">
 
         <div class="section-heading">
           <h2>E-commerce & Digital</h2>
-          <span>03 / Digital</span>
+          <span>Digital operations and products</span>
         </div>
 
         <div class="project-grid">
 
+          <!-- PRODUCT OPTIMIZATION -->
           <article class="project-card">
-
             <div class="project-image">
               <div class="project-image-placeholder">
-                Product Optimization
+                <span>E-commerce Product Optimization</span>
               </div>
             </div>
 
@@ -676,18 +644,18 @@
             <h3>E-commerce Product Optimization</h3>
 
             <p>
-              Product presentation and listing optimization,
-              focusing on visual consistency, clear information
-              and an improved customer experience.
+              Product listing optimization focused on
+              presentation, descriptions, organization
+              and improving the customer experience.
             </p>
-
           </article>
 
-          <article class="project-card">
 
+          <!-- VINTED -->
+          <article class="project-card">
             <div class="project-image">
               <div class="project-image-placeholder">
-                Vinted Workflow
+                <span>Vinted Workflow Automation</span>
               </div>
             </div>
 
@@ -696,18 +664,18 @@
             <h3>Vinted Workflow Automation</h3>
 
             <p>
-              Exploring workflows for product images,
-              listing preparation and repetitive e-commerce
-              tasks using digital tools.
+              Workflow experimentation focused on organizing
+              product information, managing listings
+              and improving repetitive e-commerce tasks.
             </p>
-
           </article>
 
-          <article class="project-card">
 
+          <!-- DIGITAL PRODUCTS -->
+          <article class="project-card">
             <div class="project-image">
               <div class="project-image-placeholder">
-                Digital Products
+                <span>Digital Product Creation</span>
               </div>
             </div>
 
@@ -716,33 +684,30 @@
             <h3>Digital Product Creation</h3>
 
             <p>
-              Creating downloadable digital products,
-              including visual assets and creative bundles,
-              for online marketplaces.
+              Digital assets and creative products
+              developed for online distribution,
+              including visual resources and downloadable content.
             </p>
-
           </article>
 
         </div>
-
       </div>
     </section>
 
-        <!-- WRITING -->
 
+    <!-- WRITING -->
     <section class="project-section" id="writing">
       <div class="container">
 
         <div class="section-heading">
-          <h2>Writing</h2>
-          <span>04 / Literature</span>
+          <h2>Poetry & Writing</h2>
+          <span>Personal writing</span>
         </div>
 
         <div class="project-grid">
 
           <!-- POEM -->
-
-          <article class="project-card writing-card">
+          <article class="writing-card">
 
             <span class="project-category">Poetry</span>
 
@@ -753,9 +718,9 @@
             </p>
 
             <p class="writing-description">
-              Um poema sobre silêncio, distância e aquilo que permanece.
-              Uma reflexão sobre amar o vazio de alguém e sobre
-              a estranha familiaridade que pode existir entre dois estranhos.
+              A personal poem about memory, distance,
+              truth and the strange familiarity of
+              someone who once meant everything.
             </p>
 
             <div class="writing-meta">
@@ -767,16 +732,16 @@
             <button
               class="project-link"
               type="button"
-              data-open-writing="poem"
+              data-open-modal="poem-modal"
             >
-              Read poem / Ler poema ↗
+              Read poem ↗
             </button>
 
           </article>
 
-          <!-- LETTER -->
 
-          <article class="project-card writing-card">
+          <!-- LETTER -->
+          <article class="writing-card">
 
             <span class="project-category">Personal Letter</span>
 
@@ -787,9 +752,9 @@
             </p>
 
             <p class="writing-description">
-              Uma carta sobre amor não correspondido,
-              a esperança de ser escolhida e a coragem
-              de deixar de esperar por aquilo que nunca aconteceu.
+              A personal letter about love, expectations,
+              waiting and the difficult process
+              of letting go.
             </p>
 
             <div class="writing-meta">
@@ -801,572 +766,260 @@
             <button
               class="project-link"
               type="button"
-              data-open-writing="letter"
+              data-open-modal="letter-modal"
             >
-              Read letter / Ler carta ↗
+              Read letter ↗
             </button>
 
           </article>
 
         </div>
-
       </div>
     </section>
 
-    <!-- CONTACT CTA -->
+        <!-- POEM MODAL -->
+    <div
+      class="writing-modal"
+      id="poem-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="poem-modal-title"
+    >
+      <div class="writing-modal-content">
 
-    <section class="projects-cta">
-      <div class="container">
+        <button
+          class="writing-modal-close"
+          type="button"
+          aria-label="Close poem"
+          data-close-modal
+        >
+          ×
+        </button>
 
-        <h2>Have a project in mind?</h2>
+        <span class="project-category">Poetry</span>
 
-        <p>
-          I'm open to creative collaborations, digital projects
-          and opportunities to build something meaningful.
+        <h2 id="poem-modal-title">
+          O Estranho que Melhor Conheci
+        </h2>
+
+        <p class="writing-subtitle">
+          The Stranger I Knew Best
         </p>
 
-        <a href="contact.html">
-          Get in touch ↗
-        </a>
+        <div class="writing-text">
+          <p>
+            Sob a minha língua encontrei o teu nome
+            Em meio de nada que já tudo foi
+            Das palavras que nos cercaram,
+            Aos momentos que nos deixaram.
+          </p>
+
+          <p>
+            Em quartos separados,
+            Em lugares distantes,
+            ...
+          </p>
+
+          <p>
+            Serás o estranho que eu melhor conheci
+            Algumas verdades serão sombrias
+            E sombrias serão pois um dia já foram verdades.
+          </p>
+        </div>
+
+        <div class="writing-translation">
+
+          <span class="project-category">English translation</span>
+
+          <h2>The Stranger I Knew Best</h2>
+
+          <div class="writing-text">
+            <p>
+              Under my tongue I found your name
+              Amidst nothing that had already been everything
+              From the words that surrounded us,
+              To the moments that left us.
+            </p>
+
+            <p>
+              In separate rooms,
+              In distant places,
+              ...
+            </p>
+
+            <p>
+              You will be the stranger I knew best
+              Some truths will be dark
+              And dark they will be because one day they were truths.
+            </p>
+          </div>
+
+        </div>
 
       </div>
-    </section>
+    </div>
+
+
+    <!-- LETTER MODAL -->
+    <div
+      class="writing-modal"
+      id="letter-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="letter-modal-title"
+    >
+      <div class="writing-modal-content">
+
+        <button
+          class="writing-modal-close"
+          type="button"
+          aria-label="Close letter"
+          data-close-modal
+        >
+          ×
+        </button>
+
+        <span class="project-category">Personal Letter</span>
+
+        <h2 id="letter-modal-title">
+          Adeus ao Amor que Esperei
+        </h2>
+
+        <p class="writing-subtitle">
+          Goodbye to the Love I Waited For
+        </p>
+
+        <div class="writing-text">
+          <!--
+            IMPORTANTE:
+
+            Aqui tens de manter o texto COMPLETO original
+            da carta portuguesa.
+
+            Não substituas o texto original por uma versão
+            resumida ou inventada.
+          -->
+        </div>
+
+        <div class="writing-translation">
+
+          <span class="project-category">English translation</span>
+
+          <h2>Goodbye to the Love I Waited For</h2>
+
+          <div class="writing-text">
+            <!--
+              Mantém aqui o texto COMPLETO original
+              da tradução inglesa.
+            -->
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
 
   </main>
 
-  <!-- FOOTER -->
 
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container footer-inner">
+    <div class="container">
 
       <p>
-        © <span id="year">2026</span> Maria Silva.
-        All rights reserved.
+        © <span id="current-year"></span> Maria Silva
       </p>
 
-      <a href="#top">Back to top ↑</a>
+      <a href="contact.html">
+        Get in touch ↗
+      </a>
 
     </div>
   </footer>
 
-  <!-- POEM MODAL -->
 
-  <div
-    class="writing-modal"
-    id="poem-modal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="poem-modal-title"
-  >
-
-    <div class="writing-modal-content">
-
-      <button
-        class="writing-modal-close"
-        type="button"
-        aria-label="Close poem"
-      >
-        ×
-      </button>
-
-      <span class="project-category">Poetry</span>
-
-      <h2 id="poem-modal-title">
-        O Estranho que Melhor Conheci
-      </h2>
-
-      <p class="modal-language">
-        Português
-      </p>
-
-      <div class="modal-text">
-
-        <p>
-          Sob a minha língua encontrei o teu nome<br>
-          Em meio de nada que já tudo foi<br>
-          Das palavras que nos cercaram,<br>
-          Aos momentos que nos deixaram.
-        </p>
-
-        <p>
-          E em quartos separados,<br>
-          Em lugares distantes,<br>
-          As paredes inclinadas,<br>
-          só para que ouçam... o que nenhum dos corações<br>
-          ousaria confessar.
-        </p>
-
-        <p>
-          Não é o teu fantasma que me dá medo<br>
-          É a forma como amei o teu vazio.
-        </p>
-
-        <p>
-          No meio de estranhos,<br>
-          Dois estranhos seremos<br>
-          E se as nossas sombras se encontrarem<br>
-          Em meio a multidões,<br>
-          Serás o estranho que eu melhor conheci
-        </p>
-
-        <p>
-          Algumas verdades serão sombrias<br>
-          E sombrias serão pois um dia já foram verdades.
-        </p>
-
-      </div>
-
-      <hr class="modal-divider">
-
-      <h2>
-        The Stranger I Knew Best
-      </h2>
-
-      <p class="modal-language">
-        English
-      </p>
-
-      <div class="modal-text">
-
-        <p>
-          A poem about silence, distance, and what remains
-        </p>
-
-        <p>
-          Beneath my tongue, I found your name,<br>
-          amidst the nothing that once was everything.<br>
-          From the words that surrounded us<br>
-          to the moments that left us behind.
-        </p>
-
-        <p>
-          And in separate rooms,<br>
-          in distant places,<br>
-          the walls lean closer,<br>
-          just to hear what neither heart<br>
-          would dare to confess.
-        </p>
-
-        <p>
-          It is not your ghost that frightens me—<br>
-          it is the way I loved your emptiness.
-        </p>
-
-        <p>
-          Among strangers,<br>
-          we, too, shall be strangers.<br>
-          And if our shadows meet<br>
-          amid a sea of faces,<br>
-          you will be the stranger<br>
-          I knew best.
-        </p>
-
-        <p>
-          Some truths will be dark,<br>
-          and dark they will remain,<br>
-          for once, they were truths.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- LETTER MODAL -->
-
-  <div
-    class="writing-modal"
-    id="letter-modal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="letter-modal-title"
-  >
-
-    <div class="writing-modal-content">
-
-      <button
-        class="writing-modal-close"
-        type="button"
-        aria-label="Close letter"
-      >
-        ×
-      </button>
-
-      <span class="project-category">Personal Letter</span>
-
-      <h2 id="letter-modal-title">
-        Adeus ao Amor que Esperei
-      </h2>
-
-      <p class="modal-language">
-        Português
-      </p>
-
-      <div class="modal-text">
-
-        <p>
-          Não escrevo para te pedir que sintas o mesmo.
-          Escrevo porque já não quero fingir que não sinto nada.
-        </p>
-
-        <p>
-          Talvez nunca tenhas percebido o lugar que foste
-          ocupando em mim. Não aconteceu de repente, nem houve
-          um momento exato em que pudesse apontar e dizer:
-          foi aqui. Foram os pequenos detalhes, as conversas
-          que ficaram comigo depois de terminarem, a maneira
-          como, sem dar por isso, comecei a encontrar-te em
-          pensamentos onde nem sequer te tinha procurado.
-        </p>
-
-        <p>
-          Há uma coisa que torna tudo isto mais difícil:
-          sei que o teu coração já encontrou um lugar onde
-          quer ficar, e esse lugar não é comigo. Não te culpo
-          por isso. Seria injusto pedir-te que sentisses algo
-          que não nasceu em ti, só porque em mim cresceu tanto.
-          Mas não vou fingir que não dói. Há uma tristeza
-          muito particular em querer fazer parte da felicidade
-          de alguém e, ao mesmo tempo, ter de aceitar que
-          talvez nunca sejamos nós a razão por detrás dela.
-        </p>
-
-        <p>
-          Às vezes, dou por mim a imaginar como seria se
-          as coisas fossem diferentes. Se, por uma vez, os teus
-          olhos procurassem os meus com a mesma intenção com
-          que os meus procuram os teus. Se pudesse aproximar-me
-          sem ter de me perguntar se estou a ultrapassar algum
-          limite, se pudesse dizer que tenho saudades tuas sem
-          precisar de inventar uma desculpa para isso.
-          Imagino como seria ser alguém em quem pensas antes
-          de adormecer, alguém a quem procuras quando o teu
-          dia corre mal, alguém que conheces tão bem que até
-          o silêncio se torna confortável. E depois volto à
-          realidade, onde todas essas pequenas coisas são apenas
-          possibilidades que nunca me pertenceram.
-        </p>
-
-        <p>
-          Mas talvez, um dia, eu também encontre alguém.
-          Alguém que me olhe da mesma forma que eu tantas
-          vezes desejei que tu me olhasses. Alguém que não
-          me deixe a imaginar o que poderia ter sido, porque
-          estará ali, a construir comigo aquilo que nunca
-          precisei de inventar. Talvez descubra que existe
-          um amor capaz de me devolver tudo aquilo que pensei
-          que só poderia sentir por ti, e que, afinal, pode
-          ser ainda maior. Não porque o que sinto agora
-          tenha sido pouco, mas porque talvez ainda não tenha
-          conhecido a forma mais bonita de ser amada.
-        </p>
-
-        <p>
-          É estranho pensar que posso desejar encontrar alguém
-          que me ame da mesma forma que eu amo, enquanto
-          uma parte de mim ainda espera que sejas tu.
-          Talvez seja contraditório, talvez seja apenas humano.
-          Não sei como se aprende a deixar espaço para alguém
-          novo quando ainda existem sentimentos que não
-          encontraram um lugar para descansar. Mas quero
-          acreditar que, um dia, não precisarei de imaginar
-          como seria ser escolhida. Talvez alguém me escolha
-          sem hesitar, e eu descubra que o amor não precisa
-          de ser uma pergunta à qual nunca recebi resposta.
-        </p>
-
-        <p>
-          Talvez amar também seja isto: aprender a deixar ir,
-          mesmo quando uma parte de nós ainda deseja ficar.
-          Durante tanto tempo, pensei que perder a possibilidade
-          de te ter significava perder algo que nunca mais
-          encontraria. Mas talvez esteja a confundir o fim
-          de uma possibilidade com o fim de todas as outras.
-          Talvez, ao deixar de esperar por ti, não esteja
-          a fechar a porta ao amor, mas a abrir espaço para
-          algo que ainda não consigo imaginar. E quem sabe
-          se, um dia, aquilo que vier não será muito mais
-          forte do que tudo aquilo que pensei que precisava
-          de viver contigo.
-        </p>
-
-        <p>
-          Não sei que forma terá, nem quem será.
-          Talvez seja um amor, talvez uma amizade, talvez
-          uma oportunidade que ainda não consigo reconhecer.
-          Mas quero deixar de acreditar que a felicidade
-          tem apenas uma forma, ou que o amor só pode
-          acontecer uma vez, com uma única pessoa.
-        </p>
-
-        <p>
-          Por isso, não te escrevo para me despedir de ti.
-          Não preciso de apagar o que senti, nem de fingir
-          que nunca foste importante. Escrevo para me despedir
-          da espera, das possibilidades que construí sozinha,
-          da esperança de que um dia me olhasses e encontrasses
-          em mim aquilo que nunca procuraste.
-        </p>
-
-        <p>
-          Levo comigo o que este sentimento me ensinou.
-          E deixo contigo aquilo que nunca foi meu para guardar.
-        </p>
-
-        <p>
-          Talvez nunca saibas o quanto te amei.
-          Talvez nunca precises de saber.
-        </p>
-
-        <p>
-          Mas eu sei.
-        </p>
-
-        <p>
-          E, pela primeira vez, isso é suficiente.
-        </p>
-
-        <p>
-          Não sei o que vem a seguir.
-          Mas estou preparada para descobrir.
-        </p>
-
-        <p>
-          Adeus ao amor que esperei.
-        </p>
-
-        <p>
-          E olá a tudo aquilo que ainda pode ser.
-        </p>
-
-      </div>
-
-      <hr class="modal-divider">
-
-      <h2>
-        Goodbye to the Love I Waited For
-      </h2>
-
-      <p class="modal-language">
-        English
-      </p>
-
-      <div class="modal-text">
-
-        <p>
-          I am not writing to ask you to feel the same.
-          I am writing because I no longer want to pretend
-          that I feel nothing.
-        </p>
-
-        <p>
-          Perhaps you never realised the place you came to
-          occupy within me. It did not happen all at once,
-          and there was no exact moment I could point to
-          and say: it was here. It was the little things,
-          the conversations that stayed with me long after
-          they ended, the way I began to find you in thoughts
-          where I had not even been looking for you.
-        </p>
-
-        <p>
-          There is something that makes all of this harder:
-          I know your heart has already found a place where
-          it wants to stay, and that place is not with me.
-          I do not blame you for that. It would be unfair
-          to ask you to feel something that never grew within
-          you simply because it grew so much within me.
-          But I will not pretend it does not hurt. There
-          is a particular sadness in wanting to be part of
-          someone's happiness while accepting that we may
-          never be the reason behind it.
-        </p>
-
-        <p>
-          Sometimes, I find myself imagining what it would
-          be like if things were different. If, just once,
-          your eyes searched for mine with the same intention
-          with which mine search for yours. If I could come
-          closer without wondering whether I was crossing
-          a line, if I could tell you I miss you without
-          having to invent an excuse. I imagine what it
-          would be like to be someone you think of before
-          falling asleep, someone you turn to when your
-          day goes wrong, someone you know so well that
-          even silence feels comfortable. And then I return
-          to reality, where all those little things are
-          only possibilities that never belonged to me.
-        </p>
-
-        <p>
-          But perhaps, one day, I will find someone too.
-          Someone who looks at me the way I so often
-          wished you would. Someone who does not leave me
-          wondering what might have been, because they
-          will be there, building with me something I never
-          had to invent. Perhaps I will discover a love
-          capable of giving me everything I thought I could
-          only feel for you, and perhaps it will be even
-          greater. Not because what I feel now was too
-          little, but because I may not yet have known
-          the most beautiful way of being loved.
-        </p>
-
-        <p>
-          It is strange to think that I can wish to find
-          someone who loves me the way I love, while a
-          part of me still hopes it will be you. Perhaps
-          it is contradictory. Perhaps it is simply human.
-          I do not know how to make room for someone new
-          when there are still feelings that have nowhere
-          to rest. But I want to believe that, one day,
-          I will no longer have to imagine what it feels
-          like to be chosen. Perhaps someone will choose
-          me without hesitation, and I will discover that
-          love does not have to be a question to which
-          I never received an answer.
-        </p>
-
-        <p>
-          Perhaps loving is also this: learning to let go,
-          even when a part of us still wants to stay.
-          For so long, I thought losing the possibility
-          of having you meant losing something I would
-          never find again. But perhaps I have been
-          confusing the end of one possibility with the
-          end of all the others. Perhaps, by no longer
-          waiting for you, I am not closing the door
-          on love, but making room for something I cannot
-          yet imagine. And who knows if, one day, what
-          comes next will be much stronger than everything
-          I thought I needed to experience with you.
-        </p>
-
-        <p>
-          I do not know what shape it will take, or who
-          it will be. Perhaps it will be love, perhaps
-          friendship, perhaps an opportunity I cannot
-          yet recognise. But I want to stop believing
-          that happiness has only one form, or that
-          love can happen only once, with only one person.
-        </p>
-
-        <p>
-          So I am not writing to say goodbye to you.
-          I do not need to erase what I felt, or pretend
-          you were never important. I am writing to say
-          goodbye to the waiting, to the possibilities
-          I built on my own, to the hope that one day
-          you would look at me and find something you
-          never searched for.
-        </p>
-
-        <p>
-          I will carry with me what this feeling has
-          taught me. And I will leave with you what
-          was never mine to keep.
-        </p>
-
-        <p>
-          Perhaps you will never know how much I loved you.
-          Perhaps you will never need to know.
-        </p>
-
-        <p>
-          But I know.
-        </p>
-
-        <p>
-          And for the first time, that is enough.
-        </p>
-
-        <p>
-          I do not know what comes next.
-          But I am ready to find out.
-        </p>
-
-        <p>
-          Goodbye to the love I waited for.
-        </p>
-
-        <p>
-          And hello to everything that still might be.
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- MODAL SCRIPT -->
-
+  <!-- PROJECT PAGE INTERACTIONS -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
 
-      const openButtons = document.querySelectorAll("[data-open-writing]");
       const modals = document.querySelectorAll(".writing-modal");
-      let previousFocus = null;
 
-      function openModal(modal) {
+      const openButtons = document.querySelectorAll(
+        "[data-open-modal]"
+      );
+
+      const closeButtons = document.querySelectorAll(
+        "[data-close-modal]"
+      );
+
+
+      function openModal(modalId) {
+
+        const modal = document.getElementById(modalId);
+
         if (!modal) return;
 
-        previousFocus = document.activeElement;
-
         modal.classList.add("is-open");
-        document.body.classList.add("modal-open");
 
-        const closeButton = modal.querySelector(".writing-modal-close");
+        document.body.style.overflow = "hidden";
 
-        if (closeButton) {
-          closeButton.focus();
-        }
       }
 
+
       function closeModal(modal) {
+
         if (!modal) return;
 
         modal.classList.remove("is-open");
-        document.body.classList.remove("modal-open");
 
-        if (previousFocus) {
-          previousFocus.focus();
-        }
+        document.body.style.overflow = "";
+
       }
+
 
       openButtons.forEach(function (button) {
 
         button.addEventListener("click", function () {
 
-          const writingType = button.getAttribute("data-open-writing");
-          const modal = document.getElementById(writingType + "-modal");
+          const modalId = button.getAttribute(
+            "data-open-modal"
+          );
 
-          openModal(modal);
+          openModal(modalId);
 
         });
 
       });
 
+
+      closeButtons.forEach(function (button) {
+
+        button.addEventListener("click", function () {
+
+          const modal = button.closest(".writing-modal");
+
+          closeModal(modal);
+
+        });
+
+      });
+
+
       modals.forEach(function (modal) {
-
-        const closeButton = modal.querySelector(".writing-modal-close");
-
-        if (closeButton) {
-          closeButton.addEventListener("click", function () {
-            closeModal(modal);
-          });
-        }
 
         modal.addEventListener("click", function (event) {
 
           if (event.target === modal) {
+
             closeModal(modal);
+
           }
 
         });
 
       });
+
 
       document.addEventListener("keydown", function (event) {
 
@@ -1374,9 +1027,7 @@
 
           modals.forEach(function (modal) {
 
-            if (modal.classList.contains("is-open")) {
-              closeModal(modal);
-            }
+            closeModal(modal);
 
           });
 
@@ -1384,10 +1035,15 @@
 
       });
 
-      const year = document.getElementById("year");
 
-      if (year) {
-        year.textContent = new Date().getFullYear();
+      const yearElement = document.getElementById(
+        "current-year"
+      );
+
+      if (yearElement) {
+
+        yearElement.textContent = new Date().getFullYear();
+
       }
 
     });
@@ -1395,3 +1051,4 @@
 
 </body>
 </html>
+
