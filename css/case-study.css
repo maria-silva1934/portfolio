@@ -1252,3 +1252,45 @@ body.lightbox-open {
     transition: none;
   }
 }
+
+
+/* Creative Writing — consistent content alignment */
+
+.case-body {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.case-body-inner {
+    width: min(100% - 48px, 848px);
+    max-width: 848px;
+    margin-inline: auto;
+    box-sizing: border-box;
+}
+
+.case-body-inner .case-section {
+    width: 100%;
+    max-width: 100%;
+    margin-inline: 0;
+    box-sizing: border-box;
+}
+
+.case-body-inner .case-section .listing-block-text {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.case-body-inner .case-section + .case-section {
+    margin-top: 72px;
+}
+
+@media (max-width: 600px) {
+    .case-body-inner {
+        width: calc(100% - 32px);
+    }
+
+    .case-body-inner .case-section + .case-section {
+        margin-top: 48px;
+    }
+}
