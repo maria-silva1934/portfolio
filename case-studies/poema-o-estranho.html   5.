@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>The Stranger I Knew Best | Maria Silva</title>
+
+  <meta name="description" content="The Stranger I Knew Best — original poetry by Maria Silva, presented in Portuguese and English.">
+
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/case-study.css">
+
+  <style>
+    .literary-page {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 100px 24px 120px;
+    }
+
+    .literary-heading {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .literary-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+    }
+
+    .literary-heading h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .literary-subtitle {
+      opacity: 0.7;
+      font-size: 1rem;
+    }
+
+    .literary-language {
+      margin-bottom: 75px;
+    }
+
+    .literary-language h2 {
+      font-family: Georgia, serif;
+      font-size: 1.7rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+
+    .literary-language .language-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.65;
+      margin-bottom: 30px;
+    }
+
+    .poem-text {
+      font-family: Georgia, serif;
+      font-size: 1.15rem;
+      line-height: 2;
+      white-space: pre-line;
+    }
+
+    .literary-divider {
+      width: 70px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.25;
+      margin: 70px auto;
+    }
+
+    .literary-back {
+      text-align: center;
+      margin-top: 70px;
+    }
+
+    .literary-back a {
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .literary-page {
+        padding: 70px 20px 90px;
+      }
+
+      .poem-text {
+        font-size: 1.05rem;
+      }
+
+      .literary-language {
+        margin-bottom: 55px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main id="main" class="literary-page">
+
+    <header class="literary-heading">
+      <p class="literary-label">Poetry · Creative Writing</p>
+
+      <h1>The Stranger I Knew Best</h1>
+
+      <p class="literary-subtitle">
+        A poem about silence, distance, and what remains
+      </p>
+    </header>
+
+    <section class="literary-language">
+
+      <h2>The Stranger I Knew Best</h2>
+
+      <p class="language-label">English</p>
+
+      <div class="poem-text">Beneath my tongue, I found your name,
+amidst the nothing that once was everything.
+From the words that surrounded us
+to the moments that left us behind.
+
+And in separate rooms,
+in distant places,
+the walls lean closer,
+just to hear what neither heart
+would dare to confess.
+
+It is not your ghost that frightens me—
+it is the way I loved your emptiness.
+
+Among strangers,
+we, too, shall be strangers.
+And if our shadows meet
+amid a sea of faces,
+you will be the stranger
+I knew best.
+
+Some truths will be dark,
+and dark they will remain,
+for once, they were truths.</div>
+
+    </section>
+
+    <div class="literary-divider"></div>
+
+    <section class="literary-language">
+
+      <h2>O Estranho que Melhor Conheci</h2>
+
+      <p class="language-label">Português</p>
+
+      <div class="poem-text">Sob a minha língua encontrei o teu nome
+Em meio de nada que já tudo foi
+Das palavras que nos cercaram,
+Aos momentos que nos deixaram.
+
+E em quartos separados,
+Em lugares distantes,
+As paredes inclinadas,
+só para que ouçam... o que nenhum dos corarações
+ousaria confessar.
+Não é o teu fantasma que me dá medo
+É a forma como amei o teu vazio.
+
+No meio de estranhos,
+Dois estranhos seremos
+E se as nossas sombras se encontrarem
+Em meio a multidões,
+Serás o estranho que eu melhor conheci
+
+Algumas verdades serão sombrias
+E sombrias serão pois um dia já foram verdades.</div>
+
+    </section>
+
+    <div class="literary-back">
+      <a href="../projects.html">← Back to Projects</a>
+    </div>
+
+  </main>
+
+  <script src="../js/main.js"></script>
+
+</body>
+</html>
