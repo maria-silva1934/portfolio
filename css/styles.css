@@ -1018,3 +1018,10 @@ ul {
 .contact .final-cta .section-intro { margin-left: auto; margin-right: auto; }
 .contact .final-cta .section-title { text-align: center; }
 .contact .final-cta .final-cta-actions { justify-content: center; }
+
+.contact-title {
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
