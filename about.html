@@ -1,286 +1,719 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>About | Maria Silva</title>
+  <!-- Primary SEO -->
+  <title>About — Maria Silva</title>
 
-    <meta name="description" content="Learn more about Maria Silva, a digital creator working across web design, AI-assisted creativity, visual content and digital projects.">
+  <meta
+    name="description"
+    content="Portfolio of Maria Silva — Creative Technologist, Digital Creator and Visual Artist working across AI, visual content, video, digital products and e-commerce."
+  >
 
-    <link rel="stylesheet" href="css/styles.css">
+  <meta name="author" content="Maria Silva">
+  <meta name="robots" content="index, follow">
 
-    <script src="js/main.js" defer></script>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta
+    property="og:title"
+    content="Maria Silva — Creative Technologist · Digital Creator · Visual Artist"
+  >
+  <meta
+    property="og:description"
+    content="AI, visual content, video, digital products, e-commerce and independent creative projects."
+  >
+  <meta
+    property="og:url"
+    content="https://maria-silva1934.github.io/portfolio/"
+  >
+  <meta property="og:site_name" content="Maria Silva Portfolio">
 
-    <style>
-        .about-page {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 80px 24px;
-        }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta
+    name="twitter:title"
+    content="Maria Silva — Creative Technologist · Digital Creator · Visual Artist"
+  >
+  <meta
+    name="twitter:description"
+    content="AI, visual content, video, digital products, e-commerce and independent creative projects."
+  >
 
-        .about-hero {
-            max-width: 850px;
-            margin-bottom: 80px;
-        }
+  <!-- Favicon -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a1a1a'/><text x='50' y='68' font-size='52' font-family='Georgia, serif' fill='%23faf9f7' text-anchor='middle'>M</text></svg>"
+  >
 
-        .about-hero h1 {
-            font-size: clamp(2.5rem, 6vw, 5rem);
-            line-height: 1.1;
-            margin-bottom: 30px;
-        }
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
 
-        .about-hero p {
-            font-size: 1.15rem;
-            line-height: 1.9;
-            opacity: 0.8;
-        }
+  <!-- Small homepage-specific additions -->
+  <style>
 
-        .about-section {
-            margin-bottom: 70px;
-        }
+    /* ================================
+       HOMEPAGE STRATEGIC LAYOUT
+       ================================ */
 
-        .about-section h2 {
-            font-size: 2rem;
-            margin-bottom: 24px;
-        }
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+    }
 
-        .about-section p {
-            max-width: 750px;
-            line-height: 1.9;
-            opacity: 0.8;
-        }
+    .hero-inner {
+      max-width: 980px;
+    }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 24px;
-        }
+    .hero-eyebrow {
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
 
-        .about-card {
-            padding: 30px;
-            border: 1px solid rgba(128, 128, 128, 0.25);
-            border-radius: 16px;
-        }
+    .hero-title {
+      margin-bottom: 0.5rem;
+    }
 
-        .about-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 16px;
-        }
+    .hero-subtitle {
+      max-width: 850px;
+      line-height: 1.35;
+    }
 
-        .about-card p {
-            line-height: 1.8;
-            opacity: 0.8;
-        }
+    .hero-intro {
+      max-width: 720px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
 
-        .about-skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 25px;
-        }
+    .hero-pathways {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+      max-width: 900px;
+    }
 
-        .about-skills span {
-            padding: 9px 15px;
-            border: 1px solid rgba(128, 128, 128, 0.3);
-            border-radius: 30px;
-            font-size: 0.9rem;
-        }
+    .hero-pathway {
+      display: block;
+      padding: 1.35rem;
+      border: 1px solid rgba(0,0,0,0.12);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
 
-        .about-cta {
-            padding: 40px;
-            border: 1px solid rgba(128, 128, 128, 0.25);
-            border-radius: 16px;
-        }
+    .hero-pathway:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0,0,0,0.35);
+    }
 
-        .about-cta h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
+    .pathway-label {
+      display: block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.5rem;
+      opacity: 0.65;
+    }
 
-        .about-cta p {
-            line-height: 1.8;
-            margin-bottom: 25px;
-        }
+    .pathway-title {
+      display: block;
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
 
-        @media (max-width: 700px) {
-            .about-page {
-                padding: 50px 20px;
-            }
+    .pathway-description {
+      display: block;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      opacity: 0.72;
+    }
 
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
+/* ================================
+   WHAT I BRING
+   ================================ */
 
-            .about-card {
-                padding: 24px;
-            }
+.bring-list {
+  max-width: 900px;
+  margin: 2rem auto 0;
+}
 
-            .about-cta {
-                padding: 28px;
-            }
-        }
-    </style>
+.bring-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bring-list li {
+  position: relative;
+  padding: 0 0 1.15rem 1.5rem;
+  margin-bottom: 1.15rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.bring-list li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.55;
+}
+
+/* ================================
+   PROJECTS & VENTURES
+   ================================ */
+
+.venture-focus {
+  margin-top: 1.25rem;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  opacity: 0.72;
+}
+
+.venture-focus strong {
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.ventures-cta {
+  max-width: 760px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.ventures-cta p {
+  margin: 0 0 1.25rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+    /* ================================
+       SERVICES
+       ================================ */
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    .service-card {
+      padding: 1.6rem;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .service-number {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      opacity: 0.55;
+      margin-bottom: 1.5rem;
+    }
+
+    .service-title {
+      margin-bottom: 0.75rem;
+    }
+
+    .service-description {
+      line-height: 1.65;
+      font-size: 0.92rem;
+    }
+
+    .service-list {
+      margin-top: 1rem;
+      padding-left: 1rem;
+    }
+
+    .service-list li {
+      margin-bottom: 0.35rem;
+      font-size: 0.85rem;
+    }
+
+    /* ================================
+       WORK / PROJECT CATEGORIES
+       ================================ */
+
+    .work-intro {
+      max-width: 760px;
+    }
+
+    .project-category {
+      margin-top: 3.5rem;
+    }
+
+    .project-category:first-child {
+      margin-top: 2rem;
+    }
+
+    .project-category-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .project-category-heading h3 {
+      margin: 0;
+      font-size: 1.25rem;
+    }
+
+    .project-category-heading span {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.55;
+    }
+
+    /* ================================
+       VENTURES
+       ================================ */
+
+    .ventures-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .venture-card {
+      padding: 1.75rem;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .venture-status {
+      display: inline-block;
+      margin-bottom: 1rem;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      opacity: 0.55;
+    }
+
+    .venture-title {
+      margin-bottom: 0.75rem;
+    }
+
+    .venture-description {
+      line-height: 1.7;
+      font-size: 0.92rem;
+    }
+
+    /* ================================
+       THAILAND SECTION
+       ================================ */
+
+    .international-box {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: start;
+      padding: 2rem;
+      border: 1px solid rgba(0,0,0,0.12);
+    }
+
+    .international-text p {
+      line-height: 1.75;
+    }
+
+    .international-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .international-list li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .international-list li:last-child {
+      border-bottom: none;
+    }
+
+    /* ================================
+       CTA
+       ================================ */
+
+    .final-cta {
+      text-align: center;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .final-cta .section-intro {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .final-cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    /* ================================
+   CONTACT DETAILS
+   ================================ */
+
+.contact-details {
+  max-width: 760px;
+  margin: 2.5rem auto 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.contact-details .contact-name {
+  margin: 0 0 0.35rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+}
+
+.contact-details .contact-location {
+  margin: 0 0 0.9rem;
+  font-size: 0.88rem;
+  opacity: 0.65;
+}
+
+.contact-details .contact-email {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ================================
+   EXPERIENCE GROUPS / CERTIFICATIONS
+   ================================ */
+
+.experience-group {
+  margin-top: 3rem;
+}
+
+.experience-group-label {
+  margin-bottom: 1.25rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  opacity: 0.55;
+}
+
+.certifications {
+  padding-top: 0.5rem;
+}
+
+.certifications-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.certification-item {
+  padding: 0.65rem 0.9rem;
+  border: 1px solid rgba(0,0,0,0.1);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.experience-summary {
+  max-width: 760px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.experience-summary p {
+  margin: 0;
+  line-height: 1.75;
+  font-size: 0.95rem;
+  opacity: 0.78;
+}
+
+/* ================================
+   SERVICE FIT / CUSTOM CTA
+   ================================ */
+
+.service-fit {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  opacity: 0.72;
+}
+
+.service-fit strong {
+  opacity: 1;
+}
+
+.service-note {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.service-note p {
+  margin: 0;
+  max-width: 680px;
+  line-height: 1.65;
+}
+
+@media (max-width: 600px) {
+
+  .service-note {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
+    /* ================================
+       RESPONSIVE
+       ================================ */
+
+    @media (max-width: 900px) {
+
+      .hero-pathways,
+      .services-grid,
+      .ventures-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .international-box {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      .hero {
+        min-height: auto;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+      }
+
+      .hero-pathways,
+      .services-grid,
+      .ventures-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-actions .btn {
+        text-align: center;
+      }
+
+      .project-category-heading {
+        display: block;
+      }
+
+      .project-category-heading span {
+        display: block;
+        margin-top: 0.35rem;
+      }
+
+    }
+
+  </style>
 </head>
-
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header class="site-header" id="top">
 
-    <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html" aria-current="page">About</a>
-            <a href="services.html">Services</a>
-            <a href="projects.html">Projects</a>
-            <a href="thumbnail.html">Thumbnails</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
+    <div class="container header-inner">
 
-    <main class="about-page">
+      <a
+        class="brand"
+        href="index.html"
+        aria-label="Maria Silva — back to top"
+      >
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span class="brand-name">Maria Silva</span>
+      </a>
 
-        <section class="about-hero">
 
-            <p>ABOUT ME</p>
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        aria-expanded="false"
+        aria-controls="primaryNav"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
 
-            <h1>Curiosity drives my creativity.</h1>
 
-            <p>
-                I'm Maria Silva, a digital creator interested
-                in the intersection of creativity, technology
-                and practical digital solutions.
+      <nav class="primary-nav" id="primaryNav" aria-label="Primary navigation"><ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="experience.html">Experience</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
 
-                My work brings together web design,
-                visual content, AI-assisted creativity
-                and digital projects.
-            </p>
+    </div>
 
-        </section>
+  </header>
+<main id="main">
+<section
+      class="section about"
+      id="about"
+      aria-labelledby="about-title"
+    >
 
-        <section class="about-section">
+      <div class="container">
 
-            <h2>A little about my approach</h2>
+        <p class="section-label reveal">
+          About
+        </p>
 
-            <p>
-                I enjoy exploring ideas, learning new tools
-                and turning concepts into something tangible.
 
-                Whether I'm building a website,
-                developing visual content or working
-                on a digital project, I focus on combining
-                creativity with functionality.
+        <h2
+          class="section-title reveal"
+          id="about-title"
+        >
+          A creative and practical approach to digital work
+        </h2>
 
-                I believe good digital work should
-                communicate clearly, feel intentional
-                and serve a real purpose.
-            </p>
 
-        </section>
+        <div class="about-grid">
 
-        <section class="about-section">
 
-            <h2>What I work with</h2>
-
-            <div class="about-grid">
-
-                <article class="about-card">
-
-                    <h3>Creative & Visual</h3>
-
-                    <p>
-                        Developing visual concepts,
-                        digital artwork and creative
-                        content using traditional
-                        design principles and AI tools.
-                    </p>
-
-                </article>
-
-                <article class="about-card">
-
-                    <h3>Web & Digital</h3>
-
-                    <p>
-                        Building websites and exploring
-                        digital solutions that help
-                        businesses and creators
-                        establish an online presence.
-                    </p>
-
-                </article>
-
-                <article class="about-card">
-
-                    <h3>Digital Projects</h3>
-
-                    <p>
-                        Working across e-commerce,
-                        digital products and online
-                        content, with an interest
-                        in practical and creative
-                        applications.
-                    </p>
-
-                </article>
-
-                <article class="about-card">
-
-                    <h3>Continuous Learning</h3>
-
-                    <p>
-                        Exploring new technologies,
-                        experimenting with workflows
-                        and developing skills through
-                        independent projects.
-                    </p>
-
-                </article>
-
-            </div>
-
-        </section>
-
-        <section class="about-section">
-
-            <h2>Skills & interests</h2>
-
-            <div class="about-skills">
-
-                <span>Web Design</span>
-                <span>HTML & CSS</span>
-                <span>AI Image Generation</span>
-                <span>Visual Content</span>
-                <span>Graphic Design</span>
-                <span>Video Editing</span>
-                <span>E-commerce</span>
-                <span>Digital Products</span>
-                <span>Creative Research</span>
-
-            </div>
-
-        </section>
-
-        <section class="about-cta">
-
-            <p>HAVE A PROJECT IN MIND?</p>
-
-            <h2>Let's create something meaningful.</h2>
+          <div class="about-text reveal">
 
             <p>
-                I'm interested in creative collaborations
-                and digital projects where ideas
-                can become something real.
+              I'm based in <strong>Porto, Portugal</strong>, with a
+              professional background spanning customer-facing work,
+              operations, emergency response and international airport
+              passenger assistance.
             </p>
 
-            <a href="contact.html">Get in touch →</a>
+            <p>
+              Alongside my professional experience, I've developed
+              hands-on projects in <strong>AI, visual creation, video,
+              e-commerce, digital products and automation</strong>.
+            </p>
 
-        </section>
+            <p>
+              I enjoy turning ideas into practical digital projects —
+              from concept and research through creation, organization,
+              presentation and publication.
+            </p>
 
-    </main>
+            <p>
+              My goal is to work internationally, collaborate with
+              businesses and clients, and develop independent projects
+              with long-term potential.
+            </p>
 
-    <footer>
-        <p>© Maria Silva</p>
-    </footer>
+          </div>
 
+
+          <aside
+            class="about-facts reveal"
+            aria-label="Quick facts"
+          >
+
+            <ul class="facts-list">
+
+              <li>
+                <span class="fact-label">
+                  Based in
+                </span>
+
+                <span class="fact-value">
+                  Porto, Portugal
+                </span>
+              </li>
+
+
+              <li>
+                <span class="fact-label">
+                  Direction
+                </span>
+
+                <span class="fact-value">
+                  International
+                </span>
+              </li>
+
+
+              <li>
+                <span class="fact-label">
+                  Work
+                </span>
+
+                <span class="fact-value">
+                  Freelance · Employment
+                </span>
+              </li>
+
+
+              <li>
+                <span class="fact-label">
+                  Projects
+                </span>
+
+                <span class="fact-value">
+                  Independent · Digital
+                </span>
+              </li>
+
+
+              <li>
+                <span class="fact-label">
+                  Languages
+                </span>
+
+                <span class="fact-value">
+                  PT · ES · EN · TH
+                </span>
+              </li>
+
+            </ul>
+
+          </aside>
+
+        </div>
+
+      </div>
+
+    </section>
+</main>
+<footer class="site-footer">
+
+    <div class="container footer-inner">
+
+      <p class="footer-note">
+Built through creative, digital and independent project work.
+      </p>
+
+      <p class="footer-copy">
+        © <span id="year">2026</span> Maria Silva
+      </p>
+
+    </div>
+
+  </footer>
+<script src="js/main.js"></script>
 </body>
 </html>
