@@ -1,311 +1,544 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a1a1a'/><text x='50' y='68' font-size='52' font-family='Georgia, serif' fill='%23faf9f7' text-anchor='middle'>M</text></svg>">
 
-  <link rel="icon" type="image/png" href="../assets/images/favicon.png">
-  <link rel="icon" type="image/png" href="../assets/favicon.png">
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Maria Silva">
+  <meta name="description" content="Poemas, escrita pessoal e narrativa original de Maria Silva, escritos em português e acompanhados de adaptações literárias em inglês.">
 
-  <title>Creative Writing & Storytelling — Maria Silva</title>
+  <title>Escrita Criativa — Maria Silva</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a1a1a'/><text x='50' y='68' font-size='52' font-family='Georgia,serif' fill='%23faf9f7' text-anchor='middle'>M</text></svg>">
 
   <link rel="stylesheet" href="../css/styles.css">
-  <link rel="stylesheet" href="../css/case-study.css">
+
+  <style>
+    :root {
+      --literary-bg: #f8f6f3;
+      --literary-text: #292725;
+      --literary-muted: #77716c;
+      --literary-accent: #81718c;
+      --literary-soft: rgba(129, 113, 140, 0.055);
+      --literary-line: rgba(80, 70, 80, 0.18);
+    }
+
+    body {
+      background: var(--literary-bg);
+      color: var(--literary-text);
+    }
+
+    .literary-page {
+      width: min(100% - 40px, 900px);
+      margin-inline: auto;
+      padding: 70px 0 90px;
+    }
+
+    .literary-back {
+      display: inline-block;
+      margin-bottom: 65px;
+      color: inherit;
+      font-size: 0.9rem;
+      text-decoration: none;
+      opacity: 0.75;
+      transition: opacity 0.2s ease;
+    }
+
+    .literary-back:hover {
+      opacity: 1;
+    }
+
+    .literary-heading {
+      text-align: center;
+      margin: 0 auto 70px;
+      max-width: 740px;
+    }
+
+    .literary-eyebrow {
+      color: var(--literary-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.72rem;
+      margin-bottom: 22px;
+    }
+
+    .literary-heading h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      line-height: 1.15;
+      font-weight: 400;
+      letter-spacing: -0.035em;
+      margin: 0 0 24px;
+    }
+
+    .literary-intro {
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1rem;
+      line-height: 1.9;
+      color: var(--literary-muted);
+    }
+
+    .literary-intro p {
+      margin: 0 0 15px;
+    }
+
+    .literary-work {
+      margin: 0 0 76px;
+      padding: 34px clamp(20px, 5vw, 54px);
+      background: var(--literary-soft);
+      border-top: 1px solid var(--literary-line);
+      border-bottom: 1px solid var(--literary-line);
+      border-radius: 2px;
+    }
+
+    .work-type {
+      color: var(--literary-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.7rem;
+      margin: 0 0 14px;
+    }
+
+    .work-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.65rem, 3.5vw, 2.25rem);
+      line-height: 1.3;
+      font-weight: 400;
+      margin: 0 0 32px;
+    }
+
+    .work-language {
+      padding: 24px 0 30px;
+    }
+
+    .work-language + .work-language {
+      border-top: 1px solid var(--literary-line);
+    }
+
+    .language-heading {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--literary-accent);
+      margin: 0 0 10px;
+    }
+
+    .language-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      font-size: clamp(1.25rem, 2.7vw, 1.65rem);
+      line-height: 1.4;
+      margin: 0 0 25px;
+    }
+
+    .work-text {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.06rem;
+      line-height: 2;
+      overflow-wrap: anywhere;
+    }
+
+    .work-text p {
+      margin: 0 0 1.4em;
+    }
+
+    .work-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .work-credit {
+      margin-top: 28px;
+      color: var(--literary-muted);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+    }
+
+    .literary-divider {
+      width: 54px;
+      height: 1px;
+      background: var(--literary-accent);
+      opacity: 0.5;
+      margin: 0 auto 76px;
+    }
+
+    .literary-rights {
+      max-width: 680px;
+      margin: 90px auto 0;
+      padding-top: 28px;
+      border-top: 1px solid var(--literary-line);
+      text-align: center;
+      color: var(--literary-muted);
+      font-size: 0.83rem;
+      line-height: 1.9;
+    }
+
+    .literary-rights strong {
+      color: var(--literary-text);
+      font-weight: 500;
+    }
+
+    .literary-footer {
+      text-align: center;
+      margin-top: 35px;
+    }
+
+    .literary-footer a {
+      color: inherit;
+      text-decoration: none;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .literary-footer a:hover {
+      opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+      .literary-page {
+        width: min(100% - 28px, 900px);
+        padding: 42px 0 60px;
+      }
+
+      .literary-back {
+        margin-bottom: 48px;
+      }
+
+      .literary-heading {
+        margin-bottom: 48px;
+      }
+
+      .literary-work {
+        margin-bottom: 48px;
+        padding: 24px 18px;
+      }
+
+      .work-language {
+        padding: 20px 0 24px;
+      }
+
+      .work-text {
+        font-size: 1rem;
+        line-height: 1.9;
+      }
+
+      .literary-divider {
+        margin-bottom: 48px;
+      }
+
+      .literary-rights {
+        margin-top: 60px;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <main id="main" class="literary-page">
 
-  <main id="main">
-
-    <section class="case-body" aria-label="Creative Writing and Storytelling details">
-
-      <div class="container case-body-inner">
-
-     <!-- Case Study Hero -->
-<section class="case-hero" aria-label="Creative Writing and Storytelling introduction">
-  <div class="case-hero-inner">
-
-    <a class="case-back-link" href="../index.html">
-      ← Back to Projects
+    <a class="literary-back" href="../projects.html">
+      ← Voltar aos projetos
     </a>
 
-    <p class="case-category">Creative Writing / Storytelling</p>
+    <header class="literary-heading">
+      <p class="literary-eyebrow">Escrita criativa · Poesia · Narrativa</p>
 
-    <h1 class="case-title">Creative Writing &amp; Storytelling</h1>
+      <h1>Palavras que ficam</h1>
 
-    <p class="case-type">Creative Writing Portfolio</p>
-
-<p class="case-intro">
-    A selection of original poetry, emotional writing and narrative storytelling,
-    presented in Portuguese with English literary adaptations.
-</p>
-
-<p class="case-intro">
-    All texts and poems presented on this page are original works by Maria Silva.
-    Reproduction or redistribution without permission is not permitted.
-</p>
-
-<div class="case-section">
-
-    <p class="case-section-label">Poetry</p>
-
-    <h2 class="case-section-title">O Cárcere</h2>
-
-    <p class="listing-block-label">Português</p>
-
-    <div class="listing-block">
+      <div class="literary-intro">
         <p>
+          Esta página reúne uma seleção de poemas, textos pessoais e narrativas
+          originais escritos por mim, Maria Silva. A escrita nasce em português,
+          a língua em que encontro a voz, o ritmo e as palavras que melhor
+          traduzem aquilo que quero expressar.
+        </p>
+
+        <p>
+          Cada obra é apresentada primeiro na sua versão original em português,
+          seguida de uma adaptação literária em inglês. Estas adaptações procuram
+          preservar o sentido, a emoção e a intenção do texto original, respeitando
+          as particularidades de cada língua.
+        </p>
+
+        <p>
+          Mais do que traduções palavra por palavra, são duas formas de dar voz
+          à mesma obra.
+        </p>
+      </div>
+    </header>
+
+    
+    <!-- O CÁRCERE -->
+    <article class="literary-work">
+      <p class="work-type">Poesia</p>
+
+      <section class="work-language" lang="pt-PT">
+        <p class="language-heading">Português · Original</p>
+        <h2 class="language-title">O Cárcere</h2>
+
+        <div class="work-text">
+          <p>
             Num mundo vasto de gente,<br>
             há quem não sinta de verdade.<br>
             Tem o corpo como um mapa<br>
             e uma mente que arde.
-        </p>
+          </p>
+        </div>
+        <p class="work-credit">Escrito por Maria Silva · © 2026</p>
+      </section>
 
-        <p class="case-author">
-            Written by Maria Silva · © 2026
-        </p>
-    </div>
+      <section class="work-language" lang="en">
+        <p class="language-heading">English · Literary Adaptation</p>
+        <h2 class="language-title">The Prison</h2>
 
-    <p class="listing-block-label">English — Literary Adaptation</p>
-
-    <div class="listing-block">
-        <p>
+        <div class="work-text">
+          <p>
             In a vast world full of people,<br>
             there are those who do not truly feel.<br>
             Their body is a map,<br>
             and their mind is burning.
-        </p>
+          </p>
+        </div>
+        <p class="work-credit">Original written in Portuguese by Maria Silva · © 2026</p>
+      </section>
+    </article>
 
-        <p class="case-author">
-            Written by Maria Silva · © 2026
-        </p>
-    </div>
+    <!-- TIVE DOIS PAIS -->
+    <article class="literary-work">
+      <p class="work-type">Poesia · Excerto selecionado</p>
 
-</div>
-<div class="case-section">
+      <section class="work-language" lang="pt-PT">
+        <p class="language-heading">Português · Original</p>
+        <h2 class="language-title">Tive Dois Pais</h2>
 
-    <p class="case-section-label">Poetry — Selected Excerpt</p>
+        <div class="work-text">
+          <p>
+            Tive um pai que julguei odiar.<br>
+            Tive um pai que, afinal, só queria uma oportunidade.<br>
+            Tive um pai que partiu e,<br>
+            Anos depois, aprendi que eu podia amar.
+          </p>
 
-    <h2 class="case-section-title">Tive Dois Pais</h2>
+          <p>
+            Tive outro pai que se dedicou.<br>
+            Tive outro pai que eu tanto quis odiar,<br>
+            Que não aproveitou e não soube levar.<br>
+            Tive outro pai que partiu e ainda não aprendi a deixar para trás.
+          </p>
 
-    <p class="listing-block-label">Português</p>
+          <p>
+            Tive dois pais que partiram,<br>
+            Tive dois pais que, talvez, me amaram,<br>
+            Mas não souberam ser mais fortes<br>
+            Então, tive dois pais que achava conhecer,<br>
+            Mas escondiam tanto que, só eu não podia ver.
+          </p>
 
-    <div class="listing-block">
-<p>
-    Tive um pai que julguei odiar.<br>
-    Tive um pai que, afinal, só queria uma oportunidade.<br>
-    Tive um pai que partiu e,<br>
-    Anos depois, aprendi que eu podia amar.<br>
-    <br>
-    Tive outro pai que se dedicou.<br>
-    Tive outro pai que eu tanto quis odiar,<br>
-    Que não aproveitou e não soube levar.<br>
-    Tive outro pai que partiu e ainda não aprendi a deixar para trás.<br>
-    <br>
-    Tive dois pais que partiram,<br>
-    Tive dois pais que, talvez, me amaram,<br>
-    Mas não souberam ser mais fortes<br>
-    Então, tive dois pais que achava conhecer,<br>
-    Mas escondiam tanto que, só eu não podia ver.<br>
-    <br>
-    Dois pais que se foram,<br>
-    Dois pais que nada me disseram,<br>
-    Dois pais que me trouxeram dor,<br>
-    Mas um era doente e o outro doente quis ser.<br>
-    <br>
-    Dois homens diferentes,<br>
-    Que teriam um papel fundamental,<br>
-    Deixaram-se levar e apesar de bem,<br>
-    Fizeram-me bastante mal,<br>
-    <br>
-    Dois homens que, homens já não são<br>
-    E nada mais me resta, além de memórias e uma falsa sensação.
-</p>     
+          <p>
+            Dois pais que se foram,<br>
+            Dois pais que nada me disseram,<br>
+            Dois pais que me trouxeram dor,<br>
+            Mas um era doente e o outro doente quis ser.
+          </p>
 
+          <p>
+            Dois homens diferentes,<br>
+            Que teriam um papel fundamental,<br>
+            Deixaram-se levar e apesar de bem,<br>
+            Fizeram-me bastante mal,
+          </p>
 
-        <p class="case-author">
-            Written by Maria Silva · © 2026
-        </p>
-    </div>
+          <p>
+            Dois homens que, homens já não são<br>
+            E nada mais me resta, além de memórias e uma falsa sensação.
+          </p>
+        </div>
+        <p class="work-credit">Escrito por Maria Silva · © 2026</p>
+      </section>
 
-    <p class="listing-block-label">English — Literary Adaptation</p>
+      <section class="work-language" lang="en">
+        <p class="language-heading">English · Literary Adaptation</p>
+        <h2 class="language-title">I Had Two Fathers</h2>
 
-    <div class="listing-block">
-<p>
-    I had a father whom I thought I hated.<br>
-    I had a father who, in the end, only wanted a chance.<br>
-    I had a father who passed away and,<br>
-    years later, I learned that I could love.<br>
-    <br>
-    I had another father who devoted himself to me.<br>
-    I had another father whom I so desperately wanted to hate,<br>
-    who failed to make the most of it and did not know how to carry on.<br>
-    I had another father who passed away,<br>
-    and I still haven't learned how to leave him behind.<br>
-    <br>
-    I had two fathers who passed away,<br>
-    two fathers who perhaps loved me,<br>
-    but did not know how to be stronger.<br>
-    So I had two fathers I thought I knew,<br>
-    but they hid so much that I was the only one who could not see.<br>
-    <br>
-    Two fathers who were gone,<br>
-    two fathers who told me nothing,<br>
-    two fathers who brought me pain,<br>
-    but one was ill, and the other chose to become ill.<br>
-    <br>
-    Two different men,<br>
-    who would have played such a fundamental role,<br>
-    let themselves be carried away and, despite being well,<br>
-    caused me so much pain.<br>
-    <br>
-    Two men who are men no longer<br>
-    and nothing remains to me but memories and a false sense of certainty.
-</p>
+        <div class="work-text">
+          <p>
+            I had a father whom I thought I hated.<br>
+            I had a father who, in the end, only wanted a chance.<br>
+            I had a father who passed away and,<br>
+            years later, I learned that I could love.
+          </p>
 
-        <p class="case-author">
-            Written by Maria Silva · © 2026
-        </p>
-    </div>
-<div class="case-section">
+          <p>
+            I had another father who devoted himself to me.<br>
+            I had another father whom I so desperately wanted to hate,<br>
+            who failed to make the most of it and did not know how to carry on.<br>
+            I had another father who passed away,<br>
+            and I still haven't learned how to leave him behind.
+          </p>
 
-    <p class="case-section-label">Poetry</p>
+          <p>
+            I had two fathers who passed away,<br>
+            two fathers who perhaps loved me,<br>
+            but did not know how to be stronger.<br>
+            So I had two fathers I thought I knew,<br>
+            but they hid so much that I was the only one who could not see.
+          </p>
 
-    <h2 class="case-section-title">Chuva</h2>
+          <p>
+            Two fathers who were gone,<br>
+            two fathers who told me nothing,<br>
+            two fathers who brought me pain,<br>
+            but one was ill, and the other chose to become ill.
+          </p>
 
-    <p class="listing-block-label">Português</p>
+          <p>
+            Two different men,<br>
+            who would have played such a fundamental role,<br>
+            let themselves be carried away and, despite being well,<br>
+            caused me so much pain.
+          </p>
 
-    <div class="listing-block">
-        <p>
+          <p>
+            Two men who are men no longer<br>
+            and nothing remains to me but memories and a false sense of certainty.
+          </p>
+        </div>
+        <p class="work-credit">Original written in Portuguese by Maria Silva · © 2026</p>
+      </section>
+    </article>
+
+    <!-- CHUVA -->
+    <article class="literary-work">
+      <p class="work-type">Poesia</p>
+
+      <section class="work-language" lang="pt-PT">
+        <p class="language-heading">Português · Original</p>
+        <h2 class="language-title">Chuva</h2>
+
+        <div class="work-text">
+          <p>
             Amo a chuva, em casa ou perdida no mundo.<br>
             Se não tivesse corpo, seria a própria chuva —<br>
             e quando o meu tempo findar,<br>
             pintarei o céu com trovões luminosos<br>
             e chuvas que dançam.
-        </p>
+          </p>
+        </div>
+        <p class="work-credit">Escrito por Maria Silva · © 2026</p>
+      </section>
 
-        <p class="case-author">
-            Written by Maria Silva · © 2026
-        </p>
-    </div>
+      <section class="work-language" lang="en">
+        <p class="language-heading">English · Literary Adaptation</p>
+        <h2 class="language-title">Rain</h2>
 
-    <p class="listing-block-label">English — Literary Adaptation</p>
-
-    <div class="listing-block">
-        <p>
+        <div class="work-text">
+          <p>
             I love the rain, at home or lost somewhere in the world.<br>
             If I had no body, I would be the rain itself —<br>
             and when my time comes to an end,<br>
             I will paint the sky with luminous thunder<br>
             and dancing rain.
-        </p>
+          </p>
+        </div>
+        <p class="work-credit">Original written in Portuguese by Maria Silva · © 2026</p>
+      </section>
+    </article>
 
-        <p class="case-author">
-            Written by Maria Silva · © 2026
-        </p>
-    </div>
+    <!-- FRAGMENTOS DA VOZ -->
+    <article class="literary-work">
+      <p class="work-type">Escrita pessoal · Emocional</p>
 
-            </div>
+      <section class="work-language" lang="pt-PT">
+        <p class="language-heading">Português · Original</p>
+        <h2 class="language-title">Fragmentos da voz</h2>
 
-    </div>
-<div class="case-section">
-
-    <p class="case-section-label">Personal / Emotional Writing</p>
-
-    <h2 class="case-section-title">Fragmentos da voz</h2>
-
-    <p class="listing-block-label">Português — Selected Excerpts</p>
-
-    <div class="listing-block">
-        <p>
+        <div class="work-text">
+          <p>
             Cacos pequenos e invisíveis, como os de um copo que cai no chão
             numa casa cheia de gente onde todos olham para o barulho mas
             ninguém se levanta para ver quem se cortou.
-        </p>
+          </p>
 
-        <p>
+          <p>
             Fiquei quando a minha voz voltava para mim como eco num quarto fechado.
-        </p>
+          </p>
+        </div>
+        <p class="work-credit">Escrito por Maria Silva · © 2026</p>
+      </section>
 
-        <p class="case-author">
-            Written by Maria Silva · © 2026
-        </p>
-    </div>
+      <section class="work-language" lang="en">
+        <p class="language-heading">English · Literary Adaptation</p>
+        <h2 class="language-title">Fragments of a Voice</h2>
 
-    <p class="listing-block-label">English — Literary Adaptation</p>
-
-    <div class="listing-block">
-        <p>
+        <div class="work-text">
+          <p>
             Small, invisible shards, like those of a glass falling to the floor
             in a house full of people, where everyone looks towards the sound
             but no one gets up to see who has been cut.
-        </p>
+          </p>
 
-        <p>
+          <p>
             I stayed while my voice returned to me like an echo in a locked room.
-        </p>
+          </p>
+        </div>
+        <p class="work-credit">Original written in Portuguese by Maria Silva · © 2026</p>
+      </section>
+    </article>
 
-        <p class="case-author">
-            Written by Maria Silva · © 2026
-        </p>
-    </div>
+    <!-- O PEIXE QUE PEIXE NÃO QUERIA SER -->
+    <article class="literary-work">
+      <p class="work-type">Narrativa · Escrita criativa</p>
 
-</div>
-<div class="case-section">
+      <section class="work-language" lang="pt-PT">
+        <p class="language-heading">Português · Original</p>
+        <h2 class="language-title">O Peixe que Peixe Não Queria Ser</h2>
 
-    <p class="case-section-label">Creative Writing</p>
-
-    <h2 class="case-section-title">O Peixe que Peixe Não Queria Ser</h2>
-
-    <p class="listing-block-label">Português — Original</p>
-
-    <div class="listing-block">
-        <p>
+        <div class="work-text">
+          <p>
             O peixe que não pensava em nada mais, a não ser deixar de o ser.
             Os pensamentos eram como um tornado: giravam sempre em volta do mesmo.
             Por vezes acalmavam, quase desapareciam, mas nunca o abandonavam.
-        </p>
+          </p>
 
-        <p>
+          <p>
             Todos os dias alguém desaparecia.
             Uns eram engolidos por peixes maiores.
             Outros desapareciam dentro de redes que caíam do céu azul do mar,
             algo inexplicável para um peixe que nada mais conhecia, além de nadar.
-        </p>
+          </p>
 
-        <p>
+          <p>
             Havia quem lhe falasse de anzóis, ele suspirava e tentava imaginar o que seriam.
             Talvez uma forma de liberdade... Não, não podia ser.
             Todos falavam com tanto medo sobre isso que o pequeno peixe já não quis entender.
             Motores, enormes monstros que rasgavam o mar sem se importarem com quem
             encontrassem pelo caminho.
-        </p>
+          </p>
 
-        <p>
+          <p>
             Contaram-lhe sobre as sombras, mas sobre sombras sabia ele bem.
             A sombra que escondia uma caverna, o predador que passa acima dele
             e lhe rouba a luz por uns breves segundos.
             As sombras que mudavam de forma consoante a maré e a posição do sol.
             As sombras sempre lhe deram medo, talvez fosse esse o problema.
             Talvez o problema fosse ser peixe.
-        </p>
+          </p>
 
-        <p>
+          <p>
             Ele já vira gaivotas a sobrevoar as águas e a pousar sobre rochas.
             Já vira revoadas em que as aves voavam tão livres, parecendo não pertencerem
             a lado nenhum, senão a todo o lado que quisessem.
             Já vira pessoas a passear junto à costa e saltavam, corriam e brincavam.
-        </p>
+          </p>
 
-        <p>
+          <p>
             O pequeno peixe achava, na sua inocência, que acima da água não havia medo,
             que todos viviam em segurança.
             E assim o desejo de não ser peixe crescia a cada dia que passava.
-        </p>
+          </p>
 
-        <p>
+          <p>
             Mas, o que ele não sabia, era que, não era o mar que era perigoso.
             Era a vida.
             Cada criatura carregava um medo diferente.
@@ -313,65 +546,65 @@
             Outros de garras.
             Havia quem fugisse de guerras.
             E aqueles que fugiam de si próprios.
-        </p>
+          </p>
 
-        <p>
+          <p>
             E, naquele imenso oceano chamado vida, o pequeno peixe nunca percebeu que,
             mesmo deixando de ser peixe, continuaria a fugir.
-        </p>
+          </p>
+        </div>
+        <p class="work-credit">Escrito por Maria Silva · © 2026</p>
+      </section>
 
-        <p class="case-author">
-            Written by Maria Silva · © 2026
-        </p>
-    </div>
+      <section class="work-language" lang="en">
+        <p class="language-heading">English · Literary Adaptation</p>
+        <h2 class="language-title">The Fish Who Didn't Want to Be a Fish</h2>
 
-    <p class="listing-block-label">English — Literary Adaptation</p>
-
-    <div class="listing-block">
-        <p>
+        <div class="work-text">
+          <p>
             The fish thought of nothing but no longer wanting to be one.
             His thoughts were like a tornado: always circling around the same thing.
             Sometimes they calmed, almost disappeared, but they never left him.
-        </p>
+          </p>
 
-        <p>
+          <p>
             Every day, someone disappeared.
             Some were swallowed by larger fish.
             Others vanished into nets that fell from the blue sky above the sea,
             something inexplicable to a fish who knew nothing beyond swimming.
-        </p>
+          </p>
 
-        <p>
+          <p>
             Some spoke to him of hooks. He would sigh and try to imagine what they were.
             Perhaps a form of freedom...
             No, it could not be.
             Everyone spoke of them with such fear that the little fish no longer wanted to understand.
             Engines, enormous monsters that tore through the sea without caring who they found in their path.
-        </p>
+          </p>
 
-        <p>
+          <p>
             They told him about shadows, but shadows he knew well.
             The shadow that hid a cave, the predator passing above him and stealing his light
             for a few brief seconds.
             Shadows that changed shape with the tide and the position of the sun.
             Shadows had always frightened him. Perhaps that was the problem.
             Perhaps the problem was being a fish.
-        </p>
+          </p>
 
-        <p>
+          <p>
             He had seen seagulls flying over the water and resting on rocks.
             He had seen flocks of birds flying so freely, seeming to belong nowhere
             and everywhere they wished to go.
             He had seen people walking along the coast, jumping, running and playing.
-        </p>
+          </p>
 
-        <p>
+          <p>
             In his innocence, the little fish believed that above the water there was no fear,
             that everyone lived in safety.
             And so, with every passing day, his desire to no longer be a fish grew.
-        </p>
+          </p>
 
-        <p>
+          <p>
             But what he did not know was that it was not the sea that was dangerous.
             It was life.
             Every creature carried a different fear.
@@ -379,234 +612,229 @@
             Others from claws.
             Some fled from wars.
             And there were those who fled from themselves.
-        </p>
+          </p>
 
-        <p>
+          <p>
             And, in that immense ocean called life, the little fish never understood that,
             even if he stopped being a fish, he would still be running away.
-        </p>
-
-        <p class="case-author">
-            Written by Maria Silva · © 2026
-        </p>
-    </div>
+          </p>
+        </div>
+        <p class="work-credit">Original written in Portuguese by Maria Silva · © 2026</p>
+      </section>
+    </article>
 
     
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ADEUS AO AMOR QUE ESPEREI -->
+    <article class="literary-work">
+      <p class="work-type">Carta · Escrita pessoal</p>
 
-  <title>Goodbye to the Love I Waited For | Maria Silva</title>
+      <section class="work-language" lang="pt-PT">
+        <p class="language-heading">Português · Original</p>
+        <h2 class="language-title">Adeus ao Amor que Esperei</h2>
 
-  <meta name="description" content="Goodbye to the Love I Waited For — a personal literary letter by Maria Silva, presented in Portuguese and English.">
+        <div class="work-text">
+          <p>Não escrevo para te pedir que sintas o mesmo. Escrevo porque já não quero fingir que não sinto nada.</p>
 
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="stylesheet" href="../css/case-study.css">
+          <p>Talvez nunca tenhas percebido o lugar que foste ocupando em mim. Não aconteceu de repente, nem houve um momento exato em que pudesse apontar e dizer: foi aqui. Foram os pequenos detalhes, as conversas que ficaram comigo depois de terminarem, a maneira como, sem dar por isso, comecei a encontrar-te em pensamentos onde nem sequer te tinha procurado.</p>
 
-  <style>
-    .literary-page {
-      max-width: 850px;
-      margin: 0 auto;
-      padding: 100px 24px 120px;
-    }
+          <p>Há uma coisa que torna tudo isto mais difícil: sei que o teu coração já encontrou um lugar onde quer ficar, e esse lugar não é comigo. Não te culpo por isso. Seria injusto pedir-te que sentisses algo que não nasceu em ti, só porque em mim cresceu tanto. Mas não vou fingir que não dói. Há uma tristeza muito particular em querer fazer parte da felicidade de alguém e, ao mesmo tempo, ter de aceitar que talvez nunca sejamos nós a razão por detrás dela.</p>
 
-    .literary-heading {
-      text-align: center;
-      margin-bottom: 70px;
-    }
+          <p>Às vezes, dou por mim a imaginar como seria se as coisas fossem diferentes. Se, por uma vez, os teus olhos procurassem os meus com a mesma intenção com que os meus procuram os teus. Se pudesse aproximar-me sem ter de me perguntar se estou a ultrapassar algum limite, se pudesse dizer que tenho saudades tuas sem precisar de inventar uma desculpa para isso. Imagino como seria ser alguém em quem pensas antes de adormecer, alguém a quem procuras quando o teu dia corre mal, alguém que conheces tão bem que até o silêncio se torna confortável. E depois volto à realidade, onde todas essas pequenas coisas são apenas possibilidades que nunca me pertenceram.</p>
 
-    .literary-label {
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      font-size: 0.8rem;
-      margin-bottom: 20px;
-    }
+          <p>Mas talvez, um dia, eu também encontre alguém. Alguém que me olhe da mesma forma que eu tantas vezes desejei que tu me olhasses. Alguém que não me deixe a imaginar o que poderia ter sido, porque estará ali, a construir comigo aquilo que nunca precisei de inventar. Talvez descubra que existe um amor capaz de me devolver tudo aquilo que pensei que só poderia sentir por ti, e que, afinal, pode ser ainda maior. Não porque o que sinto agora tenha sido pouco, mas porque talvez ainda não tenha conhecido a forma mais bonita de ser amada.</p>
 
-    .literary-heading h1 {
-      font-family: Georgia, serif;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 400;
-      line-height: 1.2;
-      margin-bottom: 18px;
-    }
+          <p>É estranho pensar que posso desejar encontrar alguém que me ame da mesma forma que eu amo, enquanto uma parte de mim ainda espera que sejas tu. Talvez seja contraditório, talvez seja apenas humano. Não sei como se aprende a deixar espaço para alguém novo quando ainda existem sentimentos que não encontraram um lugar para descansar. Mas quero acreditar que, um dia, não precisarei de imaginar como seria ser escolhida. Talvez alguém me escolha sem hesitar, e eu descubra que o amor não precisa de ser uma pergunta à qual nunca recebi resposta.</p>
 
-    .literary-subtitle {
-      opacity: 0.7;
-      font-size: 1rem;
-    }
+          <p>Talvez amar também seja isto: aprender a deixar ir, mesmo quando uma parte de nós ainda deseja ficar. Durante tanto tempo, pensei que perder a possibilidade de te ter significava perder algo que nunca mais encontraria. Mas talvez esteja a confundir o fim de uma possibilidade com o fim de todas as outras. Talvez, ao deixar de esperar por ti, não esteja a fechar a porta ao amor, mas a abrir espaço para algo que ainda não consigo imaginar. E quem sabe se, um dia, aquilo que vier não será muito mais forte do que tudo aquilo que pensei que precisava de viver contigo.</p>
 
-    .literary-language {
-      margin-bottom: 75px;
-    }
+          <p>Não sei que forma terá, nem quem será. Talvez seja um amor, talvez uma amizade, talvez uma oportunidade que ainda não consigo reconhecer. Mas quero deixar de acreditar que a felicidade tem apenas uma forma, ou que o amor só pode acontecer uma vez, com uma única pessoa.</p>
 
-    .literary-language h2 {
-      font-family: Georgia, serif;
-      font-size: 1.7rem;
-      font-weight: 400;
-      margin-bottom: 12px;
-    }
+          <p>Por isso, não te escrevo para me despedir de ti. Não preciso de apagar o que senti, nem de fingir que nunca foste importante. Escrevo para me despedir da espera, das possibilidades que construí sozinha, da esperança de que um dia me olhasses e encontrasses em mim aquilo que nunca procuraste.</p>
 
-    .literary-language .language-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      opacity: 0.65;
-      margin-bottom: 30px;
-    }
+          <p>Levo comigo o que este sentimento me ensinou. E deixo contigo aquilo que nunca foi meu para guardar.</p>
 
-    .letter-text {
-      font-family: Georgia, serif;
-      font-size: 1.08rem;
-      line-height: 1.95;
-      white-space: pre-line;
-    }
+          <p>Talvez nunca saibas o quanto te amei. Talvez nunca precises de saber.</p>
 
-    .literary-divider {
-      width: 70px;
-      height: 1px;
-      background: currentColor;
-      opacity: 0.25;
-      margin: 70px auto;
-    }
+          <p>Mas eu sei.</p>
 
-    .literary-back {
-      text-align: center;
-      margin-top: 70px;
-    }
+          <p>E, pela primeira vez, isso é suficiente.</p>
 
-    .literary-back a {
-      text-decoration: none;
-    }
+          <p>Não sei o que vem a seguir. Mas estou preparada para descobrir.</p>
 
-    @media (max-width: 600px) {
-      .literary-page {
-        padding: 70px 20px 90px;
-      }
+          <p>Adeus ao amor que esperei.</p>
 
-      .letter-text {
-        font-size: 1rem;
-      }
+          <p>E olá a tudo aquilo que ainda pode ser.</p>
+        </div>
+        <p class="work-credit">Escrito por Maria Silva · © 2026</p>
+      </section>
 
-      .literary-language {
-        margin-bottom: 55px;
-      }
-    }
-  </style>
-</head>
+      <section class="work-language" lang="en">
+        <p class="language-heading">English · Literary Adaptation</p>
+        <h2 class="language-title">Goodbye to the Love I Waited For</h2>
 
-<body>
+        <div class="work-text">
+          <p>I am not writing to ask you to feel the same. I am writing because I no longer want to pretend that I feel nothing.</p>
 
-  <main id="main" class="literary-page">
+          <p>Perhaps you never realised the place you came to occupy within me. It did not happen all at once, and there was no exact moment I could point to and say: it was here. It was the little things, the conversations that stayed with me long after they ended, the way I began to find you in thoughts where I had not even been looking for you.</p>
 
-    <header class="literary-heading">
-      <p class="literary-label">Letter · Creative Writing</p>
+          <p>There is something that makes all of this harder: I know your heart has already found a place where it wants to stay, and that place is not with me. I do not blame you for that. It would be unfair to ask you to feel something that never grew within you simply because it grew so much within me. But I will not pretend it does not hurt. There is a particular sadness in wanting to be part of someone's happiness while accepting that we may never be the reason behind it.</p>
 
-      <h1>Goodbye to the Love I Waited For</h1>
+          <p>Sometimes, I find myself imagining what it would be like if things were different. If, just once, your eyes searched for mine with the same intention with which mine search for yours. If I could come closer without wondering whether I was crossing a line, if I could tell you I miss you without having to invent an excuse. I imagine what it would be like to be someone you think of before falling asleep, someone you turn to when your day goes wrong, someone you know so well that even silence feels comfortable. And then I return to reality, where all those little things are only possibilities that never belonged to me.</p>
 
-      <p class="literary-subtitle">
-        A personal letter about love, waiting, and letting go
-      </p>
-    </header>
+          <p>But perhaps, one day, I will find someone too. Someone who looks at me the way I so often wished you would. Someone who does not leave me wondering what might have been, because they will be there, building with me something I never had to invent. Perhaps I will discover a love capable of giving me everything I thought I could only feel for you, and perhaps it will be even greater. Not because what I feel now was too little, but because I may not yet have known the most beautiful way of being loved.</p>
 
-    <section class="literary-language">
+          <p>It is strange to think that I can wish to find someone who loves me the way I love, while a part of me still hopes it will be you. Perhaps it is contradictory. Perhaps it is simply human. I do not know how to make room for someone new when there are still feelings that have nowhere to rest. But I want to believe that, one day, I will no longer have to imagine what it feels like to be chosen. Perhaps someone will choose me without hesitation, and I will discover that love does not have to be a question to which I never received an answer.</p>
 
-      <h2>Goodbye to the Love I Waited For</h2>
+          <p>Perhaps loving is also this: learning to let go, even when a part of us still wants to stay. For so long, I thought losing the possibility of having you meant losing something I would never find again. But perhaps I have been confusing the end of one possibility with the end of all the others. Perhaps, by no longer waiting for you, I am not closing the door on love, but making room for something I cannot yet imagine. And who knows if, one day, what comes next will be much stronger than everything I thought I needed to experience with you.</p>
 
-      <p class="language-label">English</p>
+          <p>I do not know what shape it will take, or who it will be. Perhaps it will be love, perhaps friendship, perhaps an opportunity I cannot yet recognise. But I want to stop believing that happiness has only one form, or that love can happen only once, with only one person.</p>
 
-      <div class="letter-text">I am not writing to ask you to feel the same. I am writing because I no longer want to pretend that I feel nothing.
+          <p>So I am not writing to say goodbye to you. I do not need to erase what I felt, or pretend you were never important. I am writing to say goodbye to the waiting, to the possibilities I built on my own, to the hope that one day you would look at me and find something you never searched for.</p>
 
-Perhaps you never realised the place you came to occupy within me. It did not happen all at once, and there was no exact moment I could point to and say: it was here. It was the little things, the conversations that stayed with me long after they ended, the way I began to find you in thoughts where I had not even been looking for you.
+          <p>I will carry with me what this feeling has taught me. And I will leave with you what was never mine to keep.</p>
 
-There is something that makes all of this harder: I know your heart has already found a place where it wants to stay, and that place is not with me. I do not blame you for that. It would be unfair to ask you to feel something that never grew within you simply because it grew so much within me. But I will not pretend it does not hurt. There is a particular sadness in wanting to be part of someone's happiness while accepting that we may never be the reason behind it.
+          <p>Perhaps you will never know how much I loved you. Perhaps you will never need to know.</p>
 
-Sometimes, I find myself imagining what it would be like if things were different. If, just once, your eyes searched for mine with the same intention with which mine search for yours. If I could come closer without wondering whether I was crossing a line, if I could tell you I miss you without having to invent an excuse. I imagine what it would be like to be someone you think of before falling asleep, someone you turn to when your day goes wrong, someone you know so well that even silence feels comfortable. And then I return to reality, where all those little things are only possibilities that never belonged to me.
+          <p>But I know.</p>
 
-But perhaps, one day, I will find someone too. Someone who looks at me the way I so often wished you would. Someone who does not leave me wondering what might have been, because they will be there, building with me something I never had to invent. Perhaps I will discover a love capable of giving me everything I thought I could only feel for you, and perhaps it will be even greater. Not because what I feel now was too little, but because I may not yet have known the most beautiful way of being loved.
+          <p>And for the first time, that is enough.</p>
 
-It is strange to think that I can wish to find someone who loves me the way I love, while a part of me still hopes it will be you. Perhaps it is contradictory. Perhaps it is simply human. I do not know how to make room for someone new when there are still feelings that have nowhere to rest. But I want to believe that, one day, I will no longer have to imagine what it feels like to be chosen. Perhaps someone will choose me without hesitation, and I will discover that love does not have to be a question to which I never received an answer.
+          <p>I do not know what comes next. But I am ready to find out.</p>
 
-Perhaps loving is also this: learning to let go, even when a part of us still wants to stay. For so long, I thought losing the possibility of having you meant losing something I would never find again. But perhaps I have been confusing the end of one possibility with the end of all the others. Perhaps, by no longer waiting for you, I am not closing the door on love, but making room for something I cannot yet imagine. And who knows if, one day, what comes next will be much stronger than everything I thought I needed to experience with you.
+          <p>Goodbye to the love I waited for.</p>
 
-I do not know what shape it will take, or who it will be. Perhaps it will be love, perhaps friendship, perhaps an opportunity I cannot yet recognise. But I want to stop believing that happiness has only one form, or that love can happen only once, with only one person.
-
-So I am not writing to say goodbye to you. I do not need to erase what I felt, or pretend you were never important. I am writing to say goodbye to the waiting, to the possibilities I built on my own, to the hope that one day you would look at me and find something you never searched for.
-
-I will carry with me what this feeling has taught me. And I will leave with you what was never mine to keep.
-
-Perhaps you will never know how much I loved you. Perhaps you will never need to know.
-
-But I know.
-
-And for the first time, that is enough.
-
-I do not know what comes next. But I am ready to find out.
-
-Goodbye to the love I waited for.
-
-And hello to everything that still might be.</div>
-
-    </section>
+          <p>And hello to everything that still might be.</p>
+        </div>
+        <p class="work-credit">Original written in Portuguese by Maria Silva · © 2026</p>
+      </section>
+    </article>
 
     <div class="literary-divider"></div>
 
-    <section class="literary-language">
+    <!-- O ESTRANHO QUE MELHOR CONHECI -->
+    <article class="literary-work">
+      <p class="work-type">Poesia</p>
 
-      <h2>Adeus ao Amor que Esperei</h2>
+      <section class="work-language" lang="pt-PT">
+        <p class="language-heading">Português · Original</p>
+        <h2 class="language-title">O Estranho que Melhor Conheci</h2>
 
-      <p class="language-label">Português</p>
+        <div class="work-text">
+          <p>
+            Sob a minha língua encontrei o teu nome<br>
+            Em meio de nada que já tudo foi<br>
+            Das palavras que nos cercaram,<br>
+            Aos momentos que nos deixaram.
+          </p>
 
-      <div class="letter-text">Não escrevo para te pedir que sintas o mesmo. Escrevo porque já não quero fingir que não sinto nada.
+          <p>
+            E em quartos separados,<br>
+            Em lugares distantes,<br>
+            As paredes inclinadas,<br>
+            só para que ouçam... o que nenhum dos corações<br>
+            ousaria confessar.
+          </p>
 
-Talvez nunca tenhas percebido o lugar que foste ocupando em mim. Não aconteceu de repente, nem houve um momento exato em que pudesse apontar e dizer: foi aqui. Foram os pequenos detalhes, as conversas que ficaram comigo depois de terminarem, a maneira como, sem dar por isso, comecei a encontrar-te em pensamentos onde nem sequer te tinha procurado.
+          <p>
+            Não é o teu fantasma que me dá medo<br>
+            É a forma como amei o teu vazio.
+          </p>
 
-Há uma coisa que torna tudo isto mais difícil: sei que o teu coração já encontrou um lugar onde quer ficar, e esse lugar não é comigo. Não te culpo por isso. Seria injusto pedir-te que sentisses algo que não nasceu em ti, só porque em mim cresceu tanto. Mas não vou fingir que não dói. Há uma tristeza muito particular em querer fazer parte da felicidade de alguém e, ao mesmo tempo, ter de aceitar que talvez nunca sejamos nós a razão por detrás dela.
+          <p>
+            No meio de estranhos,<br>
+            Dois estranhos seremos<br>
+            E se as nossas sombras se encontrarem<br>
+            Em meio a multidões,<br>
+            Serás o estranho que eu melhor conheci
+          </p>
 
-Às vezes, dou por mim a imaginar como seria se as coisas fossem diferentes. Se, por uma vez, os teus olhos procurassem os meus com a mesma intenção com que os meus procuram os teus. Se pudesse aproximar-me sem ter de me perguntar se estou a ultrapassar algum limite, se pudesse dizer que tenho saudades tuas sem precisar de inventar uma desculpa para isso. Imagino como seria ser alguém em quem pensas antes de adormecer, alguém a quem procuras quando o teu dia corre mal, alguém que conheces tão bem que até o silêncio se torna confortável. E depois volto à realidade, onde todas essas pequenas coisas são apenas possibilidades que nunca me pertenceram.
+          <p>
+            Algumas verdades serão sombrias<br>
+            E sombrias serão pois um dia já foram verdades.
+          </p>
+        </div>
+        <p class="work-credit">Escrito por Maria Silva · © 2026</p>
+      </section>
 
-Mas talvez, um dia, eu também encontre alguém. Alguém que me olhe da mesma forma que eu tantas vezes desejei que tu me olhasses. Alguém que não me deixe a imaginar o que poderia ter sido, porque estará ali, a construir comigo aquilo que nunca precisei de inventar. Talvez descubra que existe um amor capaz de me devolver tudo aquilo que pensei que só poderia sentir por ti, e que, afinal, pode ser ainda maior. Não porque o que sinto agora tenha sido pouco, mas porque talvez ainda não tenha conhecido a forma mais bonita de ser amada.
+      <section class="work-language" lang="en">
+        <p class="language-heading">English · Literary Adaptation</p>
+        <h2 class="language-title">The Stranger I Knew Best</h2>
 
-É estranho pensar que posso desejar encontrar alguém que me ame da mesma forma que eu amo, enquanto uma parte de mim ainda espera que sejas tu. Talvez seja contraditório, talvez seja apenas humano. Não sei como se aprende a deixar espaço para alguém novo quando ainda existem sentimentos que não encontraram um lugar para descansar. Mas quero acreditar que, um dia, não precisarei de imaginar como seria ser escolhida. Talvez alguém me escolha sem hesitar, e eu descubra que o amor não precisa de ser uma pergunta à qual nunca recebi resposta.
+        <div class="work-text">
+          <p>
+            Beneath my tongue, I found your name,<br>
+            amidst the nothing that once was everything.<br>
+            From the words that surrounded us<br>
+            to the moments that left us behind.
+          </p>
 
-Talvez amar também seja isto: aprender a deixar ir, mesmo quando uma parte de nós ainda deseja ficar. Durante tanto tempo, pensei que perder a possibilidade de te ter significava perder algo que nunca mais encontraria. Mas talvez esteja a confundir o fim de uma possibilidade com o fim de todas as outras. Talvez, ao deixar de esperar por ti, não esteja a fechar a porta ao amor, mas a abrir espaço para algo que ainda não consigo imaginar. E quem sabe se, um dia, aquilo que vier não será muito mais forte do que tudo aquilo que pensei que precisava de viver contigo.
+          <p>
+            And in separate rooms,<br>
+            in distant places,<br>
+            the walls lean closer,<br>
+            just to hear what neither heart<br>
+            would dare to confess.
+          </p>
 
-Não sei que forma terá, nem quem será. Talvez seja um amor, talvez uma amizade, talvez uma oportunidade que ainda não consigo reconhecer. Mas quero deixar de acreditar que a felicidade tem apenas uma forma, ou que o amor só pode acontecer uma vez, com uma única pessoa.
+          <p>
+            It is not your ghost that frightens me—<br>
+            it is the way I loved your emptiness.
+          </p>
 
-Por isso, não te escrevo para me despedir de ti. Não preciso de apagar o que senti, nem de fingir que nunca foste importante. Escrevo para me despedir da espera, das possibilidades que construí sozinha, da esperança de que um dia me olhasses e encontrasses em mim aquilo que nunca procuraste.
+          <p>
+            Among strangers,<br>
+            we, too, shall be strangers.<br>
+            And if our shadows meet<br>
+            amid a sea of faces,<br>
+            you will be the stranger<br>
+            I knew best.
+          </p>
 
-Levo comigo o que este sentimento me ensinou. E deixo contigo aquilo que nunca foi meu para guardar.
+          <p>
+            Some truths will be dark,<br>
+            and dark they will remain,<br>
+            for once, they were truths.
+          </p>
+        </div>
+        <p class="work-credit">Original written in Portuguese by Maria Silva · © 2026</p>
+      </section>
+    </article>
 
-Talvez nunca saibas o quanto te amei. Talvez nunca precises de saber.
+    <!-- DIREITOS DE AUTOR -->
+    <footer class="literary-rights">
+      <p>
+        <strong>Direitos de autor · Copyright</strong>
+      </p>
 
-Mas eu sei.
+      <p>
+        Todas as obras apresentadas nesta página — incluindo poemas, textos,
+        narrativas, cartas e respetivas adaptações literárias — são da autoria
+        de Maria Silva, salvo indicação expressa em contrário.
+      </p>
 
-E, pela primeira vez, isso é suficiente.
+      <p>
+        É proibida a cópia, reprodução, distribuição, publicação, adaptação
+        ou utilização de qualquer conteúdo sem autorização prévia e expressa
+        da autora. A apresentação das versões em inglês não transfere nem
+        abdica dos direitos sobre os textos originais.
+      </p>
 
-Não sei o que vem a seguir. Mas estou preparada para descobrir.
+      <p>
+        All works on this page, including poems, personal writing, narratives,
+        letters and their literary adaptations, are original works by Maria Silva
+        unless otherwise stated. No part may be copied, reproduced, distributed,
+        published, adapted or used without the author's prior written permission.
+      </p>
 
-Adeus ao amor que esperei.
+      <p>© 2026 Maria Silva. Todos os direitos reservados.</p>
+    </footer>
 
-E olá a tudo aquilo que ainda pode ser.</div>
-
-    </section>
-
-    <div class="literary-back">
-      <a href="../projects.html">← Back to Projects</a>
+    <div class="literary-footer">
+      <a href="../projects.html">← Voltar aos projetos / Back to Projects</a>
     </div>
 
   </main>
 
   <script src="../js/main.js"></script>
-
-
-</div>
-</section>
-
-</div>
-
-</main>
-
 </body>
 </html>
